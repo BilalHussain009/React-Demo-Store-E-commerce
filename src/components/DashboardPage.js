@@ -1,9 +1,7 @@
 import React from 'react';
-
+import Product from './product';
 const DashboardPage = () => (
-  <div>
-    Dashboard page content
-  </div>
+  <Product />
 );
 
 export default DashboardPage;
