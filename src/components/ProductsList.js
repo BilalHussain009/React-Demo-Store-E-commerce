@@ -1,9 +1,12 @@
 import React from 'react';
 import Product from './Product';
 import {connect} from 'react-redux';
+
 export const ProductsList=(props)=>(
     <div>
+      
     {
+      
         props.items.length === 0 ? (
           <div className='list-item list-item--message'>
             <span>
@@ -13,7 +16,7 @@ export const ProductsList=(props)=>(
         ) : (
             props.items.map((item) => {
                 
-                return <Product key={item.id} {...item} />;
+                return <Product key={item.id} {...item}  />;
             })
           )
       }
