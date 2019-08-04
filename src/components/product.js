@@ -6,16 +6,10 @@ import {connect} from 'react-redux';
     return(
         <div>
             <div>Image Here</div>
-            <h1>Title here</h1>
-            <h1>Price here</h1>
-            <button onClick={()=>{
-                props.dispatch(addItem({
-                    
-                        name:'Bilal',
-                        price:12,
-                        company:'Samsung'
-                }))
-            }}>Add to cart</button>
+            <h1>{props.company}</h1>
+            <h1>{props.name}</h1>
+            <h1>{props.price}</h1>
+            
             <button>Description</button>
         </div>
     )

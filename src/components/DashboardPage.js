@@ -1,7 +1,15 @@
 import React from 'react';
-import Product from './product';
+import ProductList from './ProductsList';
+import AddItem from './AddItem';
+
 const DashboardPage = () => (
-  <Product />
+  <div>
+    
+    <ProductList />
+    <AddItem/>
+  </div>
+  
+  
 );
 
 export default DashboardPage;
