@@ -8,6 +8,9 @@ export default(state=defaultCart,action)=>{
                 ]
             case 'REMOVE_ITEM':
                 return state.filter(({id})=>id!==action.id);
+            case 'SET_CART':
+                return action.cart
+
             default:
                 return state;
     }

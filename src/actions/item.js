@@ -28,13 +28,16 @@ export const startSetItems = () => {
 };
 export const startAddItem = (itemData = {}) => {
   return (dispatch,getState) => {
-    console.log(itemData);
     const uid=getState().auth.uid;
     const {
-      id=0
+      id=0,
+      company='',
+      name='',
+      price=0,
+      image=''
     } = itemData;
-    const item = {id};
-    
+    const item = {id,company,name,price,image};
+    console.log(item);
     return database.ref(`users/${uid}/cart`).push(item).then((ref) => {
       dispatch(addItem({
         ...item
