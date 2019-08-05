@@ -1,5 +1,5 @@
 import React from 'react';
-import Product from '../components/Product';
+import Product from './product';
 import {connect} from 'react-redux';
 
 export const ProductsList=(props)=>(
