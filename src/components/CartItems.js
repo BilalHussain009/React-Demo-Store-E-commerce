@@ -1,12 +1,29 @@
 import React from 'react';
-const CartItems=(props)=>{
+import {startRemoveFromCart} from '../actions/cart';
+import {connect} from 'react-redux';
+import QuantitySelector from './QuantitySelector';
+class CartItems extends React.Component{
+    onRemove=()=>{
+        this.props.startRemoveFromCart(this.props.id)
+    }
+    render(){
     return(
         <div>
-            <h1>{props.name}</h1>
-            <p>{props.company}</p>
-            <img src={props.image}></img>
+            
+            <img src={this.props.image}></img>
+            <h1>{this.props.name}</h1>
+            <p>{this.props.company}</p>
+            <QuantitySelector/>
+            <button className='button button--secondary' onClick={this.onRemove}>Remove From Cart</button>
             
         </div>
     )
 }
-export default CartItems;
+};
+const mapStateToProps=(state)=>({
+    cart:state.cart
+});
+const mapDispatchToProps=(dispatch)=>({
+    startRemoveFromCart:(id)=>dispatch(startRemoveFromCart(id))
+})
+export default connect(mapStateToProps,mapDispatchToProps)(CartItems);

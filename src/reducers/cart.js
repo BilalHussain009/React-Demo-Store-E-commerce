@@ -6,7 +6,7 @@ export default(state=defaultCart,action)=>{
                     ...state,
                     action.item
                 ]
-            case 'REMOVE_ITEM':
+            case 'REMOVE_FROM_CART':
                 return state.filter(({id})=>id!==action.id);
             case 'SET_CART':
                 return action.cart
