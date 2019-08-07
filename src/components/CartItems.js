@@ -13,7 +13,7 @@ class CartItems extends React.Component{
             <li className="paypal__cart-item">
             <span className="paypal__index">1</span>
             <span className="paypal__item-name">{this.props.name}</span>
-            <span className="paypal__item-price">{this.props.price}</span>
+            <span className="paypal__item-price">Rs. {this.props.price}</span>
             
             </li>
             

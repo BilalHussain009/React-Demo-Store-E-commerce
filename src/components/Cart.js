@@ -29,7 +29,7 @@ const Cart=(props)=>{
           
           <li className="paypal__cart-item">
             <span className="paypal__cart-total">Total</span>
-            <span className="paypal__item-price">$268.00</span>
+            <span className="paypal__item-price">Rs. {props.totalAmount}</span>
           </li>
         </ul>
       </div>
@@ -67,6 +67,7 @@ const Cart=(props)=>{
     )
 };
 const mapStateToProps=(state)=>({
-    cart:state.cart
+    cart:state.cart,
+    totalAmount:state.totalAmount
 });
 export default connect(mapStateToProps)(Cart);

@@ -37,7 +37,6 @@ export const startAddItem = (itemData = {}) => {
       description=''
     } = itemData;
     const item = {company,name,price,image,description};
-    console.log(item);
     return database.ref(`users/${uid}/cart`).push({...item}).then((ref) => {
       dispatch(addItem({
         id:ref.key,
@@ -46,4 +45,16 @@ export const startAddItem = (itemData = {}) => {
     });
   };
 };
+export const Totalsum=(amount)=>({
+  type:'ADD_AMOUNT',
+  amount:amount
+});
+  
+export const startTotalSum=(price=0)=>{
+  return(dispatch,getState)=>{
+    const uid =getState().auth.uid;
+    dispatch(Totalsum(price));
+    
+  }
+} 
 

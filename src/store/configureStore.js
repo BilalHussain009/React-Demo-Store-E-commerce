@@ -3,6 +3,7 @@ import thunk from 'redux-thunk';
 import authReducer from '../reducers/auth';
 import itemReducer from '../reducers/items';
 import cartReducer from '../reducers/cart';
+import amountReducer from '../reducers/totalAmount';
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 export default () => {
@@ -10,7 +11,8 @@ export default () => {
     combineReducers({
       auth: authReducer,
       items:itemReducer,
-      cart:cartReducer
+      cart:cartReducer,
+      totalAmount:amountReducer
     }),
     composeEnhancers(applyMiddleware(thunk))
   );
