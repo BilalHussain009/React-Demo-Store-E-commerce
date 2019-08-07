@@ -79,11 +79,12 @@
     text-overflow:ellipsis;
   }
   
-  button.button-cart{
-    width: 80%;
+  .button-cart{
+    
+    width: 70%;
     padding:10px;
     background:salmon;
-    margin:10px;
+    margin:10px 10px 10px 35px;
     display:block;
     text-align:center;
     color:#fff;
