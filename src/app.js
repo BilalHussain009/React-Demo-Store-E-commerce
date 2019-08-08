@@ -6,6 +6,7 @@ import configureStore from './store/configureStore';
 import { login, logout } from './actions/auth';
 import {startSetItems} from './actions/item';
 import {startSetCart} from './actions/cart';
+import {startSetSum} from './actions/item';
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 import 'react-dates/lib/css/_datepicker.css';
@@ -33,6 +34,7 @@ firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     store.dispatch(login(user.uid));
     store.dispatch(startSetCart());
+    store.dispatch(startSetSum());
     store.dispatch(startSetItems()).then(() => {
       renderApp();
       if (history.location.pathname === '/') {

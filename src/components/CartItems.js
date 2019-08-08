@@ -1,17 +1,19 @@
 import React from 'react';
 import {startRemoveFromCart} from '../actions/cart';
+import {startSubtractAmount} from '../actions/item';
 import {connect} from 'react-redux';
 import QuantitySelector from './QuantitySelector';
 class CartItems extends React.Component{
     onRemove=()=>{
         this.props.startRemoveFromCart(this.props.id)
+        this.props.startSubtractAmount(this.props.price)
     }
     render(){
     return(
     
             
             <li className="paypal__cart-item">
-            <span className="paypal__index">1</span>
+            <a onClick={this.onRemove} className="close"></a>
             <span className="paypal__item-name">{this.props.name}</span>
             <span className="paypal__item-price">Rs. {this.props.price}</span>
             
@@ -31,6 +33,7 @@ const mapStateToProps=(state)=>({
     cart:state.cart
 });
 const mapDispatchToProps=(dispatch)=>({
-    startRemoveFromCart:(id)=>dispatch(startRemoveFromCart(id))
+    startRemoveFromCart:(id)=>dispatch(startRemoveFromCart(id)),
+    startSubtractAmount:(price)=>dispatch(startSubtractAmount(price))
 })
 export default connect(mapStateToProps,mapDispatchToProps)(CartItems);

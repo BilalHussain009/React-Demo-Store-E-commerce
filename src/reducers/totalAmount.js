@@ -7,8 +7,10 @@ export default(state=defaultAmount,action)=>{
                 state+action.amount);
         case 'SUBTRACT_AMOUNT':
             return(
-                action.amount
+                state-action.amount
             );
+        case 'SET_AMOUNT':
+            return action.price
         default:
             return state;
     }

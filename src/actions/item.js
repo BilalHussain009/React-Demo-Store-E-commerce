@@ -53,8 +53,40 @@ export const Totalsum=(amount)=>({
 export const startTotalSum=(price=0)=>{
   return(dispatch,getState)=>{
     const uid =getState().auth.uid;
-    dispatch(Totalsum(price));
     
+    return database.ref(`users/${uid}/total`).once('value').then((snapshot)=>{
+      const amount=snapshot.val();
+      dispatch(Totalsum(price));
+      database.ref(`users/${uid}/total`).set(amount+price);
+     });
   }
 } 
-
+export const setSum=(price)=>({
+  type:"SET_AMOUNT",
+  price
+});
+export const startSetSum=()=>{
+  return (dispatch,getState) => {
+    const uid=getState().auth.uid;
+    return database.ref(`users/${uid}/total`).once('value').then((snapshot)=>{
+     const price=snapshot.val()
+     
+     dispatch(setSum(price));
+    });
+  }
+}
+export const subtractAmount=(amount)=>({
+  type:"SUBTRACT_AMOUNT",
+  amount:amount
+})
+export const startSubtractAmount=(price=0)=>{
+  return(dispatch,getState)=>{
+    const uid=getState().auth.uid;
+    return database.ref(`users/${uid}/total`).once('value').then((snapshot)=>{
+      const amount=snapshot.val();
+      dispatch(subtractAmount(price));
+      database.ref(`users/${uid}/total`).set(amount-price);
+     });
+    
+  }
+}
