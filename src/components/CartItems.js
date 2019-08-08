@@ -12,6 +12,7 @@ class CartItems extends React.Component{
     return(
     
             
+<<<<<<< HEAD
         <li className="items odd">
         
         <div className="infoWrap"> 
@@ -34,6 +35,14 @@ class CartItems extends React.Component{
             </div>
           </div>
         </li>
+=======
+            <li className="paypal__cart-item">
+            <a onClick={this.onRemove} className="close"></a>
+            <span className="paypal__item-name">{this.props.name}</span>
+            <span className="paypal__item-price">Rs. {this.props.price}</span>
+            
+            </li>
+>>>>>>> af64eded691526019f4b047388f687cda31ff0d3
             
             
              /* <img src={this.props.image}></img>
