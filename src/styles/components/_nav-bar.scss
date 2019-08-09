@@ -47,7 +47,7 @@ ul {
 .navbar .logo {
     color: white;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 40px;
 	cursor: pointer;
     font-family: Lacquer;
     
@@ -141,8 +141,8 @@ button {
 	
 	
 	.navbar .right {
-		height: 0;
-		overflow: hidden;
+		width:50%;
+		padding-left: 50%;
 	}
 	
 	
