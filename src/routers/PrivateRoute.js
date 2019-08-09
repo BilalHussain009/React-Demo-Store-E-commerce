@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Route, Redirect } from 'react-router-dom';
 import NavBar from '../components/NavBar';
-
 export const PrivateRoute = ({
   isAuthenticated,
   component: Component,
@@ -10,10 +9,12 @@ export const PrivateRoute = ({
 }) => (
     <Route {...rest} component={(props) => (
       isAuthenticated ? (
+        
         <div>
           
           <NavBar/>
           <Component {...props} />
+          
         </div>
       ) : (
           <Redirect to="/" />

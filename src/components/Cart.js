@@ -4,6 +4,8 @@ import CartItems from './CartItems';
 
 const Cart=(props)=>{
     return(
+      <div>
+       
       <div className="wrap cf">
   <h1 className="projTitle">Responsive Table<span>-Less</span> Shopping Cart</h1>
   <div className="heading cf">
@@ -37,7 +39,7 @@ const Cart=(props)=>{
     </ul>
   </div>
 </div>
-
+</div>
 
 
 

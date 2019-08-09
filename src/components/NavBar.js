@@ -1,20 +1,20 @@
 import React from 'react';
 import { Helmet } from "react-helmet";
-
-export default class NavBar extends React.Component{
+import {Link} from 'react-router-dom';
+const  NavBar=()=>(
    
-    render(){
-        return(
+   
+        
             <div className="navbar">
 	
-            <div className="logo">
-                <h2>STORE</h2>
-            </div>
+
+            <Link to='/'className="logo" >Store</Link>
+            
             <Helmet>
         
             <script>
              {`
-             const navbar = document.querySelector('.navbar')
+             var navbar = document.querySelector('.navbar')
 
              navbar.querySelector('.toggle').addEventListener('click',()=>{
                  
@@ -49,10 +49,12 @@ export default class NavBar extends React.Component{
             </ul>
             
             
-            <div className="right">
-                <button>Dashboard</button>
-            </div>
-            
+            <Link to="/cart" className="right">
+            <button type="button" >
+                Cart
+             </button>
+            </Link>
+	        
             <div className="toggle">
                 <div className="line1"></div>
                 <div className="line2"></div>
@@ -62,8 +64,9 @@ export default class NavBar extends React.Component{
             
             
         </div>
-        )
-    }
+        );
+    
 
-}
 
+
+export default NavBar;

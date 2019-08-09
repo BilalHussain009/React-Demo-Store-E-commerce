@@ -45,8 +45,12 @@ ul {
 }
 
 .navbar .logo {
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
 	cursor: pointer;
-	font-family: Lacquer;
+    font-family: Lacquer;
+    
 }
 
 
@@ -188,7 +192,8 @@ button {
 	
 	.navbar.collapsed .logo {
 		position: absolute;
-		z-index: 44;
+        z-index: 44;
+        
 	}
 	
 	.navbar .links {
@@ -226,7 +231,7 @@ button {
 		
 	}
 	
-	.navbar.collapsed .right {
+	.navbar.collapsed .right .right-one {
 		position: fixed;
 		width: $sidebarWidth;
 		text-align: center;
