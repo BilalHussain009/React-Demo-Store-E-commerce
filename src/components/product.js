@@ -27,7 +27,8 @@ export class Product extends React.Component{
         //     product:this.props.name,price:this.props.price,company:this.props.company}}} className='button button--tri' >Description</Link>
             
         //     <button className='button' onClick={this.addToCart}>Addtocart</button>
-        // </div> 
+        // </div>
+        
         <figure>
         <img src={this.props.image}></img>
 	        <figcaption>{this.props.name}</figcaption>

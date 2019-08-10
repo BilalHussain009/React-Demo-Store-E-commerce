@@ -26,9 +26,15 @@ export const ProductsList=(props)=>(
             <div id="wrap">
               <div id="columns" className="columns_4">
                 {
-                  props.items.map((item) =>(
-                    <Product key={item.id} {...item}  />
-                  )
+                  props.items.map((item) =>{
+                    if(item.class===props.sort){
+                      return <Product key={item.id} {...item}  />
+                    }
+                    if(props.sort==='all'){
+                      return <Product key={item.id} {...item}  />
+                    }
+                    
+                  }             
                       )
                     }
                 
@@ -42,7 +48,8 @@ export const ProductsList=(props)=>(
 
 const mapStateToProps=(state)=>{
     return{
-        items:state.items
+        items:state.items,
+        sort:state.sort
     }
 }
 export default connect(mapStateToProps)(ProductsList);

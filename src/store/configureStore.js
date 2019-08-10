@@ -4,6 +4,7 @@ import authReducer from '../reducers/auth';
 import itemReducer from '../reducers/items';
 import cartReducer from '../reducers/cart';
 import amountReducer from '../reducers/totalAmount';
+import sortReducer from '../reducers/sort';
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 export default () => {
@@ -12,7 +13,8 @@ export default () => {
       auth: authReducer,
       items:itemReducer,
       cart:cartReducer,
-      totalAmount:amountReducer
+      totalAmount:amountReducer,
+      sort:sortReducer
     }),
     composeEnhancers(applyMiddleware(thunk))
   );

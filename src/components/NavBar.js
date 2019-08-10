@@ -1,9 +1,25 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import { Helmet } from "react-helmet";
 import {Link} from 'react-router-dom';
-const  NavBar=()=>(
-   
-   
+import {setSort} from '../actions/sort';
+
+
+export class NavBar extends React.Component{
+    setAll=()=>{
+        this.props.setSort('all');
+    }
+     setShirt=()=>{
+        this.props.setSort('shirt');
+     }
+    setLongSleeves=()=>{
+        this.props.setSort('longsleeves')
+    }
+    setHoodies=()=>{
+        this.props.setSort('hoodies')
+    }
+            render(){
+                return(
         
             <div className="navbar">
 	
@@ -42,10 +58,10 @@ const  NavBar=()=>(
             </Helmet>
             
             <ul className="links">
-                <li><a href="#">All Products</a></li>
-                <li><a href="#">Shirts</a></li>
-                <li><a href="#">Hoodies</a></li>
-                <li><a href="#">Long Sleeves</a></li>
+                <li><a onClick={this.setAll} href="#">All Products</a></li>
+                <li><a href="#" onClick={this.setShirt}>Shirts</a></li>
+                <li><a href="#" onClick={this.setHoodies} >Hoodies</a></li>
+                <li><a href="#" onClick={this.setLongSleeves}>Long Sleeves</a></li>
             </ul>
             
             
@@ -65,8 +81,11 @@ const  NavBar=()=>(
             
         </div>
         );
-    
+        }}
 
 
-
-export default NavBar;
+const mapDispatchToProps = (dispatch) => ({
+    setSort: (sortby) => dispatch(setSort(sortby))
+            
+    });
+export default connect(undefined,mapDispatchToProps)(NavBar);
