@@ -18,6 +18,9 @@ export class NavBar extends React.Component{
     setHoodies=()=>{
         this.props.setSort('hoodies')
     }
+    setJackets=()=>{
+        this.props.setSort('jackets')
+    }
             render(){
                 return(
         
@@ -62,6 +65,7 @@ export class NavBar extends React.Component{
                 <li><a href="#" onClick={this.setShirt}>Shirts</a></li>
                 <li><a href="#" onClick={this.setHoodies} >Hoodies</a></li>
                 <li><a href="#" onClick={this.setLongSleeves}>Long Sleeves</a></li>
+                <li><a href="#" onClick={this.setJackets}>Jackets</a></li>
             </ul>
             
             

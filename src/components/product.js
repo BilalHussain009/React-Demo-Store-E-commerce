@@ -32,7 +32,7 @@ export class Product extends React.Component{
         <figure>
         <img src={this.props.image}></img>
 	        <figcaption>{this.props.name}</figcaption>
-            <span className="price">Rs. {this.props.price}</span>
+            <span className="price"> ${this.props.price}</span>
             <button onClick={this.addToCart} className="button-cart">Add To Cart</button>
 	    </figure>
         
