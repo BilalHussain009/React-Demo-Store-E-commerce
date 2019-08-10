@@ -400,8 +400,13 @@ a.remove:hover {
     padding: .25em;
     font-size: .75em;
   }
-  .cart .items .cartSection.prodTotal, .cart .items .cartSection.removeWrap {
-    display: none;
+  .cart .items .cartSection.prodTotal{
+    padding-left: 40%;
+  }
+   .cart .items .cartSection.removeWrap {
+    padding-left:80%;
+    position: absolute;
+     
   }
   .cart .items .cartSection .itemImg {
     width: 25%;
