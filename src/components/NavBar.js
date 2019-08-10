@@ -42,10 +42,10 @@ const  NavBar=()=>(
             </Helmet>
             
             <ul className="links">
-                <li><a href="#">Mobiles</a></li>
-                <li><a href="#">Laptops</a></li>
-                <li><a href="#">LED Tv's</a></li>
-                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">All Products</a></li>
+                <li><a href="#">Shirts</a></li>
+                <li><a href="#">Hoodies</a></li>
+                <li><a href="#">Long Sleeves</a></li>
             </ul>
             
             
