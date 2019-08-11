@@ -13,7 +13,7 @@ export const PrivateRoute = ({
         
         <div>
           
-          <NavBar/>
+          
           <Component {...props} />
           <Footer />
           

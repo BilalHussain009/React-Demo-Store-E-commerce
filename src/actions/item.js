@@ -34,9 +34,10 @@ export const startAddItem = (itemData = {}) => {
       name='',
       price=0,
       image='',
-      description=''
+      description='',
+      size=''
     } = itemData;
-    const item = {company,name,price,image,description};
+    const item = {company,name,price,image,description,size};
     return database.ref(`users/${uid}/cart`).push({...item}).then((ref) => {
       dispatch(addItem({
         id:ref.key,

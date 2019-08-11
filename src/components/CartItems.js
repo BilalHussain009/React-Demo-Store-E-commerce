@@ -22,7 +22,7 @@ class CartItems extends React.Component{
             
                <p> <input type="text"  className="qty" placeholder="1x"/>${this.props.price}</p>
             
-              <p className="stockStatus"> In Stock</p>
+              <p className="stockStatus">{this.props.size} -size </p>
             </div>  
         
             

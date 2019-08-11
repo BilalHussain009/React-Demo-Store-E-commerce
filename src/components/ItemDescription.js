@@ -1,8 +1,12 @@
 import React from 'react';
+import NavBar from '../components/NavBar';
 import {connect} from 'react-redux';
 import {startAddItem} from '../actions/item';
 import {startTotalSum} from '../actions/item';
 class ItemDescription extends React.Component{
+  state={
+    size:''
+  }
   addToCart=(id,company,name,price,image)=>{
     
     this.props.startTotalSum(this.props.location.state.price);
@@ -12,12 +16,20 @@ class ItemDescription extends React.Component{
         name:this.props.location.state.name,
         price:this.props.location.state.price,
         image:this.props.location.state.image,
-        description:this.props.description
+        description:this.props.description,
+        size:this.state.size
     });
-}    
+} 
+  sizeChange=(e)=>{
+    const a=e.target.value;
+    this.setState(()=>({size:a}))
+  }
+
         
     render(){
-    return(<section className="buy-grid container">
+    return(<div>
+      <NavBar/>
+      <section className="buy-grid container">
     
     <div className="hero-image-wrapper">
       <img src={this.props.location.state.image} className="hero-image-element" alt="alt"></img>
@@ -31,21 +43,16 @@ class ItemDescription extends React.Component{
       <h3>${this.props.location.state.price}</h3>
     </div>
       <div className="selection-row">
-
-        <h5>Select a size:
-          </h5>
-            <div className="swatch">
-              s
-            </div>
-            <div className="swatch">
-              m
-            </div>
-            <div className="swatch">
-              l
-            </div>
-            <div className="swatch">
-              xl
-            </div>
+      <h5>Select Size:</h5>
+      <div className="select">
+  <select name="slct" id="slct"
+  onChange={this.sizeChange}>
+    
+    <option value="Small">S</option>
+    <option value="Medium">M</option>
+    <option value="Large">L</option>
+  </select>
+</div>
             </div>
   <div className="selection-row">
             <h5>Select a Color:
@@ -67,7 +74,8 @@ class ItemDescription extends React.Component{
   
     </div>
     
-  </section>)
+  </section>
+  </div>)
     }
     
 }
