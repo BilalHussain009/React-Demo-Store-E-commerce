@@ -53,7 +53,7 @@ export const Totalsum=(amount)=>({
 export const startTotalSum=(price=0)=>{
   return(dispatch,getState)=>{
     const uid =getState().auth.uid;
-    
+    console.log(price);
     return database.ref(`users/${uid}/total`).once('value').then((snapshot)=>{
       const amount=snapshot.val();
       dispatch(Totalsum(price));

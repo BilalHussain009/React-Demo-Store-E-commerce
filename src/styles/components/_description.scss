@@ -1,0 +1,120 @@
+$color: #336699;
+$breakpoint: 768px;
+
+
+img {
+  max-width: 100%;
+}
+
+
+.buy-grid {
+  @media (min-width: $breakpoint) {
+  padding-top: 3rem;
+  padding-bottom: 5rem;
+  padding-left: 20rem;
+  display: grid;
+  grid-column-gap: 2rem;
+  grid-template-columns: 40% 40%;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "hero-image header"
+    "hero-image selection"
+    "hero-image specs"
+}
+  }
+
+header {
+  padding-bottom: 3rem;
+  grid-area: header;
+  
+  h1 {
+    margin: 0;
+  }
+}
+
+
+.hero-image-wrapper {
+  grid-area: hero-image;
+  height: 100%;
+}
+
+
+.hero-image-element {
+  @media (min-width: $breakpoint) {
+  position: sticky;
+  top: 0;
+  left: 0;
+  }
+}
+
+.selection {
+  grid-area: selection;
+  padding-bottom: 3rem;
+  padding-left: 10%;
+}
+
+
+.selection-row {
+  padding-bottom: 2rem;
+}
+
+.swatch {
+  width: 36px;
+  height: 36px;
+  background-color: #ededed;
+  text-align: center;
+  line-height: 36px;
+  display: inline-block;
+  margin: 8px;
+  cursor: pointer;
+}
+
+
+.btn-primary {
+  
+  background: $color;
+  width: 50%;
+  display: block;
+  
+}
+
+.swatch.color {
+  background-color: $color;
+
+  &:nth-of-type(2) {
+    background-color: darken($color, 10%);
+  }
+
+  &:nth-of-type(3) {
+    background-color: darken($color, 15%);
+  }
+  &:nth-of-type(4) {
+    background-color: darken($color, 20%);
+  }
+  &:nth-of-type(5) {
+    background-color: darken($color, 25%);
+  }
+}
+
+.specs-table {
+  padding-bottom: 3rem;
+}
+
+.specs-table-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-top: 1px solid #ccc;
+}
+
+.spec-table-label {
+  font-weight: 700;
+}
+
+.spec-table-description {
+  color: #999;
+}
+
+.callout img {
+  width: 100%;
+}

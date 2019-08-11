@@ -29,12 +29,19 @@ export class Product extends React.Component{
         //     <button className='button' onClick={this.addToCart}>Addtocart</button>
         // </div>
         
+        <Link to={{
+            pathname: "/description",
+            state: { name:this.props.name,
+                    price:this.props.price,
+                    image:this.props.image}
+         }} >
         <figure>
         <img src={this.props.image}></img>
 	        <figcaption>{this.props.name}</figcaption>
             <span className="price"> ${this.props.price}</span>
-            <button onClick={this.addToCart} className="button-cart">Add To Cart</button>
+            
 	    </figure>
+        </Link>
         
   
 
