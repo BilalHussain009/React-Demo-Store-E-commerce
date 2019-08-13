@@ -5,7 +5,7 @@ import {startAddItem} from '../actions/item';
 import {startTotalSum} from '../actions/item';
 class ItemDescription extends React.Component{
   state={
-    size:''
+    size:'Small'
   }
   addToCart=(id,company,name,price,image)=>{
     
