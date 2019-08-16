@@ -3,10 +3,17 @@ import NavBar from '../components/NavBar';
 import {connect} from 'react-redux';
 import {startAddItem} from '../actions/item';
 import {startTotalSum} from '../actions/item';
+import  {DiscussionEmbed} from 'disqus-react';
+import uid from 'uuid';
 class ItemDescription extends React.Component{
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
+  
   state={
     size:'Small'
   }
+  
   addToCart=(id,company,name,price,image)=>{
     
     this.props.startTotalSum(this.props.location.state.price);
@@ -24,7 +31,6 @@ class ItemDescription extends React.Component{
     const a=e.target.value;
     this.setState(()=>({size:a}))
   }
-
         
     render(){
     return(<div>
@@ -73,8 +79,15 @@ class ItemDescription extends React.Component{
                 <button onClick={this.addToCart} className="btn btn-primary btn-large btn-full">Add to Cart</button>
   
     </div>
+
     
   </section>
+  <div className='comment'>
+  <DiscussionEmbed shortname={'reactdigitalstore-1'} config={{
+    identifier:uid.v4(),
+    title:'Post',
+    url:'https://digitalstore-bilal.herokuapp.com'
+  }}/></div>
   </div>)
     }
     
