@@ -5,15 +5,21 @@ const Slider=()=>(
     <div className="carousel-inner">
         <input className="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="true" checked="checked"></input>
         <div className="carousel-item">
-            
-            <h3></h3>
+            <a href='#'>
+            <div className='divtext'>THE FRESH FOAM CRUZ</div>
+            <div className='divtext1'><p>COMFORT.SPORT.STYLE.</p></div>
             <img src="/images/bg.jpg">
                 
             </img>
+            </a>
         </div>
         <input className="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="true"></input>
         <div className="carousel-item">
-            <img src="http://fakeimg.pl/2000x800/DA5930/fff/?text=JavaScript"></img>
+            
+            <img src="http://fakeimg.pl/2000x800/DA5930/fff/?text=JavaScript">
+                    
+            </img>
+            
         </div>
         <input className="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="true"></input>
         <div className="carousel-item">

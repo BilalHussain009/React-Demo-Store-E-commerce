@@ -183,3 +183,43 @@
 .tag:after{
   right: -1000px;
 }
+.imagelink{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+.divtext {
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  padding-top:13.5%;  
+  text-align:center;
+  font-weight:500;
+  font-size:5vw;
+  color:white;
+  font-family:arial;
+}
+@media (min-width: 1200px) {
+  .divtext{
+    font-size:60px;
+  }
+}
+.divtext1 {
+  padding-top:2%;
+  position:absolute;
+  top:50%;
+  left:32%;
+  
+  
+  
+  font-weight:200;
+  font-size:2.5vw;
+  color:white;
+  font-family:arial;
+}
+@media (min-width: 1200px) {
+  .divtext{
+    font-size:60px;
+  }
+}
