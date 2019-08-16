@@ -8,12 +8,14 @@ import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRoute';
 import Cart from '../components/Cart';
 import Description from '../components/ItemDescription';
+
 export const history = createHistory();
 
 const AppRouter = () => (
   <Router history={history}>
     <div>
       <Switch>
+
         <PublicRoute path="/" component={LoginPage} exact={true} />
         <PrivateRoute path="/dashboard" component={DashboardPage} />
         <PrivateRoute path="/cart" component={Cart} />
