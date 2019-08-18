@@ -82,12 +82,16 @@ class ItemDescription extends React.Component{
 
     
   </section>
+  <div className="section-title">
+  <span className="tag tag-regular">You May Also Like</span>
+</div>
   <div className='comment'>
   <DiscussionEmbed shortname={'reactdigitalstore-1'} config={{
     identifier:uid.v4(),
     title:'Post',
     url:'https://digitalstore-bilal.herokuapp.com'
   }}/></div>
+  
   </div>)
     }
     

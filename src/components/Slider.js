@@ -13,7 +13,7 @@ const Slider=()=>(
             </img>
             </a>
         </div>
-        <input className="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="true"></input>
+        <input className="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="true" ></input>
         <div className="carousel-item">
             
             <img src="http://fakeimg.pl/2000x800/DA5930/fff/?text=JavaScript">
@@ -21,7 +21,7 @@ const Slider=()=>(
             </img>
             
         </div>
-        <input className="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="true"></input>
+        <input className="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="true" ></input>
         <div className="carousel-item">
             <img src="http://fakeimg.pl/2000x800/F90/fff/?text=Carousel"></img>
         </div>
