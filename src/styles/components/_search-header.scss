@@ -1,8 +1,10 @@
 .flex-form input[type="submit"] {
-  background: #ef3f5a;
-  border: 1px solid #ef3f5a;
+  background: black;
+  border: 2px solid white;
   color: #fff;
   padding: 0 30px;
+  font-size: 15px;
+  font-weight: 600;
   cursor: pointer;
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
@@ -10,8 +12,8 @@
 }
 
 .flex-form input[type="submit"]:hover {
-  background: #d73851;
-  border: 1px solid #d73851;
+  background: black;
+  border: 1px solid black;
 }
 
 .flex-form {
@@ -36,6 +38,7 @@
 
 input[type="search"] {
   flex-basis: 500px;
+  font-size: 13px;
 }
    h1 {
     position: relative;
