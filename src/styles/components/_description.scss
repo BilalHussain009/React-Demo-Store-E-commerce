@@ -126,7 +126,7 @@ select {
   outline: 0;
   box-shadow: none;
   border: 0 !important;
-  background: #2c3e50;
+  background: black;
   background-image: none;
 }
 /* Remove IE arrow */
@@ -140,14 +140,14 @@ select::-ms-expand {
   width: 15em;
   height: 3em;
   line-height: 3;
-  background: #2c3e50;
+  background: black;
   overflow: hidden;
   border-radius: .25em;
 }
 select {
   flex: 1;
   padding: 0 .5em;
-  color: #fff;
+  color: white;
   cursor: pointer;
 }
 /* Arrow */
@@ -157,7 +157,7 @@ select {
   top: 0;
   right: 0;
   padding: 0 1em;
-  background: #34495e;
+  background: black;
   cursor: pointer;
   pointer-events: none;
   -webkit-transition: .25s all ease;
@@ -172,4 +172,74 @@ select {
   padding-left: 10%;
 
   width:90%;
+}
+.toast-container {
+  width: 90%;
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+[class*="toast-pos-"] {
+  position: absolute;
+  padding: 10px;
+}
+
+.toast-pos-top {
+  top: 0;
+}
+
+.toast-pos-right {
+  right: 0;
+}
+
+.toast-pos-bottom {
+  bottom: 0;
+}
+
+.toast-pos-left {
+  left: 0;
+}
+
+.toast {
+  display: none;
+  padding: 20px;
+  margin: 20px 0;
+  background: black;
+  color: #333333;
+}
+
+.close-toast {
+  float: right;
+  text-decoration: none;
+  color: black;
+  vertical-align: middle;
+}
+
+/* Aditional Styles */
+
+.toast-trigger {
+  color: black;  
+}
+
+.toast {
+  background: rgba(0, 0, 0, 0.5);
+  color: black;
+}
+
+.toast-trigger {
+  display: inline-block;
+  top: 50%;
+  left: 50%;
+  margin: 10px;
+  padding: 20px 40px;
+  background: transparent;
+  color: black;
+  border: 1px solid black;
+  text-decoration: none;
+  transition: ease .2s;
+}
+
+.toast-trigger:hover {
+  background: black;
+  color: white;
 }

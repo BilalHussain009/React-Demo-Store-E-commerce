@@ -1,5 +1,8 @@
 import React from 'react';
 import NavBar from '../components/NavBar';
+import { Helmet } from "react-helmet";
+import $ from 'jquery';
+window.$ = $;
 import {connect} from 'react-redux';
 import {startAddItem} from '../actions/item';
 import {startTotalSum} from '../actions/item';
@@ -12,6 +15,11 @@ class ItemDescription extends React.Component{
   
   state={
     size:'Small'
+  }
+  myFunction() {
+    var x = document.getElementById("notification");
+    x.className = "show";
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
   }
   
   addToCart=(id,company,name,price,image)=>{
@@ -76,7 +84,45 @@ class ItemDescription extends React.Component{
   
                 </div>
                 </div>
-                <button onClick={this.addToCart} className="btn btn-primary btn-large btn-full">Add to Cart</button>
+                <Helmet>
+                  <script>
+                    {`$(".toast-trigger").click(function(e){
+  e.preventDefault();
+  datatoast = $(this).attr("data-toast");
+  if ( $( this ).hasClass( "toast-auto" ) && !$("#" + datatoast).is(":visible") ){ 
+    $("#" + datatoast).fadeIn(400).delay(2000).fadeOut(400);
+  }
+  else if ( !$("#" + datatoast).is(":visible") ){
+    $("#" + datatoast).fadeIn(400);
+  };
+});
+
+$(".close-toast").click(function(e){
+  e.preventDefault();
+  closetoast = $(this).parent().attr("id");
+  $("#" + closetoast).fadeOut(400);
+});`}
+                  </script>
+                </Helmet>
+                <button onClick={this.addToCart} className="toast-trigger" data-toast="toast-name-1">Add To Cart</button>
+                
+                <div className="toast-container toast-pos-right toast-pos-bottom">
+
+  
+  <div className="toast" id="toast-name-1">
+    
+    <a href="#" onClick={this.addToCart} className="close-toast">&#10006;</a>
+    Added To Cart Successfully!.
+  </div>
+  
+  
+  <div className="toast" id="toast-name-2">
+    <a href="#" class="close-toast">&#10006;</a>
+    <b>Messege 2!</b> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+  </div>
+  
+</div>
+                {/* <button onClick={this.addToCart} className="btn btn-primary btn-large btn-full">Add to Cart</button> */}
   
     </div>
 

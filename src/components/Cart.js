@@ -3,7 +3,11 @@ import {connect} from 'react-redux';
 import CartItems from './CartItems';
 import {Link} from 'react-router-dom';
 import NavBar from '../components/NavBar';
-const Cart=(props)=>{
+class Cart extends React.Component{
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
+  render(){
     return(
       <div>
        <NavBar/>
@@ -18,7 +22,7 @@ const Cart=(props)=>{
     <ul className="cartWrap">
     {
                   
-      props.cart.map((item) =>(
+                  this.props.cart.map((item) =>(
                       
       <CartItems key={item.id} {...item}  />
       ))
@@ -30,11 +34,11 @@ const Cart=(props)=>{
   
   <div className="subtotal cf">
     <ul>
-      <li className="totalRow"><span className="label">Subtotal</span><span className="value">${props.totalAmount}</span></li>
+      <li className="totalRow"><span className="label">Subtotal</span><span className="value">${this.props.totalAmount}</span></li>
       
-          <li className="totalRow"><span className="label">Shipping</span><span className="value">{props.totalAmount>0?<p>$5</p>:<p>$0.00</p>}</span></li>
-            <li className="totalRow"><span className="label">Tax</span><span className="value">{props.totalAmount>0?<p>$4.00</p>:<p>$0.00</p>}</span></li>
-            <li className="totalRow final"><span className="label">Total</span><span className="value">{props.totalAmount>0?<p>${props.totalAmount+9}</p>:<p>$0.00</p>}</span></li>
+          <li className="totalRow"><span className="label">Shipping</span><span className="value">{this.props.totalAmount>0?<p>$5</p>:<p>$0.00</p>}</span></li>
+            <li className="totalRow"><span className="label">Tax</span><span className="value">{this.props.totalAmount>0?<p>$4.00</p>:<p>$0.00</p>}</span></li>
+            <li className="totalRow final"><span className="label">Total</span><span className="value">{this.props.totalAmount>0?<p>${this.props.totalAmount+9}</p>:<p>$0.00</p>}</span></li>
       <li className="totalRow"><a href='#' className="btn continue">Checkout</a></li>
     </ul>
   </div>
@@ -75,7 +79,7 @@ const Cart=(props)=>{
     // <button>Proceed To checkout</button>
     //     </div>
     )
-};
+}};
 const mapStateToProps=(state)=>({
     cart:state.cart,
     totalAmount:state.totalAmount
