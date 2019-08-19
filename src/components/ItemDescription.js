@@ -111,7 +111,7 @@ $(".close-toast").click(function(e){
   
   <div className="toast" id="toast-name-1">
     
-    <a href="#" onClick={this.addToCart} className="close-toast">&#10006;</a>
+    <a href="#"  className="close-toast">&#10006;</a>
     Added To Cart Successfully!.
   </div>
   
