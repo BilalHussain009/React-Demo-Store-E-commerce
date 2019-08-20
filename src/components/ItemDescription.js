@@ -24,7 +24,15 @@ class ItemDescription extends React.Component{
   
   addToCart=(id,company,name,price,image)=>{
     
-    this.props.startTotalSum(this.props.location.state.price);
+    if(JSON.parse(localStorage.getItem("sum"))==null ||undefined){
+      var sum=0;
+    }
+    else{
+      var sum=JSON.parse(localStorage.getItem("sum"));
+    }
+    
+    sum+=this.props.location.state.price;
+    localStorage.setItem('sum',JSON.stringify(sum));
     
     this.props.startAddItem({id:this.props.id,
         company:this.props.company,

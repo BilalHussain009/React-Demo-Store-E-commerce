@@ -29,21 +29,15 @@ const renderApp = () => {
 
 ReactDOM.render(<LoadingPage />, document.getElementById('app'));
 
-firebase.auth().onAuthStateChanged((user) => {
-  
-  if (user) {
-    store.dispatch(login(user.uid));
-    store.dispatch(startSetCart());
-    store.dispatch(startSetSum());
+
+
+
+    
+    // store.dispatch(startSetSum());
     store.dispatch(startSetItems()).then(() => {
       renderApp();
       if (history.location.pathname === '/') {
         history.push('/dashboard');
       }
-    });
-  } else {
-    store.dispatch(logout());
-    renderApp();
-    history.push('/');
-  }
+
 });

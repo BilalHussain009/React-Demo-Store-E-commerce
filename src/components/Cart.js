@@ -22,7 +22,7 @@ class Cart extends React.Component{
     <ul className="cartWrap">
     {
                   
-                  this.props.cart.map((item) =>(
+                  JSON.parse(localStorage.getItem("cart")).map((item) =>(
                       
       <CartItems key={item.id} {...item}  />
       ))
@@ -34,11 +34,11 @@ class Cart extends React.Component{
   
   <div className="subtotal cf">
     <ul>
-      <li className="totalRow"><span className="label">Subtotal</span><span className="value">${this.props.totalAmount}</span></li>
+      <li className="totalRow"><span className="label">Subtotal</span><span className="value">${(JSON.parse(localStorage.getItem("sum")))}</span></li>
       
-          <li className="totalRow"><span className="label">Shipping</span><span className="value">{this.props.totalAmount>0?<p>$5</p>:<p>$0.00</p>}</span></li>
-            <li className="totalRow"><span className="label">Tax</span><span className="value">{this.props.totalAmount>0?<p>$4.00</p>:<p>$0.00</p>}</span></li>
-            <li className="totalRow final"><span className="label">Total</span><span className="value">{this.props.totalAmount>0?<p>${this.props.totalAmount+9}</p>:<p>$0.00</p>}</span></li>
+          <li className="totalRow"><span className="label">Shipping</span><span className="value">{JSON.parse(localStorage.getItem("sum"))>0?<p>$5</p>:<p>$0.00</p>}</span></li>
+            <li className="totalRow"><span className="label">Tax</span><span className="value">{JSON.parse(localStorage.getItem("sum"))>0?<p>$4.00</p>:<p>$0.00</p>}</span></li>
+            <li className="totalRow final"><span className="label">Total</span><span className="value">{JSON.parse(localStorage.getItem("sum"))>0?<p>${JSON.parse(localStorage.getItem("sum"))+9}</p>:<p>$0.00</p>}</span></li>
       <li className="totalRow"><a href='#' className="btn continue">Checkout</a></li>
     </ul>
   </div>
