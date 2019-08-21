@@ -5,7 +5,7 @@ const publicPath = path.join(__dirname, '..', 'public');
 const port = process.env.PORT || 3000;
 const compression = require('compression');
 app.use(express.static(publicPath));
-zz
+app.use(compression());
 app.get('*', (req, res) => {
   res.sendFile(path.join(publicPath, 'index.html'));
 });
