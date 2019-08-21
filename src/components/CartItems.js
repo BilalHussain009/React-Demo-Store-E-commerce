@@ -5,8 +5,19 @@ import {connect} from 'react-redux';
 import QuantitySelector from './QuantitySelector';
 class CartItems extends React.Component{
     onRemove=()=>{
-        this.props.startRemoveFromCart(this.props.id)
-        this.props.startSubtractAmount(this.props.price)
+        // this.props.startRemoveFromCart(this.props.id)
+        // this.props.startSubtractAmount(this.props.price)
+        let cart =JSON.parse(localStorage.getItem("cart"));
+        
+        let newCart=cart.filter(({id})=>id!==this.props.id);
+        localStorage.setItem('cart',JSON.stringify(newCart));
+        
+        var sum=JSON.parse(localStorage.getItem("sum"));
+        
+        
+        sum-=this.props.price;
+        localStorage.setItem('sum',JSON.stringify(sum));
+        
     }
     render(){
     return(
