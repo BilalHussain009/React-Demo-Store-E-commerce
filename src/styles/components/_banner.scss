@@ -1,0 +1,68 @@
+.banner {
+	position: relative;
+	height: 400px;
+	.bg {
+		&:before, &:after {
+			top: 0;
+			content: "";
+			width: 50.05%;
+			height: 100%;
+			position: absolute;
+			display: block;
+			background-position: center;
+			background-size: cover;
+		}
+		&:before {
+			transform: scaleX(-1);
+		}
+		&:after {
+			right: 0;
+		}
+	}
+	.content {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	.content {
+		text-align: center;
+		color: #fff;
+		h4 {
+			font-family: 'Lato';
+			font-weight: 900;
+			font-size: 52px;
+			border: 8px solid #fff;
+			padding: 5px 15px;
+			margin: 0;
+		}
+		p {	
+			font-family: 'Lato';
+			font-weight: 900;
+			font-size: 42px;
+			margin-bottom: 0;
+		}
+	}
+	ul {
+		margin: 25px 0 0 0;
+		padding: 0;
+		cursor: default;
+		li {
+			list-style: none;
+			display: inline-block;
+			margin: 0 10px;
+			a {
+				display: block;
+				color: #fff;
+			}
+		}
+	}
+}
+
+
+// RIGHT SIDE IS MIRRORED
+#banner1 .bg {
+	&:before, &:after {
+		background-image: url('https://images.pexels.com/photos/206434/pexels-photo-206434.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+	}
+}

@@ -21,11 +21,11 @@ const AppRouter = () => (
         <Route path="/cart" component={Cart} />
         <Route  path='/description' component={Description}/>
         <Route path='/search' component={SearchResult}/>
-        
         <Route component={NotFoundPage} />
       </Switch>
     </div>
   </Router>
+
 );
 
 export default AppRouter;
