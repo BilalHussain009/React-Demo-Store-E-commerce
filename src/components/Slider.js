@@ -8,7 +8,7 @@ const Slider=()=>(
             <a href='#'>
             <div className='divtext'>THE FRESH FOAM CRUZ</div>
             <div className='divtext1'><p>COMFORT.SPORT.STYLE.</p></div>
-            <img src="https://i.ibb.co/Gv3gsFT/image1.jpg">
+            <img src="https://i.ibb.co/JsLWTqq/rsz-fashionable-girl-1382946.jpg">
                 
             </img>
             </a>
