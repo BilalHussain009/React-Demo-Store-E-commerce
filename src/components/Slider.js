@@ -8,7 +8,7 @@ const Slider=()=>(
             <a href='#'>
             <div className='divtext'>THE FRESH FOAM CRUZ</div>
             <div className='divtext1'><p>COMFORT.SPORT.STYLE.</p></div>
-            <img src="https://i.ibb.co/JsLWTqq/rsz-fashionable-girl-1382946.jpg">
+            <img src="https://images.unsplash.com/photo-1495708188978-c9327285bed7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80">
                 
             </img>
             </a>
@@ -16,7 +16,7 @@ const Slider=()=>(
         <input className="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="true" ></input>
         <div className="carousel-item">
             
-            <img src="https://i.ibb.co/2qsM5qL/image.jpg">
+            <img src="https://images.unsplash.com/photo-1467271891377-355028f2f363?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80">
                     
             </img>
             
