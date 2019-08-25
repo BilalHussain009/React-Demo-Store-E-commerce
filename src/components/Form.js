@@ -1,6 +1,6 @@
 import React from 'react';
 const Form =()=>(
-    <section className='merch'>
+    
     <div className="background">
   <div className="container">
     <div className="screen">
@@ -38,7 +38,7 @@ const Form =()=>(
     
   </div>
 </div>
-</section>
+
 
 );
 export default Form;

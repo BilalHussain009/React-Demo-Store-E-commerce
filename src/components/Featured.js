@@ -1,12 +1,13 @@
 import React from 'react';
 import { Helmet } from "react-helmet";
+import {Link} from 'react-router-dom';
 import $ from 'jquery';
 window.$ = $;
 const Featured =()=>(
     
 <div className="wrapper">
       <div className="cards">
-        
+        <Link to='/merch'>
         <div className="card">
           <div className="card-content">
             <div className="top">
@@ -47,7 +48,8 @@ const Featured =()=>(
             />
           </div>
         </div>
-
+        </Link>
+        <Link to='/merch'>
         <div className="card">
           <div className="card-content">
             <div className="top">
@@ -87,7 +89,7 @@ const Featured =()=>(
             />
           </div>
         </div>
-
+        </Link>
  
       </div>
     </div>

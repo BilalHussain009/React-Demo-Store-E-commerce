@@ -1,0 +1,67 @@
+section#features {
+    width:80%;
+    padding-top: 80px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 20%;
+    justify-content: center;
+  }
+  
+  section#features div.grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: calc(100%  / 3);
+    margin: 10px 10px 35px 10px;
+  }
+  
+  section#features img#icon {
+    height: 70px;
+    width: 70px;
+  }
+  
+  section#features div.desc {
+    min-width: 180px;
+    margin: 10px 10px 15px 10px;
+    line-height: 1.5;
+  }
+  
+  section#features div.desc h2 {
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    margin-bottom: 10px;
+  }
+
+  @media (max-width: 700px) {
+    header img#header-img {
+      width: 180px;
+    }
+  
+    nav#nav-bar a {
+      font-size: 13px;
+    }
+  
+    section#features {
+      padding-top: 160px;
+      flex-direction: column;
+    }
+  
+    section#features div.grid {
+      max-width: 380px;
+      width: 80vw;
+    }
+  
+    section#pricing {
+      flex-direction: column;
+    }
+  
+    section#pricing #apprentice, #jedi, #master {
+      min-width: 320px;
+    }
+  
+  }
