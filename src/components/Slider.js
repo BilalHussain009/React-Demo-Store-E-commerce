@@ -23,7 +23,7 @@ const Slider=()=>(
         </div>
         <input className="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="true" ></input>
         <div className="carousel-item">
-            <img src="https://i.ibb.co/0VCbSLk/image2.jpg"></img>
+            <img src="https://images.unsplash.com/photo-1491592459486-f04f965504d3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"></img>
         </div>
         <label htmlFor="carousel-3" className="carousel-control prev control-1">‹</label>
         <label htmlFor="carousel-2" className="carousel-control next control-1">›</label>

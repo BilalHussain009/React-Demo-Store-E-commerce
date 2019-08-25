@@ -1,10 +1,16 @@
+h3{
+  text-decoration: none;
+}
 img {
     width: 100%;
     height: auto;
   }
+.abc{
+  text-decoration: none;
+}
 .wrapper {
     max-width: 1000px;
-    min-height: 100vh;
+    min-height: 0vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -44,16 +50,17 @@ img {
       align-items: space-between;
       justify-content: space-between;
       .bottom h2 {
-        font-size: 2.6rem;
+        font-size: 3rem;
+        text-decoration: none;
       }
     }
   
     .top {
       display: flex;
       justify-content: space-between;
-      font-size: 1.8rem;
+      
       .name {
-        font-size: 1.8rem;
+        font-size: 5rem;
       }
       .date {
         font-weight: bold;
@@ -64,6 +71,7 @@ img {
     .bottom {
       display: flex;
       justify-content: space-between;
+      
       align-items: center;
       .bookmark {
         margin-left: 5rem;

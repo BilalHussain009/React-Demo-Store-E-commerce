@@ -2,7 +2,8 @@ import React from 'react';
 import Product from './product';
 import {connect} from 'react-redux';
 
-export const ProductsList=(props)=>(
+
+export const PhoneCaseSection=(props)=>(
     <div>
       
     {
@@ -24,11 +25,11 @@ export const ProductsList=(props)=>(
             //   </div> ) 
             // })
             <div id="wrap">
-              <div id="columns" className="columns_4">
+              <div id="columns" className="columns_3">
                 {
                   props.items.map((item) =>{
                     
-                    if(item.section==='explore'){
+                    if(item.section==='phonecase'){
                       return <Product key={item.id} {...item}  />
                     }
                     
@@ -45,10 +46,11 @@ export const ProductsList=(props)=>(
 );
 
 
+
 const mapStateToProps=(state)=>{
     return{
         items:state.items,
         sort:state.sort
     }
-}
-export default connect(mapStateToProps)(ProductsList);
+};
+export default connect(mapStateToProps)(PhoneCaseSection);
