@@ -9,6 +9,7 @@ import PublicRoute from './PublicRoute';
 import Cart from '../components/Cart';
 import Description from '../components/ItemDescription';
 import SearchResult from '../components/SearchResult';
+import Merch from '../components/Merch';
 export const history = createHistory();
 
 const AppRouter = () => (
@@ -21,6 +22,7 @@ const AppRouter = () => (
         <Route path="/cart" component={Cart} />
         <Route  path='/description' component={Description}/>
         <Route path='/search' component={SearchResult}/>
+        <Route path='/merch' component={Merch}/>
         <Route component={NotFoundPage} />
       </Switch>
     </div>

@@ -4,7 +4,7 @@
     font-family: 'Montserrat';
     margin: 0;
     text-align: center;
-    text-transform: uppercase;
+  
     background-image: -webkit-linear-gradient(left, #2EE1F6, #F62ED2);
     background-image: -moz-linear-gradient(left, #2EE1F6, #F62ED2);
     background-image: -ms-linear-gradient(left, #2EE1F6, #F62ED2);
@@ -24,11 +24,17 @@
     }
   }
   .live-text-header {
-    font-size: 20px;
+    font-size: 50px;
     line-height: 110px;
   }
   .live-text {
-    font-size: 26px;
+    font-size: 40px;
+    letter-spacing: 1px;
+  }
+  .live-text1 {
+    font-family:Arial, Helvetica, sans-serif;
+    
+    font-size: 50px;
     letter-spacing: 1px;
   }
   .btn-group {
