@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 import { Helmet } from "react-helmet";
 import $ from 'jquery';
 window.$ = $;
@@ -7,22 +6,36 @@ const Featured =()=>(
     
 <div className="wrapper">
       <div className="cards">
-      <Link to='/dashboard' className='abc'>
-        <div className="cardy">
+        
+        <div className="card">
           <div className="card-content">
             <div className="top">
-              <h3 className="name">Creators</h3>
+              <h3 className="name">20% Off</h3>
              
             </div>
             <div className="bottom">
-              <h2>Lets Make Merch Happen</h2>
-              
+              <h2>Jackets</h2>
+              <div className="bookmark">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  x="0px"
+                  y="0px"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  className="bookmark-icn"
+                >
+                  <path
+                    d="M 6.0097656 2 C 4.9143111 2 4.0097656 2.9025988 4.0097656 3.9980469 L 4 22 L 12 19 L 20 22 L 20 20.556641 L 20 4 C 20 2.9069372 19.093063 2 18 2 L 6.0097656 2 z M 6.0097656 4 L 18 4 L 18 19.113281 L 12 16.863281 L 6.0019531 19.113281 L 6.0097656 4 z"
+                  ></path>
+                </svg>
+              </div>
             </div>
           </div>
           <div className="card-bg">
             <img
               className="bg-img"
-              src="https://images.unsplash.com/photo-1462392246754-28dfa2df8e6b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
+              src="https://images.unsplash.com/photo-1554826762-cffbbe6672d7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=760&q=80"
               alt="leafs"
             />
           </div>
@@ -34,20 +47,31 @@ const Featured =()=>(
             />
           </div>
         </div>
-      </Link>
-      <Link to='/dashboard' className='abc'>
-        <div className="cardy">
-        
+
+        <div className="card">
           <div className="card-content">
             <div className="top">
               
             </div>
             <div className="bottom">
               <h2>Shirts</h2>
-              
+              <div className="bookmark">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  x="0px"
+                  y="0px"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  className="bookmark-icn"
+                >
+                  <path
+                    d="M 6.0097656 2 C 4.9143111 2 4.0097656 2.9025988 4.0097656 3.9980469 L 4 22 L 12 19 L 20 22 L 20 20.556641 L 20 4 C 20 2.9069372 19.093063 2 18 2 L 6.0097656 2 z M 6.0097656 4 L 18 4 L 18 19.113281 L 12 16.863281 L 6.0019531 19.113281 L 6.0097656 4 z"
+                  ></path>
+                </svg>
+              </div>
             </div>
           </div>
-          
           <div className="card-bg">
             <img
               className="bg-img"
@@ -63,10 +87,8 @@ const Featured =()=>(
             />
           </div>
         </div>
-    </Link>
-        
 
-        
+ 
       </div>
     </div>
 );
