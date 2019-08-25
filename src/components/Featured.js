@@ -8,7 +8,7 @@ const Featured =()=>(
 <div className="wrapper">
       <div className="cards">
       <Link to='/dashboard' className='abc'>
-        <div className="card">
+        <div className="cardy">
           <div className="card-content">
             <div className="top">
               <h3 className="name">Creators</h3>
@@ -36,7 +36,7 @@ const Featured =()=>(
         </div>
       </Link>
       <Link to='/dashboard' className='abc'>
-        <div className="card">
+        <div className="cardy">
         
           <div className="card-content">
             <div className="top">
