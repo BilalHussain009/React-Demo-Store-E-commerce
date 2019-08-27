@@ -7,15 +7,44 @@ const Featured =()=>(
     
 <div className="wrapper">
       <div className="cards">
-        <Link to='/merch'>
+        <Link to='/merch' className="flink">
         <div className="card">
+        <div className="top">
+              <h3 className="name">Simple and Easy </h3>
+             
+            </div>
+          <div className="card-content">
+            
+            <div className="bottom">
+              <h2>Creators Design Your Merch Here</h2>
+              
+              
+            </div>
+          </div>
+          <div className="card-bg">
+            <img
+              className="bg-img"
+              src="https://i.ibb.co/vmSxkX0/image.png"
+              alt="leafs"
+            />
+          </div>
+          <div className="shadow">
+            <img
+              className="shadow-img"
+              src="https://cdn.stocksnap.io/img-thumbs/960w/SKI2T9YF2P.jpg"
+              alt="leafs"
+            />
+          </div>
+        </div>
+        {/* <div className="card">
           <div className="card-content">
             <div className="top">
               <h3 className="name">20% Off</h3>
              
             </div>
             <div className="bottom">
-              <h2>Jackets</h2>
+              <h2>Creators Design Your Merch Here</h2>
+              
               
             </div>
           </div>
@@ -33,9 +62,9 @@ const Featured =()=>(
               alt="leafs"
             />
           </div>
-        </div>
+        </div> */}
         </Link>
-        <Link to='/merch'>
+        <Link to='/merch' className="flink">
         <div className="card">
           <div className="card-content">
             <div className="top">

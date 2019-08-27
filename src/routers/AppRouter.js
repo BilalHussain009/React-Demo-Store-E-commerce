@@ -10,6 +10,7 @@ import Cart from '../components/Cart';
 import Description from '../components/ItemDescription';
 import SearchResult from '../components/SearchResult';
 import Merch from '../components/Merch';
+import  NavbarClickPage from '../components/NavbarClickPage';
 export const history = createHistory();
 
 const AppRouter = () => (
@@ -23,6 +24,7 @@ const AppRouter = () => (
         <Route  path='/description' component={Description}/>
         <Route path='/search' component={SearchResult}/>
         <Route path='/merch' component={Merch}/>
+        <Route path='/socks' component={NavbarClickPage}/>
         <Route component={NotFoundPage} />
       </Switch>
     </div>

@@ -64,3 +64,95 @@
     transition: color 0.5s ease;
   }
   
+
+
+
+  
+
+  .hero1 {
+    color: white;
+    font-family: 'Montserrat';
+    margin: 0;
+    text-align: center;
+    height: 20rem;
+    background-image: -webkit-linear-gradient(left, #2EE1F6, #F62ED2);
+    background-image: -moz-linear-gradient(left, #2EE1F6, #F62ED2);
+    background-image: -ms-linear-gradient(left, #2EE1F6, #F62ED2);
+    background-image: -o-linear-gradient(left, #2EE1F6, #F62ED2);
+    background-image: linear-gradient(left, #2EE1F6, #F62ED2);
+    background-image: url('https://cdn.pixabay.com/photo/2015/03/26/10/07/young-690958_960_720.jpg');
+    background-repeat: no-repeat;
+    background-position: 75% center;
+    background-size: cover;
+    padding: 85px 15px 90px 15px;
+  }
+  @supports (background-blend-mode: multiply) {
+    .hero1 {
+      background: #c94b4b;  /* fallback for old browsers */
+      background: -webkit-linear-gradient(to right, #4b134f, #c94b4b);  /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to right, #4b134f, #c94b4b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      
+    }
+  }
+  .live-text-header1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 4rem;
+    line-height: 110px;
+    position: absolute;
+    top:15rem;
+    padding-left: 15vw;
+  }
+  .live-text11 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding-top:2rem;
+    font-size: 2.5rem;
+    position: absolute;
+    text-align: left;
+    letter-spacing: 1px;
+    padding-left: 15vw;
+
+  }
+  .live-text1 {
+    font-family:Arial, Helvetica, sans-serif;
+    
+    font-size: 50px;
+    letter-spacing: 1px;
+  }
+  .btn-group1 {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+  }
+  .btn-group1 .btn {
+    background: #000000;
+    margin: 0 12px;
+  }
+  .btn-group1 .btn:hover a {
+    color: #F62ED2;
+  }
+  .btn-group1 a {
+    color: #6A9FE6;
+    display: block;
+    font-family: 'News Cycle';
+    font-size: 18px;
+    font-weight: 700;
+    padding: 15px 40px;
+    text-decoration: none;
+    transition: -webkit-color 0.5s ease;
+    transition: -moz-color 0.5s ease;
+    transition: -ms-color 0.5s ease;
+    transition: -o-color 0.5s ease;
+    transition: color 0.5s ease;
+  }
+  @media screen and (max-width: 750px){
+    .live-text11{
+      display: none;
+      padding-left: 10vw;
+    }
+    .live-text-header1 {
+      padding-left: 7vw;
+    }
+    
+  }
+  
+

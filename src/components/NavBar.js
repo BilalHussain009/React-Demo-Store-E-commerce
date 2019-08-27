@@ -61,11 +61,11 @@ export class NavBar extends React.Component{
             </Helmet>
             
             <ul className="links">
-                <li><Link to='/dashboard'><a   onClick={this.setAll} >All Products</a></Link></li>
-                <li><Link to='/dashboard'><a   onClick={this.setShirt} >Shirts</a></Link></li>
-                <li><Link to='/dashboard'><a   onClick={this.setHoodies} >Hoodies</a></Link></li>
-                <li><Link to='/dashboard'><a   onClick={this.setLongSleeves} >Long Sleeves</a></Link></li>
-                <li><Link to='/dashboard'><a   onClick={this.setJackets} >Jackets</a></Link></li>
+                <li><Link to='/socks'><a   onClick={this.setAll} >All Products</a></Link></li>
+                <li><Link to='/socks'><a   onClick={this.setShirt} >Shirts</a></Link></li>
+                <li><Link to='/socks'><a   onClick={this.setHoodies} >Hoodies</a></Link></li>
+                <li><Link to='/socks'><a   onClick={this.setLongSleeves} >Long Sleeves</a></Link></li>
+                <li><Link to='/socks'><a   onClick={this.setJackets} >Jackets</a></Link></li>
                 
             </ul>
             
