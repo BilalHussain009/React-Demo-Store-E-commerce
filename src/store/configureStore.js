@@ -6,7 +6,7 @@ import cartReducer from '../reducers/cart';
 import amountReducer from '../reducers/totalAmount';
 import sortReducer from '../reducers/sort';
 import searchReducer from '../reducers/search';
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ;
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 export default () => {
   const store = createStore(
