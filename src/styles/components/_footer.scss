@@ -3,11 +3,14 @@
 
 
 footer {
+  padding: 0%;
   width: 100%;
   display: inline-block;
   margin: 0;
   height: 70px;
   background-color: #999;
+  position: absolute;
+  
 }
 footer .copyright {
   width: 50%;

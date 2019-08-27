@@ -21,11 +21,11 @@ class Cart extends React.Component{
 
     <ul className="cartWrap">
     {
-                  
-                  JSON.parse(localStorage.getItem("cart")).map((item) =>(
+                  localStorage.getItem("cart")!==null?(JSON.parse(localStorage.getItem("cart")).map((item) =>(
                       
-      <CartItems key={item.id} {...item}  />
-      ))
+                    <CartItems key={item.id} {...item}  />
+                    ))):<div>No item</div>
+                  
     }
     </ul>
   </div>

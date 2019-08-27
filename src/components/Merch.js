@@ -2,7 +2,7 @@ import React from 'react';
 import NavBar from '../components/NavBar';
 import Form from '../components/Form';
 import Features from '../components/Features';
-
+import Footer from '../components/Footer';
 class Merch extends React.Component{
   componentDidMount() {
     window.scrollTo(0, 0)
@@ -26,6 +26,7 @@ class Merch extends React.Component{
   <span className="tag tag-regular">Our Specializtions</span>
 </div>
 <Features/>
+<Footer/>
 </div>
     )
   }
