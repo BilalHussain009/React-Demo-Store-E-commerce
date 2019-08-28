@@ -2,9 +2,9 @@ import React from 'react';
 import NavBar from '../components/NavBar';
 import SearchHeader from '../components/SearchHeader';
 import FilterBar from '../components/FilterBar';
-import ProductList from './ProductsList';
+import ProductListNavbar from './ProductListNavbar';
 import Footer from '../components/Footer';
-
+import {connect} from 'react-redux';
 const NavbarClickPage=()=>(
     <div>
         
@@ -18,9 +18,12 @@ const NavbarClickPage=()=>(
 
   </div>
 </div>
-<ProductList section="socks"/>
+<ProductListNavbar section="socks"/>
 
 <Footer/>
     </div>
 );
-export default NavbarClickPage;
+const mapStateToProps=(state)=>({
+    sort:state.sort
+})
+export default connect(mapStateToProps)(NavbarClickPage);

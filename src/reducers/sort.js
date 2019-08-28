@@ -2,19 +2,20 @@ const defaultSort='all';
 export default(state=defaultSort,action)=>{
     
     switch(action.type){
-        case 'all':
-            return 'all';
-        case 'shirt':
-            return 'shirt';
+        case 'camo':
+            return 'camo';
+        case 'cat':
+            return 'cat';
+        case 'love':
+            return 'love';
+        case 'passion':
+            return 'passion';
         case 'hoodies':
-            return 'hoodies';
-        case 'longsleeves':
-            return 'longsleeves';
-        case 'hoodies':
-
             return 'hoodies';
         case 'jackets':
             return 'jackets';
+        case 'all':
+            return 'all';
         default:
             
             return state;
