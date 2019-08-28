@@ -27,9 +27,8 @@ export const ProductsList=(props)=>(
               <div id="columns" className="columns_4">
                 {
                   props.items.map((item) =>{
-                    
-                    if(item.section==='explore'){
-                      return <Product key={item.id} {...item}  />
+                    if(item.section===props.section){
+                      return <Product key={item.image} {...item}  />
                     }
                     
                     

@@ -17,7 +17,7 @@ const DashboardPage = () => (
     <div className="section-title">
   <span className="tag tag-regular"> Explore</span>
 </div>
-<ProductList/>
+<ProductList section='explore'/>
 
 
     

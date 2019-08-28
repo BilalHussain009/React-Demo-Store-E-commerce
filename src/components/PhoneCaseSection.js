@@ -30,7 +30,7 @@ export const PhoneCaseSection=(props)=>(
                   props.items.map((item) =>{
                     
                     if(item.section==='phonecase'){
-                      return <Product key={item.id} {...item}  />
+                      return <Product key={item.image} {...item}  />
                     }
                     
                     
