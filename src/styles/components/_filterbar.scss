@@ -19,8 +19,8 @@
       padding-left: 50px;
       position: fixed;
      
-      -webkit-box-shadow: -3px 0px 5px 0px rgba(0,0,0,0.2);
-      box-shadow: -3px 0px 5px 0px rgba(0,0,0,0.2);
+      -webkit-box-shadow: -3px 0px 5px 0px rgb(0, 0, 0);
+      box-shadow: -3px 0px 5px 0px rgb(0, 0, 0);
       left:-130px;
       @include all-transition(0.3s);
       color: #222;
@@ -45,6 +45,7 @@
           @include vertical-align(absolute);
       font-weight: 100;
       left:10%;
+      top:30vh;
   
           li
           {
