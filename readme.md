@@ -1,5 +1,15 @@
-view the Live App : https://digitalstore-bilal.herokuapp.com
+![Images](https://i.ibb.co/yPVLdgX/Capture.png)
+![Images](https://i.ibb.co/jGxHKZw/Capture.png)
+![Images](https://i.ibb.co/bXn8WcM/Capture.png)
 
+
+
+
+
+
+
+
+view the Live App : https://digitalstore-bilal.herokuapp.com
 
 
 install Command : Yarn install
