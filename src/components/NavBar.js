@@ -7,19 +7,23 @@ import {setSort} from '../actions/sort';
 
 export class NavBar extends React.Component{
     setAll=()=>{
+        localStorage.setItem();
         this.props.setSort('all');
     }
-     setShirt=()=>{
-        this.props.setSort('shirt');
+    setSocks=()=>{
+        localStorage.setItem('category','socks')
+        this.props.setSort('all');
      }
-    setLongSleeves=()=>{
-        this.props.setSort('longsleeves')
+    setHoods=()=>{
+        localStorage.setItem('category','explore');
+        this.props.setSort('all')
     }
     setHoodies=()=>{
         this.props.setSort('hoodies')
     }
-    setJackets=()=>{
-        this.props.setSort('jackets')
+    setMugs=()=>{
+        this.props.setSort('mugs');
+        localStorage.setItem('category','mugs')
     }
             render(){
                 return(
@@ -62,9 +66,9 @@ export class NavBar extends React.Component{
             
             <ul className="links">
                 <li><Link to='/socks'><a   onClick={this.setAll} >All Products</a></Link></li>
-                <li><Link to='/socks'><a    onClick={this.setAll} >Socks</a></Link></li>
-                <li><Link to='/socks'><a    onClick={this.setAll} >Hoodies</a></Link></li>
-                <li><Link to='/socks'><a    onClick={this.setAll} >Long Sleeves</a></Link></li>
+                <li><Link to='/socks'   onClick={this.setSocks}><a     >Socks</a></Link></li>
+                <li><Link to='/socks'><a    onClick={this.setHoods} >Hoodies</a></Link></li>
+                <li><Link to='/socks'><a    onClick={this.setMugs} >Mugs</a></Link></li>
                 <li><Link to='/socks'><a    onClick={this.setAll} >Jackets</a></Link></li>
                 
             </ul>

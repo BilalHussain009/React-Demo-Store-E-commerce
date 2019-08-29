@@ -4,19 +4,40 @@ import {setSort} from '../actions/sort';
 import {connect} from 'react-redux';
 class FilterBar extends React.Component{
     setAll=()=>{
+        
         this.props.setSort('all');
     }
      setCat=()=>{
-        this.props.setSort('cat');
+        if(localStorage.getItem('category')=='mugs'){
+            this.props.setSort('animal');
+        }
+        if(localStorage.getItem('category')=='socks'){
+            this.props.setSort('cat');
+        }
      }
     setLove=()=>{
-        this.props.setSort('love');
+        if(localStorage.getItem('category')=='mugs'){
+            this.props.setSort('Halloween');
+        }
+        if(localStorage.getItem('category')=='socks'){
+            this.props.setSort('cat');
+        }
     }
     setCamo=()=>{
-        this.props.setSort('camo');
+        if(localStorage.getItem('category')=='mugs'){
+            this.props.setSort('mom');
+        }
+        if(localStorage.getItem('category')=='socks'){
+            this.props.setSort('camo');
+        }
     }
     setPassion=()=>{
-        this.props.setSort('passion');
+        if(localStorage.getItem('category')=='mugs'){
+            this.props.setSort('american');
+        }
+        if(localStorage.getItem('category')=='socks'){
+            this.props.setSort('passion');
+        }
     }
     render(){
         return(

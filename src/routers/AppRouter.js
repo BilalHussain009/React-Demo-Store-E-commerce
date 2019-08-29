@@ -21,7 +21,7 @@ const AppRouter = () => (
         <Route path="/" component={DashboardPage} exact={true} />
         <Route path="/dashboard" component={DashboardPage} />
         <Route path="/cart" component={Cart} />
-        <Route  path='/description' component={Description}/>
+        <Route path='/description' component={Description}/>
         <Route path='/search' component={SearchResult}/>
         <Route path='/merch' component={Merch}/>
         <Route path='/socks' component={NavbarClickPage}/>

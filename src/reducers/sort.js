@@ -16,6 +16,12 @@ export default(state=defaultSort,action)=>{
             return 'jackets';
         case 'all':
             return 'all';
+        case 'animal':
+            return 'animal';
+        case 'american':
+            return 'american';
+        case 'mom':
+            return 'mom';
         default:
             
             return state;
