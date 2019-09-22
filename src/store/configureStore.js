@@ -6,6 +6,7 @@ import cartReducer from '../reducers/cart';
 import amountReducer from '../reducers/totalAmount';
 import sortReducer from '../reducers/sort';
 import searchReducer from '../reducers/search';
+import headingReducer from '../reducers/headings';
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 export default () => {
@@ -16,7 +17,8 @@ export default () => {
       cart:cartReducer,
       totalAmount:amountReducer,
       sort:sortReducer,
-      search:searchReducer
+      search:searchReducer,
+      heading:headingReducer
     }),
     composeEnhancers(applyMiddleware(thunk))
   );

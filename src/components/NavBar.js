@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import { Helmet } from "react-helmet";
 import {Link} from 'react-router-dom';
 import {setSort} from '../actions/sort';
-
+import {setHeading} from '../actions/headings';
 
 export class NavBar extends React.Component{
     setAll=()=>{
@@ -13,17 +13,25 @@ export class NavBar extends React.Component{
     setSocks=()=>{
         localStorage.setItem('category','socks')
         this.props.setSort('all');
+        this.props.setHeading('SET_SOCKS');
      }
     setHoods=()=>{
         localStorage.setItem('category','explore');
-        this.props.setSort('all')
+        this.props.setSort('all');
+        this.props.setHeading('SET_HOODIES');
     }
     setHoodies=()=>{
         this.props.setSort('hoodies')
     }
     setMugs=()=>{
         this.props.setSort('mugs');
-        localStorage.setItem('category','mugs')
+        localStorage.setItem('category','mugs');
+        this.props.setHeading('SET_MUGS');
+    }
+    setPhoneCase=()=>{
+        this.props.setSort('phonecase');
+        localStorage.setItem('category','phonecase');
+        this.props.setHeading('SET_PHONECASE');
     }
             render(){
                 return(
@@ -69,7 +77,7 @@ export class NavBar extends React.Component{
                 <li><Link to='/socks'   onClick={this.setSocks}><a     >Socks</a></Link></li>
                 <li><Link to='/socks'><a    onClick={this.setHoods} >Hoodies</a></Link></li>
                 <li><Link to='/socks'><a    onClick={this.setMugs} >Mugs</a></Link></li>
-                <li><Link to='/socks'><a    onClick={this.setAll} >Jackets</a></Link></li>
+                <li><Link to='/socks'><a    onClick={this.setPhoneCase} >Phone Case</a></Link></li>
                 
             </ul>
             
@@ -94,7 +102,7 @@ export class NavBar extends React.Component{
 
 
 const mapDispatchToProps = (dispatch) => ({
-    setSort: (sortby) => dispatch(setSort(sortby))
-            
+    setSort: (sortby) => dispatch(setSort(sortby)),
+    setHeading:(heading)=>dispatch(setHeading(heading))
     });
 export default connect(undefined,mapDispatchToProps)(NavBar);

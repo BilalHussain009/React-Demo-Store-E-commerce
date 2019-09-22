@@ -5,6 +5,7 @@ import FilterBar from '../components/FilterBar';
 import ProductListNavbar from './ProductListNavbar';
 import Footer from '../components/Footer';
 import {connect} from 'react-redux';
+import headings from '../reducers/headings';
 class NavbarClickPage extends React.Component{
     componentDidMount() {
         window.scrollTo(0, 0)
@@ -17,9 +18,8 @@ class NavbarClickPage extends React.Component{
             <FilterBar/>
             <SearchHeader/>
             <div className="hero1">
-      <div className="hero-text1">{console.log(this.props.location.state)}</div>
-      <div className="live-text-header1">Socks</div>
-      <div className="live-text11">Go crazy and put your feet up with these custom socks Made for You.
+      <div className="live-text-header1">{this.props.heading[0]}</div>
+      <div className="live-text11">{this.props.heading[1]}
     
       </div>
     </div>
@@ -32,6 +32,7 @@ class NavbarClickPage extends React.Component{
    
 };
 const mapStateToProps=(state)=>({
-    sort:state.sort
+    sort:state.sort,
+    heading:state.heading
 })
 export default connect(mapStateToProps)(NavbarClickPage);
