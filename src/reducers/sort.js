@@ -22,6 +22,16 @@ export default(state=defaultSort,action)=>{
             return 'american';
         case 'mom':
             return 'mom';
+        case 'Halloween':
+            return 'Halloween';
+        case 'camo-phone':
+            return 'camo-phone';
+        case 'digital-phone':
+            return 'digital-phone';
+        case 'texture-phone':
+            return 'texture-phone';
+        case 'funny-phone':
+            return 'funny-phone';
         default:
             
             return state;

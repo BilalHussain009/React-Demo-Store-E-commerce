@@ -25,7 +25,7 @@ export const PhoneCaseSection=(props)=>(
             //   </div> ) 
             // })
             <div id="wrap">
-              <div id="columns" className="columns_3">
+              <div id="columns" className="columns_4">
                 {
                   props.items.map((item) =>{
                     
