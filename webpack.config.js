@@ -45,7 +45,7 @@ module.exports = (env) => {
         })
       }]
     },
-    plugins: [new CompressionPlugin(),
+    plugins: [
       CSSExtract,
       new webpack.DefinePlugin({
         'process.env.FIREBASE_API_KEY': JSON.stringify(process.env.FIREBASE_API_KEY),
