@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-var CompressionPlugin = require('compression-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
 if (process.env.NODE_ENV === 'test') {
@@ -45,7 +45,7 @@ module.exports = (env) => {
         })
       }]
     },
-    plugins: [
+    plugins: [new CompressionPlugin(),
       CSSExtract,
       new webpack.DefinePlugin({
         'process.env.FIREBASE_API_KEY': JSON.stringify(process.env.FIREBASE_API_KEY),
@@ -55,6 +55,8 @@ module.exports = (env) => {
         'process.env.FIREBASE_STORAGE_BUCKET': JSON.stringify(process.env.FIREBASE_STORAGE_BUCKET),
         'process.env.FIREBASE_MESSAGING_SENDER_ID': JSON.stringify(process.env.FIREBASE_MESSAGING_SENDER_ID)
       }),
+      new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.UglifyJsPlugin(),
       
       
     ],
