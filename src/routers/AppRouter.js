@@ -27,6 +27,7 @@ const AppRouter = () => (
         <Route path='/merch' component={Merch}/>
         <Route path='/socks' component={NavbarClickPage}/>
         <Route path='/test' component={TestNavbar}/>
+        <Route path='/LoginPage' component={LoginPage}/>
         <Route component={NotFoundPage} />
       </Switch>
     </div>

@@ -76,14 +76,22 @@ export class NavBar extends React.Component{
                 <li><Link to='/socks'><a   onClick={this.setAll} >All Products</a></Link></li>
                 <li><Link to='/socks'   onClick={this.setSocks}><a     >Socks</a></Link></li>
                 <li><Link to='/socks'><a    onClick={this.setHoods} >Hoodies</a></Link></li>
+                
                 <li><Link to='/socks'><a    onClick={this.setMugs} >Mugs</a></Link></li>
                 <li><Link to='/socks'><a    onClick={this.setPhoneCase} >Phone Case</a></Link></li>
-                
+                <li>
+                    <Link to='/LoginPage'>
+                    <div className='LoginBox'>
+                        <img className="LoginButton" src='https://i.ibb.co/ssp09kd/585e4bf3cb11b227491c339a.png'></img>
+                        <p className='LoginText'>Login</p>
+                    </div>
+                    </Link>
+                </li>
             </ul>
             
             
             <Link to="/cart" className="right">
-            <button type="button" >
+            <button type="button" className='cartbutton' >
                 Cart
              </button>
             </Link>

@@ -18,7 +18,6 @@ body,button,input {
 
 * {
 	box-sizing: border-box;
-	transition: 0.4s ease all;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -97,7 +96,7 @@ ul {
 }
 
 
-button {
+.cartbutton {
 	background: $secondary;
 	outline: none;
 	font-weight: bold;
@@ -329,4 +328,23 @@ button {
 		padding-left: 20%;
 	}
 	
+}
+.LoginButton{
+    width: 3rem;
+    margin-top: 0px;
+}
+.LoginBox{
+    display: flex;
+    width: 100px;
+    
+    
+}
+.LoginBox:hover{
+	color: black;
+}
+.LoginText{
+    font-family:  Nunito;
+    font-size: 1.6rem;
+    margin-top: 0.25rem;
+    margin-left: 1rem;
 }
