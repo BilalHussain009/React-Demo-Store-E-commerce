@@ -2,8 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { startLogin } from '../actions/auth';
 import {NavBar} from './NavBar';
-import { height } from 'window-size';
-export const LoginPage = ({ startLogin }) => (
+import {startLogout} from '../actions/auth';
+
+export const LoginPage = ({startLogin,startLogout}) => (
   <div>
     <NavBar/>
     <div className='form-box'>
@@ -32,17 +33,22 @@ export const LoginPage = ({ startLogin }) => (
       </div>
       <p className='othermethod'>Or Login using following</p>
       <div className='social-box'>
+        
       <a href='#'><img className='socialIcon' src='https://image.flaticon.com/icons/svg/145/145802.svg'></img></a>
       <a href='#'><img className='socialIcon' src='https://image.flaticon.com/icons/svg/733/733579.svg'></img></a>
       <a href='#'><img className='socialIcon' src='https://image.flaticon.com/icons/svg/174/174851.svg'></img></a>
       </div>
     </form>
+    <button onClick={startLogin}>Fb loing</button>
+    <button onClick={startLogout}>Logout</button>
     </div>
   </div>
 );
 
 const mapDispatchToProps = (dispatch) => ({
-  startLogin: () => dispatch(startLogin())
+  startLogin: () => dispatch(startLogin()),
+  startLogout:()=>dispatch(startLogout())
+
 });
 
 export default connect(undefined, mapDispatchToProps)(LoginPage);

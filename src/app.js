@@ -21,9 +21,20 @@ const jsx = (
 );
 let hasRendered = false;
 const renderApp = () => {
+ 
   if (!hasRendered) {
+
     ReactDOM.render(jsx, document.getElementById('app'));
     hasRendered = true;
+    
+    firebase.auth().onAuthStateChanged((user)=>{
+      if(user){
+        localStorage.setItem('loggedin','true');
+      }
+      else{
+        console.log('logged out');
+      }
+    });
   }
 };
 
@@ -31,9 +42,9 @@ ReactDOM.render(<LoadingPage />, document.getElementById('app'));
 
 
 
-
     
     // store.dispatch(startSetSum());
+   
     store.dispatch(startSetItems()).then(() => {
       renderApp();
       if (history.location.pathname === '/') {
@@ -41,3 +52,4 @@ ReactDOM.render(<LoadingPage />, document.getElementById('app'));
       }
 
 });
+

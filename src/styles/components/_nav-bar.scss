@@ -330,8 +330,12 @@ ul {
 	
 }
 .LoginButton{
-    width: 3rem;
-    margin-top: 0px;
+	content: attr(ti);
+	width: 50%;
+	border-radius: 50%;
+	margin-top: 0px;
+
+	
 }
 .LoginBox{
     display: flex;
@@ -345,6 +349,8 @@ ul {
 .LoginText{
     font-family:  Nunito;
     font-size: 1.6rem;
-    margin-top: 0.25rem;
-    margin-left: 1rem;
+    margin-top: 1.3rem;
+	margin-left: 1rem;
+	
+
 }

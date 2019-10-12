@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet";
 import {Link} from 'react-router-dom';
 import {setSort} from '../actions/sort';
 import {setHeading} from '../actions/headings';
+import { firebase} from '../firebase/firebase';
 
 export class NavBar extends React.Component{
     setAll=()=>{
@@ -40,7 +41,6 @@ export class NavBar extends React.Component{
 	
 
             <Link to='/'className="logo" >Store</Link>
-            
             <Helmet>
         
             <script>
@@ -82,8 +82,12 @@ export class NavBar extends React.Component{
                 <li>
                     <Link to='/LoginPage'>
                     <div className='LoginBox'>
-                        <img className="LoginButton" src='https://i.ibb.co/ssp09kd/585e4bf3cb11b227491c339a.png'></img>
-                        <p className='LoginText'>Login</p>
+                        
+                        {localStorage.getItem('loggedin')=="false"? <img className="LoginButton" src='https://i.ibb.co/ssp09kd/585e4bf3cb11b227491c339a.png'></img>:<img className="LoginButton" src={firebase.auth().currentUser.photoURL}></img>}
+                        {/* <img className="LoginButton" src= "{firebase.auth().currentUser.photoURL===null?'https://i.ibb.co/ssp09kd/585e4bf3cb11b227491c339a.png':firebase.auth().currentUser.photoURL} "></img> */}
+                        {localStorage.getItem('loggedin')=="false"? <p className='LoginText'>Login</p>:<p className='LoginText'>{firebase.auth().currentUser.displayName}</p>}
+
+                        
                     </div>
                     </Link>
                 </li>
@@ -112,5 +116,6 @@ export class NavBar extends React.Component{
 const mapDispatchToProps = (dispatch) => ({
     setSort: (sortby) => dispatch(setSort(sortby)),
     setHeading:(heading)=>dispatch(setHeading(heading))
+   
     });
 export default connect(undefined,mapDispatchToProps)(NavBar);

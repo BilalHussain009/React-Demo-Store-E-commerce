@@ -17,6 +17,8 @@ export const logout = () => ({
 
 export const startLogout = () => {
   return () => {
+    localStorage.setItem('loggedin','false');
+
     return firebase.auth().signOut();
   };
 };
