@@ -2,13 +2,17 @@
     display: block;
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 40%;
     transform: translate(-50%,-50%);
     text-align: center;
     width: 45rem;
     margin-top: 3rem;
     }
 .form-heading{
+    position: absolute;
+    left:50%;
+    top:10%;
+    transform: translate(-50%,-50%);
     font-family: "Lato";
     font-weight: 800;
     letter-spacing: 2px;
@@ -114,6 +118,7 @@
 @media (max-width: $desktop-breakpoint) {
     .form-box{
         width: 100vw;
+        top:60%;
     }
     .InputField{
         width: 100vw;
@@ -130,6 +135,9 @@
 
 
     }
+    .form-heading{
+        top:20%;
+    }
     .form-subheading{
         margin-left: 2rem;
     }
@@ -140,8 +148,5 @@
     .form-logo{
         margin-left: 1rem;
     }
-    .form-heading{
-        margin-top: 5rem;
     
-    }
 }

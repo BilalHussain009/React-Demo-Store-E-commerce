@@ -6,8 +6,11 @@ import {NavBar} from './NavBar';
 export const LoginPage = ({startLogin,startLogout,startFaceBookLogin}) => (
   <div>
     <NavBar/>
+    <div className='form-heading'>
+    <p>Login</p>
+    </div>
     <div className='form-box'>
-    <p className='form-heading'>Login</p>
+    
     <form>
     <p className='form-subheading'>UserName</p>
     <br></br>
