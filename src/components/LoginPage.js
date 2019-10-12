@@ -1,10 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { startLogin } from '../actions/auth';
+import { startLogin,startFaceBookLogin,startLogout } from '../actions/auth';
 import {NavBar} from './NavBar';
-import {startLogout} from '../actions/auth';
 
-export const LoginPage = ({startLogin,startLogout}) => (
+export const LoginPage = ({startLogin,startLogout,startFaceBookLogin}) => (
   <div>
     <NavBar/>
     <div className='form-box'>
@@ -34,20 +33,20 @@ export const LoginPage = ({startLogin,startLogout}) => (
       <p className='othermethod'>Or Login using following</p>
       <div className='social-box'>
         
-      <a href='#'><img className='socialIcon' src='https://image.flaticon.com/icons/svg/145/145802.svg'></img></a>
+      <a href='#' onClick={startFaceBookLogin}><img className='socialIcon' src='https://image.flaticon.com/icons/svg/145/145802.svg'></img></a>
       <a href='#'><img className='socialIcon' src='https://image.flaticon.com/icons/svg/733/733579.svg'></img></a>
-      <a href='#'><img className='socialIcon' src='https://image.flaticon.com/icons/svg/174/174851.svg'></img></a>
+      <a onClick={startLogin} href='#'><img className='socialIcon' src='https://image.flaticon.com/icons/svg/174/174851.svg'></img></a>
       </div>
     </form>
-    <button onClick={startLogin}>Fb loing</button>
-    <button onClick={startLogout}>Logout</button>
+      <button onClick={startLogout}>Logout</button>
     </div>
   </div>
 );
 
 const mapDispatchToProps = (dispatch) => ({
   startLogin: () => dispatch(startLogin()),
-  startLogout:()=>dispatch(startLogout())
+  startLogout:()=>dispatch(startLogout()),
+  startFaceBookLogin:()=>{console.log('called');dispatch(startFaceBookLogin())}
 
 });
 

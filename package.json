@@ -9,7 +9,7 @@
     "build:prod": "webpack -p --env production",
     "dev-server": "webpack-dev-server",
     "test": "cross-env NODE_ENV=test jest --config=jest.config.json",
-    "start": "node server/server.js",
+    "start": "set HTTPS=true node server/server.js",
     "heroku-postbuild": "yarn run build:prod"
   },
   "dependencies": {
@@ -38,6 +38,7 @@
     "pure-react-carousel": "^1.21.2",
     "react": "15.6.1",
     "react-addons-shallow-compare": "15.6.0",
+    "react-custom-scrollbars": "^4.2.1",
     "react-dates": "12.3.0",
     "react-disqus-thread": "^0.4.0",
     "react-dom": "15.6.1",

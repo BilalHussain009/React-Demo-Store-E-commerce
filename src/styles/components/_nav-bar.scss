@@ -331,9 +331,11 @@ ul {
 }
 .LoginButton{
 	content: attr(ti);
-	width: 50%;
+	width: 45%;
+	height: 45%;
 	border-radius: 50%;
-	margin-top: 0px;
+	margin-top: 1vh;
+	image-rendering: crisp-edges;
 
 	
 }

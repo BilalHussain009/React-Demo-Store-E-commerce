@@ -5,8 +5,7 @@ import AppRouter, { history } from './routers/AppRouter';
 import configureStore from './store/configureStore';
 import { login, logout } from './actions/auth';
 import {startSetItems} from './actions/item';
-import {startSetCart} from './actions/cart';
-import {startSetSum} from './actions/item';
+
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 import 'react-dates/lib/css/_datepicker.css';
@@ -17,6 +16,7 @@ const store = configureStore();
 const jsx = (
   <Provider store={store}>
     <AppRouter />
+    
   </Provider>
 );
 let hasRendered = false;
@@ -29,7 +29,7 @@ const renderApp = () => {
     
     firebase.auth().onAuthStateChanged((user)=>{
       if(user){
-        localStorage.setItem('loggedin','true');
+        console.log('logged in ')
       }
       else{
         console.log('logged out');

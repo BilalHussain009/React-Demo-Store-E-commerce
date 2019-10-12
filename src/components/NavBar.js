@@ -82,10 +82,13 @@ export class NavBar extends React.Component{
                 <li>
                     <Link to='/LoginPage'>
                     <div className='LoginBox'>
-                        
-                        {localStorage.getItem('loggedin')=="false" ||undefined? <img className="LoginButton" src='https://i.ibb.co/ssp09kd/585e4bf3cb11b227491c339a.png'></img>:<img className="LoginButton" src={firebase.auth().currentUser.photoURL}></img>}
-                        {/* <img className="LoginButton" src= "{firebase.auth().currentUser.photoURL===null?'https://i.ibb.co/ssp09kd/585e4bf3cb11b227491c339a.png':firebase.auth().currentUser.photoURL} "></img> */}
-                        {localStorage.getItem('loggedin')=="false"|| undefined? <p className='LoginText'>Login</p>:<p className='LoginText'>{firebase.auth().currentUser.displayName}</p>}
+                
+                        { firebase.auth().currentUser?
+                         <img className="LoginButton" src={firebase.auth().currentUser.photoURL}></img>:
+                         <img className="LoginButton"  src='https://i.ibb.co/ssp09kd/585e4bf3cb11b227491c339a.png'></img>}
+                        {firebase.auth().currentUser? 
+                        <p className='LoginText'>{firebase.auth().currentUser.displayName.split(' ').slice(0, 1).join(' ')}</p>:
+                        <p className='LoginText'>Login</p>}
 
                         
                     </div>
