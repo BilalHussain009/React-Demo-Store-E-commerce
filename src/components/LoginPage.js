@@ -20,7 +20,7 @@ export const LoginPage = ({ startLogin }) => (
       <br></br>
       <div className='InputField'>
     
-      <img src='https://image.flaticon.com/icons/svg/21/21104.svg' className='form-logo' alt='image here'/>
+      <img src='https://img.icons8.com/metro/26/000000/password.png' className='form-logo' alt='image here'/>
 
       <input style={{border:'none'}} className='form-placeholder' type='password' placeholder='Type your Password here'></input>
       </div>

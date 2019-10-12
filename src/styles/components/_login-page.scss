@@ -110,3 +110,37 @@
     display: flex;
     justify-content: space-around;
 }
+@media (max-width: $desktop-breakpoint) {
+    .form-box{
+        width: 100vw;
+    }
+    .InputField{
+        width: 100vw;
+        margin-bottom: 1rem;
+    }
+    .login-button{
+        padding: 12px 40px;
+
+    }
+    .form-placeholder{
+    
+        margin-left: 3rem;
+        width: 80vw;
+
+
+    }
+    .form-subheading{
+        margin-left: 2rem;
+    }
+    .fpassword{
+        margin-right: 2rem;
+    
+    }
+    .form-logo{
+        margin-left: 1rem;
+    }
+    .form-heading{
+        margin-top: 5rem;
+    
+    }
+}
