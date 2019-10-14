@@ -1,4 +1,4 @@
-const defaultHeading=[];
+const defaultHeading=['Tee Spring','Be comfortable, Be inspired, Be right at home.'];
 export default(state=defaultHeading,action)=>{
     switch(action.type){
         case 'SET_SOCKS':

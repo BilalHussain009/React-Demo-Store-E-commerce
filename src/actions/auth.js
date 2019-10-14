@@ -1,21 +1,24 @@
 import { firebase, googleAuthProvider,facebookAuthProvider } from '../firebase/firebase';
 
-export const login = (uid) => ({
-  type: 'LOGIN',
-  uid
+export const login = () => ({
+  type: 'LOGIN'
+  
 });
 
 export const startLogin = () => {
-  return () => {
+  return (dispatch) => {
+    dispatch(login());
     firebase.auth().signInWithPopup(googleAuthProvider);
-    return;
+    
+    
+    
 
   };
 };
 export const startFaceBookLogin=()=>{
   return ()=>{
-    console.log('fb');
-    firebase.auth().signInWithPopup(facebookAuthProvider);
+    
+    firebase.auth().signInWithPopup(facebookAuthProvider)
   }
 }
 export const logout = () => ({
@@ -23,8 +26,14 @@ export const logout = () => ({
 });
 
 export const startLogout = () => {
-  return () => {
+  return (dispatch) => {
+      
+     firebase.auth().signOut();
+     dispatch(logout());
+     
 
-    return firebase.auth().signOut();
+    
+     return;
+
   };
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { startLogin,startFaceBookLogin,startLogout } from '../actions/auth';
+import { startLogin,startFaceBookLogin,startLogout} from '../actions/auth';
 import {NavBar} from './NavBar';
 
 export const LoginPage = ({startLogin,startLogout,startFaceBookLogin}) => (
@@ -49,8 +49,8 @@ export const LoginPage = ({startLogin,startLogout,startFaceBookLogin}) => (
 const mapDispatchToProps = (dispatch) => ({
   startLogin: () => dispatch(startLogin()),
   startLogout:()=>dispatch(startLogout()),
-  startFaceBookLogin:()=>{console.log('called');dispatch(startFaceBookLogin())}
-
+  startFaceBookLogin:()=>{console.log('called');dispatch(startFaceBookLogin())},
+  
 });
 
 export default connect(undefined, mapDispatchToProps)(LoginPage);

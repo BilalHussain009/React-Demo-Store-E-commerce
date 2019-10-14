@@ -11,6 +11,7 @@ import SearchResult from '../components/SearchResult';
 import Merch from '../components/Merch';
 import  NavbarClickPage from '../components/NavbarClickPage';
 import TestNavbar from '../components/TestNavbar';
+import UserProfile from '../components/UserProfile';
 export const history = createHistory();
 
 const AppRouter = () => (
@@ -25,9 +26,10 @@ const AppRouter = () => (
         <Route path='/description' component={Description}/>
         <Route path='/search' component={SearchResult}/>
         <Route path='/merch' component={Merch}/>
-        <Route path='/socks' component={NavbarClickPage}/>
+        <Route path='/products' component={NavbarClickPage}/>
         <Route path='/test' component={TestNavbar}/>
-        <Route path='/LoginPage' component={LoginPage}/>
+        <Route path='/loginPage' component={LoginPage}/>
+        <Route path='/userprofile' component={UserProfile}/>
         <Route component={NotFoundPage} />
       </Switch>
     </div>

@@ -7,6 +7,21 @@ import Footer from '../components/Footer';
 import {connect} from 'react-redux';
 import headings from '../reducers/headings';
 class NavbarClickPage extends React.Component{
+    setHeadingFucntion=()=>{
+        if(this.props.sort[0]==''){
+            return(
+                <div className="hero1">
+      <div className="live-text-header1">{this.props.heading[0]}</div>
+      <div className="live-text11">{this.props.heading[1]}
+    
+      </div>
+    </div>
+            )
+        }
+    }
+    setHeadng=()=>{
+        
+    }
     componentDidMount() {
         window.scrollTo(0, 0)
       }

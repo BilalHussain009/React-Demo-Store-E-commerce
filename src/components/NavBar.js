@@ -7,6 +7,8 @@ import {setHeading} from '../actions/headings';
 import { firebase} from '../firebase/firebase';
 
 export class NavBar extends React.Component{
+    
+
     setAll=()=>{
         localStorage.setItem();
         this.props.setSort('all');
@@ -39,7 +41,6 @@ export class NavBar extends React.Component{
         
             <div className="navbar">
 	
-
             <Link to='/'className="logo" >Store</Link>
             <Helmet>
         
@@ -73,14 +74,14 @@ export class NavBar extends React.Component{
             </Helmet>
             
             <ul className="links">
-                <li><Link to='/socks'><a   onClick={this.setAll} >All Products</a></Link></li>
-                <li><Link to='/socks'   onClick={this.setSocks}><a     >Socks</a></Link></li>
-                <li><Link to='/socks'><a    onClick={this.setHoods} >Hoodies</a></Link></li>
+                <li><Link to='/products'><a   onClick={this.setAll} >All Products</a></Link></li>
+                <li><Link to='/products'   onClick={this.setSocks}><a     >Socks</a></Link></li>
+                <li><Link to='/products'><a    onClick={this.setHoods} >Hoodies</a></Link></li>
                 
-                <li><Link to='/socks'><a    onClick={this.setMugs} >Mugs</a></Link></li>
-                <li><Link to='/socks'><a    onClick={this.setPhoneCase} >Phone Case</a></Link></li>
+                <li><Link to='/products'><a    onClick={this.setMugs} >Mugs</a></Link></li>
+                <li><Link to='/products'><a    onClick={this.setPhoneCase} >Phone Case</a></Link></li>
                 <li>
-                    <Link to='/LoginPage'>
+                    <Link to={firebase.auth().currentUser?'/userprofile':'/loginPage'}>
                     <div className='LoginBox'>
                 
                         { firebase.auth().currentUser?
@@ -121,4 +122,8 @@ const mapDispatchToProps = (dispatch) => ({
     setHeading:(heading)=>dispatch(setHeading(heading))
    
     });
-export default connect(undefined,mapDispatchToProps)(NavBar);
+const mapStateToProps=(state)=>({
+    auth:state.auth,
+    sort:state.sort
+})
+export default connect(mapStateToProps,mapDispatchToProps)(NavBar);

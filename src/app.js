@@ -29,14 +29,16 @@ const renderApp = () => {
     
     firebase.auth().onAuthStateChanged((user)=>{
       if(user){
-        console.log('logged in ')
+        store.dispatch(login);
+        console.log()
       }
       else{
-        console.log('logged out');
+        console.log(logout);
       }
     });
   }
 };
+
 
 ReactDOM.render(<LoadingPage />, document.getElementById('app'));
 
