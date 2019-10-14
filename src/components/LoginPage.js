@@ -1,11 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { startLogin,startFaceBookLogin,startLogout} from '../actions/auth';
-import {NavBar} from './NavBar';
 
 export const LoginPage = ({startLogin,startLogout,startFaceBookLogin}) => (
   <div>
-    <NavBar/>
     <div className='form-heading'>
     <p>Login</p>
     </div>

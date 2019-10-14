@@ -1,5 +1,4 @@
 import React from 'react';
-import NavBar from '../components/NavBar';
 import { Helmet } from "react-helmet";
 import $ from 'jquery';
 window.$ = $;
@@ -50,7 +49,6 @@ class ItemDescription extends React.Component{
         
     render(){
     return(<div>
-      <NavBar/>
       <section className="buy-grid container">
     
     <div className="hero-image-wrapper">

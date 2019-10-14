@@ -1,14 +1,12 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import Product from './product';
-import NavBar from '../components/NavBar';
 import SearchHeader from '../components/SearchHeader';
 const SearchResult=(props)=>{
     
         return(
             <div>
                 
-                <NavBar/>
                 <SearchHeader/>
                 <h1>
                 <span>Showing Results for "{JSON.parse(localStorage.getItem('search'))}"</span>

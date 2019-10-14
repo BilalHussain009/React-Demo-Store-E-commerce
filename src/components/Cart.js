@@ -10,7 +10,6 @@ class Cart extends React.Component{
   render(){
     return(
       <div>
-       <NavBar/>
       <div className="wrap cf">
   <h1 className="projTitle"> Shopping Cart</h1>
   <div className="heading cf">

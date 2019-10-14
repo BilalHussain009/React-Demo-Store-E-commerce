@@ -1,5 +1,4 @@
 import React from 'react';
-import NavBar from '../components/NavBar';
 import Form from '../components/Form';
 import Features from '../components/Features';
 import Footer from '../components/Footer';
@@ -10,7 +9,6 @@ class Merch extends React.Component{
   render(){
     return(
 <div>
-    <NavBar/>
 <div className="hero">
   <div className="hero-text"></div>
  

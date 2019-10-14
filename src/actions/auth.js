@@ -7,8 +7,7 @@ export const login = () => ({
 
 export const startLogin = () => {
   return (dispatch) => {
-    dispatch(login());
-    firebase.auth().signInWithPopup(googleAuthProvider);
+    firebase.auth().signInWithPopup(googleAuthProvider).then(()=>dispatch(login()));
     
     
     
@@ -28,8 +27,8 @@ export const logout = () => ({
 export const startLogout = () => {
   return (dispatch) => {
       
-     firebase.auth().signOut();
-     dispatch(logout());
+     firebase.auth().signOut().then(()=>dispatch(logout()));
+     
      
 
     

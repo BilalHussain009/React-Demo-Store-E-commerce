@@ -12,14 +12,16 @@ import Merch from '../components/Merch';
 import  NavbarClickPage from '../components/NavbarClickPage';
 import TestNavbar from '../components/TestNavbar';
 import UserProfile from '../components/UserProfile';
+import NavBar from '../components/NavBar';
 export const history = createHistory();
 
 const AppRouter = () => (
   <Router history={history}>
 
     <div>
+      <NavBar/>
       <Switch>
-
+        
         <Route path="/" component={DashboardPage} exact={true} />
         <Route path="/dashboard" component={DashboardPage} />
         <Route path="/cart" component={Cart} />

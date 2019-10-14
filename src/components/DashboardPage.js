@@ -10,7 +10,6 @@ import Featured from '../components/Featured';
 import Banner from '../components/Banner';
 const DashboardPage = () => (
   <div>
-    <NavBar/>
     <SearchHeader/>
     <Slider/>
     

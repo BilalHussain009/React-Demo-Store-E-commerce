@@ -1,5 +1,4 @@
 import React from 'react';
-import NavBar from '../components/NavBar';
 import SearchHeader from '../components/SearchHeader';
 import FilterBar from '../components/FilterBar';
 import ProductListNavbar from './ProductListNavbar';
@@ -29,7 +28,6 @@ class NavbarClickPage extends React.Component{
         return(
             <div>
         
-            <NavBar/>
             <FilterBar/>
             <SearchHeader/>
             <div className="hero1">
