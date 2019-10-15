@@ -1,4 +1,6 @@
-export default (state ='LOGOUT', action) => {
+import {firebase} from '../firebase/firebase';
+let defaultAction=firebase.auth().currentUser?'LOGIN':'LOGOUT'
+export default (state ={defaultAction}, action) => {
   console.log(action);
   switch (action.type) {
     case 'LOGIN':
