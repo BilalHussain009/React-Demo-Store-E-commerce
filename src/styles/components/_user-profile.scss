@@ -1,0 +1,33 @@
+.user-heading{
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%,-50%);
+    
+}
+.top-heading{
+    font-size: 20px;
+    font-weight: 600;
+    display: block;
+    text-align: center;
+    letter-spacing: 0.5vw;
+    text-transform: uppercase;
+}
+.below-heading{
+    font-size: 16px;
+    font-weight: 400;
+    display: block;
+    text-align: center;
+}
+.form-div{
+    margin: 10vh 5%;
+}
+.form-label{
+    float: left;
+    display: block;
+
+}
+.form-input-field{
+    display: block;
+}

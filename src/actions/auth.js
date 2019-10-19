@@ -7,7 +7,7 @@ export const login = () => ({
 
 export const startLogin = () => {
   return (dispatch) => {
-    firebase.auth().signInWithPopup(googleAuthProvider).then(()=>dispatch(login()));
+    firebase.auth().signInWithPopup(googleAuthProvider).then((history)=>{dispatch(login());history.push('/dashboard')});
     
     
     
