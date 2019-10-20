@@ -122,10 +122,7 @@ $(".close-toast").click(function(e){
   </div>
   
   
-  <div className="toast" id="toast-name-2">
-    <a href="#" className="close-toast">&#10006;</a>
-    <b>Messege 2!</b> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-  </div>
+  
   
 </div>
                 {/* <button onClick={this.addToCart} className="btn btn-primary btn-large btn-full">Add to Cart</button> */}

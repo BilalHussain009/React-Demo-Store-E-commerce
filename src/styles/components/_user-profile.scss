@@ -2,12 +2,13 @@
     width: 100%;
     position: absolute;
     left: 50%;
-    top: 30%;
+    top: 25%;
     transform: translate(-50%,-50%);
     
 }
 .top-heading{
-    font-size: 20px;
+    font-size: 25px;
+
     font-weight: 600;
     display: block;
     text-align: center;
@@ -20,8 +21,34 @@
     display: block;
     text-align: center;
 }
+
+.user-profile-pic-div{
+    margin: auto;
+    margin-top: 2vh;
+    width: 7rem;
+    .user-profile-pic{
+        border-radius: 100%;
+        border: 1px solid black;
+        
+    }
+}
+
 .form-div{
-    margin: 10vh 5%;
+    margin: 15% 10% 0% 15%;
+    height: 15%;
+}
+.form-div-one{
+    margin: 5% 15%;
+    height: 15%;
+}
+.form-div-label-one{
+    font-size: 22px;
+    font-weight: 400;
+}
+.form-div-label-two{
+    
+    font-size: 16px;
+    font-weight: 200;
 }
 .form-label{
     float: left;
@@ -30,4 +57,37 @@
 }
 .form-input-field{
     display: block;
+}
+.user-profile-text{
+    font-size: 1.3rem;
+}
+.form-div-link{
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: 200;
+}
+.form-div-link:hover{
+    color: darkgray;
+}
+@media screen and (max-width: 750px){
+    .user-profile{
+        margin-top: 15%;
+    }
+    .below-heading{
+        display: none;
+    }
+    .form-div{
+        margin: 50% 0 3% 0;
+        text-align: center;
+    }
+    .form-div-label-one{
+        text-align: center;
+        margin-top: 20%;
+    }
+    .form-div-one{
+        text-align: center;
+        margin: 10% 15%;
+       
+    }
 }

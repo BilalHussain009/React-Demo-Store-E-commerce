@@ -1,51 +1,30 @@
 import React from 'react';
 import {startLogout} from '../actions/auth';
 import {connect} from 'react-redux';
-import {Link} from 'react-router-dom';
+import {Footer} from './Footer';
+import {firebase} from '../firebase/firebase';
 const onclickfunction=()=>{
 
 }
 const UserProfile=(props)=>(
-    <div >
-        <div className="section-title">
-            <span className="tag tag-regular">My Profile </span>
-        </div>
+    <div className='user-profile'>
+       
         <div className='user-heading'>
         <p><span className='top-heading'>Account Information</span>
             <span className='below-heading'>View Your Personal Details</span>
         </p>
         </div>
-        <button onClick={props.startLogout}>Logout</button>
+        
+       
         <div className='form-div'>
-            <form>
-                <div className='form-label'>
-                    <p>First Name</p>
-                </div>
-                <div className='form-input-field'>
-                    <input type='text'></input>
-                </div>
-                <div className='form-label'>
-                    <p>Last Name</p>
-                </div>
-                <div className='form-input-field'>
-                    <input type='text'></input>
-                </div>
-                <div className='form-label'>
-                    <p>Email</p>
-                </div>
-                <div className='form-input-field'>
-                    <input type='text'></input>
-                </div>
-                <div className='form-label'>
-                    <p>Confirm Email</p>
-                </div>
-                <div className='form-input-field'>
-                    <input type='text'></input>
-                </div>
-                
-
-            </form>
+            <label className='form-div-label-one'>Order History</label><br></br><br></br>
+            <label className='form-div-label-two'>You Haven't placed any orders yet.</label>
         </div>
+        <div className='form-div-one'>
+            <label className='form-div-label-one'>Account Details</label><br></br><br></br>
+            <a href='#' className='form-div-link'>View Addresses(0)</a>
+        </div>
+        
     </div>
 );
 const mapDispatchToProps=(dispatch)=>({
