@@ -24,7 +24,7 @@ export const ProductsList=(props)=>(
             //   </div> ) 
             // })
             <div id="wrap">
-              <div id="columns" className="columns_5">
+              <div id="columns" className="columns_4">
                 {
                   props.items.map((item) =>{
                     if(item.section===props.section){
