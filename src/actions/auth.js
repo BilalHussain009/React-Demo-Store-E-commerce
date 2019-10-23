@@ -4,14 +4,13 @@ export const login = () => ({
   type: 'LOGIN'
   
 });
-
+const redirectUser=()=>{
+  history.push('./')
+}
 export const startLogin = () => {
   return (dispatch) => {
-    firebase.auth().signInWithPopup(googleAuthProvider).then((history)=>{dispatch(login());history.push('/dashboard')});
-    
-    
-    
-
+    firebase.auth().signInWithPopup(googleAuthProvider).then((props)=>{dispatch(login());redirectUser()
+      });
   };
 };
 export const startFaceBookLogin=()=>{

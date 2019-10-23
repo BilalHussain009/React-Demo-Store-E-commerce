@@ -52,9 +52,8 @@ export class NavBar extends React.Component{
 
              navbar.querySelector('.toggle').addEventListener('click',()=>{
                  
-                 navbar.classList.toggle('collapsed')
-                 
-             })
+                 navbar.classList.toggle('collapsed');
+                })
              
              
              
@@ -101,7 +100,7 @@ export class NavBar extends React.Component{
             
             
             <Link to="/cart" className="right">
-            <button type="button" className='cartbutton' >
+            <button type="button" className='cartbutton' id='cartButton' >
                 Cart
              </button>
             </Link>

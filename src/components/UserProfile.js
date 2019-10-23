@@ -1,8 +1,7 @@
 import React from 'react';
 import {startLogout} from '../actions/auth';
 import {connect} from 'react-redux';
-import {Footer} from './Footer';
-import {firebase} from '../firebase/firebase';
+import {Link} from 'react-router-dom';
 const onclickfunction=()=>{
 
 }
@@ -24,7 +23,9 @@ const UserProfile=(props)=>(
             <label className='form-div-label-one'>Account Details</label><br></br><br></br>
             <a href='#' className='form-div-link'>View Addresses(0)</a>
         </div>
-        
+        <div  className='form-div-one'>
+        <Link className='form-div-link-logout' to='/' onClick={props.startLogout}>Log out</Link>
+        </div>
     </div>
 );
 const mapDispatchToProps=(dispatch)=>({

@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { startLogin,startFaceBookLogin,startLogout} from '../actions/auth';
-
 export const LoginPage = ({startLogin,startLogout,startFaceBookLogin}) => (
   <div>
     <div className='form-heading'>
@@ -9,7 +8,7 @@ export const LoginPage = ({startLogin,startLogout,startFaceBookLogin}) => (
     </div>
     <div className='form-box'>
     
-    <form>
+    <form autoComplete="on">
     <p className='form-subheading'>UserName</p>
     <br></br>
       <div className='InputField'>
@@ -39,7 +38,7 @@ export const LoginPage = ({startLogin,startLogout,startFaceBookLogin}) => (
       <a onClick={startLogin} href='#'><img className='socialIcon' src='https://svgur.com/i/FVH.svg'></img></a>
       </div>
     </form>
-      <button onClick={startLogout}>Logout</button>
+      
     </div>
   </div>
 );
