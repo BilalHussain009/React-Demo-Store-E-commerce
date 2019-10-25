@@ -1,152 +1,152 @@
 .form-box{
-    display: block;
-    position: absolute;
-    left: 50%;
-    top: 50vh;
-    transform: translate(-50%,-50%);
-    text-align: center;
-    width: 45rem;
-    margin-top: 5rem;
-    }
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50vh;
+  transform: translate(-50%,-50%);
+  text-align: center;
+  width: 45rem;
+  margin-top: 5rem;
+  }
 .form-heading{
-    position: absolute;
-    left:50%;
-    top:15vh;
-    transform: translate(-50%,-50%);
-    font-family: "Lato";
-    font-weight: 800;
-    letter-spacing: 2px;
-    font-size: 3.9rem;
+  position: absolute;
+  left:50%;
+  top:15vh;
+  transform: translate(-50%,-50%);
+  font-family: "Lato";
+  font-weight: 800;
+  letter-spacing: 2px;
+  font-size: 3.9rem;
 
 }
 .form-subheading{
-    float: left;
-    margin-bottom: 1rem;
-    margin-top: 2rem;
+  float: left;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
 }
 .form-logo{
-    margin-top:2px;
-    width: 15px;
-    position: absolute;
-    left: 2%;
-    margin-top:3.5rem;
+  margin-top:2px;
+  width: 15px;
+  position: absolute;
+  left: 2%;
+  margin-top:3.5rem;
 }
 .form-placeholder{
-    
-    margin-left: 1.5rem;
-    width: 400px;
+  
+  margin-left: 1.5rem;
+  width: 400px;
 }
 .form-placeholder::placeholder{
-    font-family: "Lato";
-    font-weight: 600;
-    color: #84817a;
-    border: none; 
-    border-width: 0; 
-    box-shadow: none;
+  font-family: "Lato";
+  font-weight: 600;
+  color: #84817a;
+  border: none; 
+  border-width: 0; 
+  box-shadow: none;
 }
 .form-placeholder:focus{
-    outline: none;
-    
+  outline: none;
+  
 }
 .InputField{
-    height: 8rem;
+  height: 8rem;
 }
 
 .fpassword{
-    float: right;
-    text-decoration: none;
-    font-family: "Lato";
-    font-size: 1.3rem;
-    color: #576574;
-    margin-top: 1rem;
+  float: right;
+  text-decoration: none;
+  font-family: "Lato";
+  font-size: 1.3rem;
+  color: #576574;
+  margin-top: 1rem;
 
 }
 .othermethod{
-    margin-top: 6rem;
-    text-decoration: none;
-    font-family: "Lato";
-    font-size: 1.3rem;
-    color: #576574;
+  margin-top: 6rem;
+  text-decoration: none;
+  font-family: "Lato";
+  font-size: 1.3rem;
+  color: #576574;
 }
 
 .login-button{
-    background-color: #000000;
-    background-image: linear-gradient(45deg, #e0d9d9 0%, #070d1d 90%);
-    background-position: 100% 0;
-    background-size: 200% 200%;
-    color: white;
-    text-transform: uppercase;
-    border-radius: 50px;
-    padding: 12px 18rem;
-    font-family: 'Nunito', sans-serif;
-    font-size: 16px;
-    font-weight: 200;
-    text-decoration: none;
-    box-shadow: 0 16px 32px 0 rgba(5, 11, 22, 0.35);
-    transition: all 0.5s ease;
-  }
+  background-color: #000000;
+  background-image: linear-gradient(45deg, #e0d9d9 0%, #070d1d 90%);
+  background-position: 100% 0;
+  background-size: 200% 200%;
+  color: white;
+  text-transform: uppercase;
+  border-radius: 50px;
+  padding: 12px 18rem;
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  font-weight: 200;
+  text-decoration: none;
+  box-shadow: 0 16px 32px 0 rgba(5, 11, 22, 0.35);
+  transition: all 0.5s ease;
+}
 .InputField::after{
-    margin-top: 2rem;
-    content: '';
-    display: block;
-    width: 0;
-    height: 2px;
-    background: #000;
-    transition: width .3s;
+  margin-top: 2rem;
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #000;
+  transition: width .3s;
 }
 .InputField:hover::after {
-    width: 100%;
-    //transition: width .3s;
+  width: 100%;
+  //transition: width .3s;
 }
 .login-button-box{
-    margin-top: 2rem;
+  margin-top: 2rem;
 }
 .login-button::after{
-    
-    box-shadow: 0 0px 0px 0 rgba(85, 78, 78, 0);
-    background-position: 0 0;
-    color: black;
-  }
+  
+  box-shadow: 0 0px 0px 0 rgba(85, 78, 78, 0);
+  background-position: 0 0;
+  color: black;
+}
 .socialIcon{
-    width: 50px;
+  width: 50px;
 }
 .social-box{
-    margin-top: 4rem;
-    display: flex;
-    justify-content: space-around;
+  margin-top: 4rem;
+  display: flex;
+  justify-content: space-around;
 }
 @media (max-width: $desktop-breakpoint) {
-    .form-box{
-        width: 100vw;
-        top:60%;
-    }
-    .InputField{
-        width: 100vw;
-        margin-bottom: 1rem;
-    }
-    .login-button{
-        padding: 12px 40px;
+  .form-box{
+      width: 100vw;
+      top:60%;
+  }
+  .InputField{
+      width: 100vw;
+      margin-bottom: 1rem;
+  }
+  .login-button{
+      padding: 12px 40px;
 
-    }
-    .form-placeholder{
-    
-        margin-left: 3rem;
-        width: 80vw;
+  }
+  .form-placeholder{
+  
+      margin-left: 3rem;
+      width: 80vw;
 
 
-    }
-    .form-heading{
-        top:20%;
-    }
-    .form-subheading{
-        margin-left: 2rem;
-    }
-    .fpassword{
-        margin-right: 2rem;
-    
-    }
-    .form-logo{
-        margin-left: 1rem;
-    }
-    
+  }
+  .form-heading{
+      top:20%;
+  }
+  .form-subheading{
+      margin-left: 2rem;
+  }
+  .fpassword{
+      margin-right: 2rem;
+  
+  }
+  .form-logo{
+      margin-left: 1rem;
+  }
+  
 }

@@ -1,75 +1,122 @@
+$heading: 'Poppins', sans-serif;
 
-.hero {
-    color: white;
-    font-family: 'Montserrat';
-    margin: 0;
-    text-align: center;
-  
-    background-image: -webkit-linear-gradient(left, #2EE1F6, #F62ED2);
-    background-image: -moz-linear-gradient(left, #2EE1F6, #F62ED2);
-    background-image: -ms-linear-gradient(left, #2EE1F6, #F62ED2);
-    background-image: -o-linear-gradient(left, #2EE1F6, #F62ED2);
-    background-image: linear-gradient(left, #2EE1F6, #F62ED2);
-    background-image: url('https://cdn.pixabay.com/photo/2015/03/26/10/07/young-690958_960_720.jpg');
-    background-repeat: no-repeat;
-    background-position: 75% center;
-    background-size: cover;
-    padding: 85px 15px 90px 15px;
-  }
-  @supports (background-blend-mode: multiply) {
-    .hero {
-      background-image: linear-gradient(to right, #2EE1F6, #F62ED2 80%), url(https://cdn.pixabay.com/photo/2015/03/26/10/07/young-690958_960_720.jpg);
-      /* black/white image */
-      background-blend-mode: multiply;
-    }
-  }
-  .live-text-header {
-    font-size: 50px;
-    line-height: 110px;
-  }
-  .live-text {
-    font-size: 40px;
-    letter-spacing: 1px;
-  }
-  .live-text1 {
-    font-family:Arial, Helvetica, sans-serif;
-    
-    font-size: 50px;
-    letter-spacing: 1px;
-  }
-  .btn-group {
-    display: flex;
-    justify-content: center;
-    margin-top: 40px;
-  }
-  .btn-group .btn {
-    background: #000000;
-    margin: 0 12px;
-  }
-  .btn-group .btn:hover a {
-    color: #F62ED2;
-  }
-  .btn-group a {
-    color: #6A9FE6;
-    display: block;
-    font-family: 'News Cycle';
-    font-size: 18px;
-    font-weight: 700;
-    padding: 15px 40px;
-    text-decoration: none;
-    transition: -webkit-color 0.5s ease;
-    transition: -moz-color 0.5s ease;
-    transition: -ms-color 0.5s ease;
-    transition: -o-color 0.5s ease;
-    transition: color 0.5s ease;
-  }
-  
+img {
+	width:100%;
+}
+
+.banner {
+	width:100%; height:inherit;
+	background: rgb(49, 45, 42);
+	overflow:hidden;
+	&-content {
+		max-width:768px;
+		margin:0 auto;
+		display:flex;
+		justify-content:space-between;
+		align-items:center;
+	}
+}
+
+.banner-content-icon {
+	animation: 
+			banner-dog-peak 
+			3s 
+			cubic-bezier(0.68, -0.55, 0.265, 1.55) 
+			3s 
+			1 
+			alternate 
+			forwards;
+	transform:translateY(100px) scale(1);
+}
+
+.banner-dog {
+    height:150px;
+    margin-bottom: 30%;
+	.dog-eye {
+		animation: 
+			banner-dog-blink 
+			4s 
+			ease-in-out 
+			4s 
+			infinite 
+			alternate;
+		transform-origin:center;
+		overflow:hidden;
+	}
+	transform:scale(1) rotateZ(0deg) translateY(0);
+	transition: all 400ms cubic-bezier(0.600, 0.270, 0.525, 1.455);
+}
+
+.banner-content-icon:hover .banner-dog{
+	transform:scale(1.15) rotateZ(-10deg) translateY(-15px);
+}
 
 
 
-  
 
-  .hero1 {
+@keyframes banner-dog-peak {
+	0% {
+		transform:translateY(100px);
+	}
+	30% {
+		transform:translateY(30px);
+	}
+	100% {
+		transform:translateY(30px);
+	}
+}
+
+@keyframes banner-dog-blink {
+	0% {
+		transform:rotateX(0deg);
+	}
+	5% {
+		transform:rotateX(90deg);
+	}
+	10% {
+		transform:rotateX(0deg);
+	}
+	
+}
+
+@keyframes banner-dog-wiggle {
+	0% {
+		transform: 
+			translateY(-40px)
+			translateX(-15px)
+			rotate(0deg);
+	}
+	100% {
+		transform: 
+			translateY(-40px)
+			translateX(-15px)
+			rotate(10deg);
+	}
+}
+
+
+
+.banner-content-copy {
+	max-width:70%;
+	h1 {
+		font-family: $heading;
+		font-weight:700;
+		font-size:2em;
+		color:#fff;
+	}
+}
+
+
+
+.cls-1{fill:#645240;}.cls-2{fill:#fff;}.cls-3{fill:#578ba8;}.cls-4{fill:#251d10;}.cls-5{fill:#ee3d74;}
+
+@media (max-width: $desktop-breakpoint){
+	.banner-content{
+		flex-direction: column;
+	}
+}
+/////////////////////////// Hero Image////////////////////////////
+.hero1 {
     clear: both;
     color: white;
     font-family: 'Montserrat';
@@ -155,5 +202,3 @@
     }
     
   }
-  
-

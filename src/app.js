@@ -5,6 +5,7 @@ import AppRouter, { history } from './routers/AppRouter';
 import configureStore from './store/configureStore';
 import { login, logout } from './actions/auth';
 import {startSetItems} from './actions/item';
+import { Scrollbars } from 'react-custom-scrollbars';
 
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
@@ -14,10 +15,13 @@ import LoadingPage from './components/LoadingPage';
 import './playGround/addToDatabase';
 const store = configureStore();
 const jsx = (
+  <Scrollbars style={{ width: '100vw', height: '100vh'}}>
   <Provider store={store}>
-    <AppRouter />
     
+    <AppRouter />
+   
   </Provider>
+   </Scrollbars>
 );
 let hasRendered = false;
 const renderApp = () => {

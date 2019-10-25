@@ -25,7 +25,7 @@ const DashboardPage = () => (
 </div>
 <Banner/>
 <div className="section-title">
-  <span className="tag tag-regular">Featured Products</span>
+  <span className="tag tag-regular">For Creators</span>
 </div>
 <Featured/>
 <div className="section-title">

@@ -35,7 +35,7 @@ const AppRouter = () => (
         <Route component={NotFoundPage} />
       </Switch>
     </div>
-  
+
   </Router>
 
 );
