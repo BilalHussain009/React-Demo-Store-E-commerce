@@ -5,94 +5,30 @@ import $ from 'jquery';
 window.$ = $;
 const Featured =()=>(
     
-<div className="wrapper">
-      <div className="cards">
-        <Link to='/merch' className="flink">
-        <div className="card">
-        <div className="top">
-              <h3 className="name"></h3>
-             
-            </div>
-          <div className="card-content">
+<div className="container2">
+        <section className="featuredm-module">
             
-            <div className="bottom">
-              <h2></h2>
-              
-              
+            <div className="featuredm featuredm-one">
+                <span className="headline">SHIRTS &amp;TOPS</span>
             </div>
-          </div>
-          <div className="card-bg">
-            <img
-              className="bg-img"
-              src="https://images.squarespace-cdn.com/content/v1/5033cb9124ac5fb46aa37ae6/1534944212208-81QFXOLHWS6KZWKHOR39/ke17ZwdGBToddI8pDm48kGhrcnfzQ7Cn4fRw5JP2gVsUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYwL8IeDg6_3B-BRuF4nNrNcQkVuAT7tdErd0wQFEGFSnJ8B3d9f9ru3cpDN5dVDL6zAuRIkK_t3SrZPyKnnq0qn3VNpTh6rREgnnj2wUK_jNA/Print+Th%21s+Website+Banner+V2.png"
-              alt="leafs"
-            />
-          </div>
-          <div className="shadow">
-            <img
-              className="shadow-img"
-              src="https://cdn.stocksnap.io/img-thumbs/960w/SKI2T9YF2P.jpg"
-              alt="leafs"
-            />
-          </div>
-        </div>
-        {/* <div className="card">
-          <div className="card-content">
-            <div className="top">
-              <h3 className="name">20% Off</h3>
-             
+
+            <div className="featuredm featuredm-two">
+            <span className="headline">IPHONE &amp; ANDROID PHONE CASES</span>
             </div>
-            <div className="bottom">
-              <h2>Creators Design Your Merch Here</h2>
-              
-              
-            </div>
-          </div>
-          <div className="card-bg">
-            <img
-              className="bg-img"
-              src="https://images.unsplash.com/photo-1554826762-cffbbe6672d7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=760&q=80"
-              alt="leafs"
-            />
-          </div>
-          <div className="shadow">
-            <img
-              className="shadow-img"
-              src="https://cdn.stocksnap.io/img-thumbs/960w/SKI2T9YF2P.jpg"
-              alt="leafs"
-            />
-          </div>
-        </div> */}
-        </Link>
-        <Link to='/merch' className="flink">
-        <div className="card">
-          <div className="card-content">
-            <div className="top">
-              
-            </div>
-            <div className="bottom">
-              <h2>Shirts</h2>
             
+            <div className="clear-fix"></div>
+            
+           
+            <div className="featuredm featuredm-three">
+                <span className="headline">MUGS <br></br> &amp; TEA CUPS</span>
+                <button className="shop-btn">SHOP NOW</button>
             </div>
-          </div>
-          <div className="card-bg">
-            <img
-              className="bg-img"
-              src="https://images.unsplash.com/photo-1529720317453-c8da503f2051?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
-              alt="colorful smoke"
-            />
-          </div>
-          <div className="shadow">
-            <img
-              className="shadow-img"
-              src="https://cdn.stocksnap.io/img-thumbs/960w/ITKSNPZ1VP.jpg"
-              alt="colorful smoke"
-            />
-          </div>
-        </div>
-        </Link>
- 
-      </div>
+
+            <div className="featuredm featuredm-four">
+                <span className="headline">TACTICAL <br></br> &amp; CAMO HOODIES</span>
+                <span className="subline">GACHII &amp; BASS</span>
+            </div>
+        </section>
     </div>
 );
 export default Featured;
