@@ -7,10 +7,7 @@ import {setHeading} from '../actions/headings';
 import { firebase} from '../firebase/firebase';
 
 export class NavBar extends React.Component{
-    componentDidMount(){
-        console.log('mounted');
-    }
-
+   
     setAll=()=>{
         localStorage.setItem();
         this.props.setSort('all');

@@ -15,13 +15,11 @@ import LoadingPage from './components/LoadingPage';
 import './playGround/addToDatabase';
 const store = configureStore();
 const jsx = (
-  <Scrollbars style={{ width: '100vw', height: '100vh'}}>
   <Provider store={store}>
     
     <AppRouter />
    
   </Provider>
-   </Scrollbars>
 );
 let hasRendered = false;
 const renderApp = () => {
