@@ -365,6 +365,9 @@ a.remove:hover {
   letter-spacing: -.025em;
   width: 35%;
 }
+.subtotal .totalRow .value p{
+  text-align: right;
+}
 
 @media only screen and (max-width: 39.375em) {
   .wrap {

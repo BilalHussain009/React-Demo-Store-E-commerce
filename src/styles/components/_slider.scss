@@ -419,6 +419,8 @@ body {
   height: 70vh;
   perspective: 1500px;
   background: #000;
+  width: 94%;
+  margin: auto;
   
   &__credits {
     box-sizing: border-box;
@@ -827,6 +829,9 @@ text-align: justify;}
   font-size: 1.3rem;
 }
 @media (max-width: $desktop-breakpoint) {
+  .demo-cont{
+    width: 100%;
+  }
   .fnc-nav__controls{
     display: flex;
     align-content: center;
@@ -869,6 +874,8 @@ text-align: justify;}
   text-align: center;
   overflow: hidden;
   margin-bottom: 1.3em;
+  width: 94%;
+  margin: auto;
 }.tag {
   text-transform: uppercase;
   position: relative;
