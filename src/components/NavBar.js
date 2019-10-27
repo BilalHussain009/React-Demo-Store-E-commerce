@@ -72,12 +72,13 @@ export class NavBar extends React.Component{
             </Helmet>
             
             <ul className="links">
-                <li><Link to='/products'><a   onClick={this.setAll} >All Products</a></Link></li>
+                
                 <li><Link to='/products'   onClick={this.setSocks}><a     >Socks</a></Link></li>
                 <li><Link to='/products'><a    onClick={this.setHoods} >Hoodies</a></Link></li>
                 
                 <li><Link to='/products'><a    onClick={this.setMugs} >Mugs</a></Link></li>
                 <li><Link to='/products'><a    onClick={this.setPhoneCase} >Phone Case</a></Link></li>
+                <li><Link to='/postanoffer'><a    onClick={this.setPhoneCase} >Post an offer</a></Link></li>
                 <li>
                     <Link to={firebase.auth().currentUser?'/userprofile':'/loginPage'}>
                     <div className='LoginBox'>

@@ -4,7 +4,6 @@ import createHistory from 'history/createBrowserHistory';
 import DashboardPage from '../components/DashboardPage';
 import NotFoundPage from '../components/NotFoundPage';
 import LoginPage from '../components/LoginPage';
-
 import Cart from '../components/Cart';
 import Description from '../components/ItemDescription';
 import SearchResult from '../components/SearchResult';

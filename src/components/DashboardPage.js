@@ -12,22 +12,23 @@ const DashboardPage = () => (
   <div>
     <SearchHeader/>
     <Slider/>
-    
+    <div className="section-title">
+  <span className="tag tag-regular">Special Offers </span>
+</div>
+    <Featured/>
     <div className="section-title">
   <span className="tag tag-regular"> Explore</span>
 </div>
 <ProductList section='explore'/>
 
 
-    
-    <div className="section-title">
-  <span className="tag tag-regular">Special Offers </span>
-</div>
-<Banner/>
 <div className="section-title">
   <span className="tag tag-regular">For Creators</span>
-</div>
-<Featured/>
+</div> 
+    
+<Banner/>
+
+
 <div className="section-title">
   <span className="tag tag-regular">Protect Your Phone</span>
 </div>
