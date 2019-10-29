@@ -2,9 +2,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { startLogin,startFaceBookLogin,startLogout} from '../actions/auth';
 export const LoginPage = ({startLogin,startLogout,startFaceBookLogin}) => (
+  
   <div>
+   
+
+                        
     <div className='form-heading'>
-    <p>Login</p>
+    <p>LOGIN</p>
     </div>
     <div className='form-box'>
     
@@ -30,12 +34,10 @@ export const LoginPage = ({startLogin,startLogout,startFaceBookLogin}) => (
       <div className='login-button-box'>
       <a className='login-button' href="#">Login</a>
       </div>
-      <p className='othermethod'>Or Login using following</p>
+      <p className='othermethod'>or Log In With</p>
       <div className='social-box'>
-        
-      <a href='#' onClick={startFaceBookLogin}><img className='socialIcon' src='https://image.flaticon.com/icons/svg/145/145802.svg'></img></a>
-      <a href='#'><img className='socialIcon' src='https://image.flaticon.com/icons/svg/733/733579.svg'></img></a>
-      <a onClick={startLogin} href='#'><img className='socialIcon' src='https://svgur.com/i/FVH.svg'></img></a>
+      <a href="#" onClick={startLogin} className="social-button" id="google-connect"> <span>Connect with Google</span></a><br></br>
+      <a href="#" onClick={startFaceBookLogin} className="social-button" id="google-connect"> <span>Connect with Google</span></a>
       </div>
     </form>
       
@@ -51,3 +53,5 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 export default connect(undefined, mapDispatchToProps)(LoginPage);
+
+
