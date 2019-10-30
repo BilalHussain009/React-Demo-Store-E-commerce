@@ -32,6 +32,14 @@ export default(state=defaultSort,action)=>{
             return 'texture-phone';
         case 'funny-phone':
             return 'funny-phone';
+        case 'pewdiepie':
+            return 'pewdiepie';
+        case 'jse':
+            return 'jse';
+        case 'merk':
+            return 'merk';
+        case 'yestheory':
+            return 'yestheory';
         default:
             
             return state;

@@ -33,9 +33,8 @@ export const LoginPage = ({startLogin,startLogout,startFaceBookLogin}) => (
       <p className='othermethod'>Or Login using following</p>
       <div className='social-box'>
         
-      <a href='#' onClick={startFaceBookLogin}><img className='socialIcon' src='https://image.flaticon.com/icons/svg/145/145802.svg'></img></a>
-      <a href='#'><img className='socialIcon' src='https://image.flaticon.com/icons/svg/733/733579.svg'></img></a>
-      <a onClick={startLogin} href='#'><img className='socialIcon' src='https://svgur.com/i/FVH.svg'></img></a>
+      <a href="#"onClick={startLogin}  className="social-button" id="google-connect"> <span>Connect with Google</span></a><br></br>
+
       </div>
     </form>
       

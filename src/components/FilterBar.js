@@ -19,6 +19,9 @@ class FilterBar extends React.Component{
             this.props.setSort('camo-phone');
             // this.props.setSort('funny-phone');
         }
+        if(localStorage.getItem('category')=='creators'){
+            this.props.setSort('yestheory');
+        }
      }
     setLove=()=>{
         if(localStorage.getItem('category')=='mugs'){
@@ -29,6 +32,9 @@ class FilterBar extends React.Component{
         }
         if(localStorage.getItem('category')=='phonecase'){
             this.props.setSort('texture-phone');
+        }
+        if(localStorage.getItem('category')=='creators'){
+            this.props.setSort('merk');
         }
     }
     setCamo=()=>{
@@ -41,7 +47,9 @@ class FilterBar extends React.Component{
         if(localStorage.getItem('category')=='phonecase'){
             this.props.setSort('funny-phone');
             // this.props.setSort('digital-phone');
-
+        }
+        if(localStorage.getItem('category')=='creators'){
+            this.props.setSort('pewdiepie');
         }
     }
     setPassion=()=>{
@@ -54,6 +62,9 @@ class FilterBar extends React.Component{
         if(localStorage.getItem('category')=='phonecase'){
             this.props.setSort('digital-phone');
             //
+        }
+        if(localStorage.getItem('category')=='creators'){
+            this.props.setSort('jse');
         }
     }
     render(){

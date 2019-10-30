@@ -11,6 +11,7 @@ export class NavBar extends React.Component{
     setAll=()=>{
         localStorage.setItem();
         this.props.setSort('all');
+
     }
     setSocks=()=>{
         localStorage.setItem('category','socks')
@@ -24,6 +25,13 @@ export class NavBar extends React.Component{
     }
     setHoodies=()=>{
         this.props.setSort('hoodies')
+    }
+    setCreators=()=>{
+        localStorage.setItem('category','creators');
+        this.props.setSort('all');
+        this.props.setHeading('SET_CREATORS');
+
+
     }
     setMugs=()=>{
         this.props.setSort('mugs');
@@ -74,11 +82,10 @@ export class NavBar extends React.Component{
             <ul className="links">
                 
                 <li><Link to='/products'   onClick={this.setSocks}><a     >Socks</a></Link></li>
-                <li><Link to='/products'><a    onClick={this.setHoods} >Hoodies</a></Link></li>
                 
                 <li><Link to='/products'><a    onClick={this.setMugs} >Mugs</a></Link></li>
                 <li><Link to='/products'><a    onClick={this.setPhoneCase} >Phone Case</a></Link></li>
-                <li><Link to='/postanoffer'><a    onClick={this.setPhoneCase} >Post an offer</a></Link></li>
+                <li><Link to='/products'><a    onClick={this.setCreators} >Creators</a></Link></li>
                 <li>
                     <Link to={firebase.auth().currentUser?'/userprofile':'/loginPage'}>
                     <div className='LoginBox'>

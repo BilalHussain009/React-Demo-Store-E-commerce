@@ -243,3 +243,35 @@ select {
   background: black;
   color: white;
 }
+.Shipping-Info{
+  float: left;
+  width: 40%;
+  text-align:left;
+  margin-left: 13%;
+}
+.ship-info{
+  font-family: "Mr Eaves XL Modern", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  font-weight:bold;
+  width: 50%;
+
+}
+.ship-detail{
+  font-size: 13px;
+  line-height: 25px;
+}
+hr{
+  border: 0.5px solid lightgray;
+}
+@media (max-width: $desktop-breakpoint) {
+
+  .Shipping-Info{
+      float: none;
+      width: 82%;
+      margin-left: 0;
+      margin: auto;
+
+
+      
+  }
+}
