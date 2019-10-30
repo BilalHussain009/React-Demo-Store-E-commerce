@@ -8,6 +8,7 @@ import SearchHeader from '../components/SearchHeader';
 import Slider from '../components/Slider';
 import Featured from '../components/Featured';
 import Banner from '../components/Banner';
+import BannerSearch from '../components/BannerSearch';
 const DashboardPage = () => (
   <div>
     <SearchHeader/>
@@ -27,8 +28,10 @@ const DashboardPage = () => (
 </div> 
     
 <Banner/>
-
-
+<div className="section-title">
+  <span className="tag tag-regular">Discover</span>
+</div>
+<BannerSearch/>
 <div className="section-title">
   <span className="tag tag-regular">Protect Your Phone</span>
 </div>

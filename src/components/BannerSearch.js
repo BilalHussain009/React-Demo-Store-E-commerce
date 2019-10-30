@@ -1,6 +1,6 @@
 import React from 'react';
 import SearchHeader from './SearchHeader';
-const TestNavbar=()=>(
+const BannerSearch=()=>(
   <div className='hero-search'>
     <div className='hero-search-line'>
       <h3>Find Something <br></br>you Love.</h3>
@@ -11,4 +11,4 @@ const TestNavbar=()=>(
     </div>
   </div>
 );
-export default TestNavbar;
+export default BannerSearch;
