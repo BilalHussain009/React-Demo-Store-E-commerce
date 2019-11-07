@@ -1,4 +1,5 @@
 {
+  "homepage": "bilalhussain009.github.io/React-Demo-Store-E-commerce",
   "name": "boilerplate-react-app",
   "version": "1.0.0",
   "main": "index.js",
@@ -10,7 +11,9 @@
     "dev-server": "webpack-dev-server",
     "test": "cross-env NODE_ENV=test jest --config=jest.config.json",
     "start": "node server/server.js",
-    "heroku-postbuild": "yarn run build:prod"
+    "heroku-postbuild": "yarn run build:prod",
+    "predeploy": "yarn run build:prod",
+    "deploy": "gh-pages yarn run build:prod"
   },
   "dependencies": {
     "@gumgum/react-script-tag": "^0.0.3",
@@ -30,6 +33,7 @@
     "express": "4.15.4",
     "extract-text-webpack-plugin": "3.0.0",
     "firebase": "4.2.0",
+    "gh-pages": "^2.1.1",
     "history": "4.7.2",
     "jquery": "^3.4.1",
     "moment": "2.18.1",
@@ -49,12 +53,14 @@
     "react-modal": "2.2.2",
     "react-redux": "5.0.5",
     "react-router-dom": "5.1.2",
+    "react-router-page-transition": "^3.1.0",
     "react-script-tag": "^1.1.2",
     "react-scrollbar": "^0.5.6",
     "redux": "3.7.2",
     "redux-mock-store": "1.2.3",
     "redux-thunk": "2.2.0",
     "sass-loader": "6.0.6",
+    "shopify-buy": "^2.8.0",
     "style-loader": "0.18.2",
     "uuid": "3.1.0",
     "validator": "8.0.0",

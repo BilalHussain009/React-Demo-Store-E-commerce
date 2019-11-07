@@ -1,41 +1,10 @@
-.hero-search{
-    height: 70vh;
+.animal-banner{
     width: 90vw;
-    background-image: url(https://teespring-ass.s3.amazonaws.com/HP/Search+Hero+/2019_07_11_vidcon_hero_desktop.jpg);
+    height: 70vh;
+    margin: auto;
+    background-image:url(https://cdn1.imggmi.com/uploads/2019/10/31/80c92b84a59a76c796035c296c8ccbc9-full.png);
     background-size: cover;
     background-position: top;
-    margin: auto;
-    margin-top:4%;
-    position: relative;
-    box-shadow: 4px 4px 5px black;
-}
-.hero-search-line{
-    position: absolute;
-    top: 15%;
-    left: 10%;
-    h3{
-        color: white;
-        font-size: 50px;
-        font-family: "GT Haptik", "Helvetica Neue", Helvetica, Arial, sans-serif;
-        font-weight: 900;
-    }
-}
-.hero-search-input{
-    position: absolute;
-    top: 60%;
-    left: 11%;
-}
-@media (max-width: $breakpoint) {
-    .hero-search-line{
-        h3{
-            font-size: 40px;
-            font-weight: 900;
-        }
-    }
-    .hero-search-input{
-        position: absolute;
-        top: 80%;
-        left: 9%;
-        
-    }
+    border: 1px solid black;
+    margin-top: 2%;
 }

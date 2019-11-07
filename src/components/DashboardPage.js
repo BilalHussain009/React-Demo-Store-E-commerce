@@ -9,8 +9,10 @@ import Slider from '../components/Slider';
 import Featured from '../components/Featured';
 import Banner from '../components/Banner';
 import BannerSearch from '../components/BannerSearch';
+
 const DashboardPage = () => (
-  <div>
+
+  <div className="transition-item">
     <SearchHeader/>
     <Slider/>
     <div className="section-title">
@@ -40,7 +42,6 @@ const DashboardPage = () => (
 
     
   </div>
-  
   
 );
 

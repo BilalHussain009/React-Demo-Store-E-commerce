@@ -12,6 +12,7 @@ import  NavbarClickPage from '../components/NavbarClickPage';
 import TestNavbar from '../components/TestNavbar';
 import UserProfile from '../components/UserProfile';
 import NavBar from '../components/NavBar';
+
 export const history = createHistory();
 
 const AppRouter = () => (
@@ -34,9 +35,7 @@ const AppRouter = () => (
         <Route component={NotFoundPage} />
       </Switch>
     </div>
-
   </Router>
 
 );
-
 export default AppRouter;
