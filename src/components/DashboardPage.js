@@ -9,10 +9,8 @@ import Slider from '../components/Slider';
 import Featured from '../components/Featured';
 import Banner from '../components/Banner';
 import BannerSearch from '../components/BannerSearch';
-
 const DashboardPage = () => (
-
-  <div className="transition-item">
+  <div>
     <SearchHeader/>
     <Slider/>
     <div className="section-title">
@@ -42,6 +40,7 @@ const DashboardPage = () => (
 
     
   </div>
+  
   
 );
 

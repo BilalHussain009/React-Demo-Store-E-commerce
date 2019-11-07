@@ -9,7 +9,7 @@
 
 
 
-view the Live App : https://digitalstore-bilal.herokuapp.com
+view the Live App : https://react-demo-store-by-bilal.herokuapp.com/
 
 
 install Command : Yarn install
