@@ -6,7 +6,6 @@ const Banner=()=>(
 	
 	<div className="banner-content">
 		<div className="banner-content-icon">
-
 <svg id="Layer_1" className="banner-dog" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 276.27 235.5">
 	<defs>
 		<style>
