@@ -17,6 +17,7 @@ class Cart extends React.Component{
     <Link to='/' href="#" className="continue">Continue Shopping</Link>
   </div>
   <div className="cart">
+
     <ul className="cartWrap">
     {
                   localStorage.getItem("cart")!==null?(JSON.parse(localStorage.getItem("cart")).map((item) =>(
