@@ -1,7 +1,5 @@
 import React from 'react';
 const Banner=()=>(
-    
-
 <div className="banner">
 	
 	<div className="banner-content">
