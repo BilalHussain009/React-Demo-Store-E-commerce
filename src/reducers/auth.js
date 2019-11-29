@@ -7,6 +7,8 @@ export default (state ={defaultAction}, action) => {
       return action.type;
     case 'LOGOUT':
       return action.type;
+    case 'SIGNUP':
+      return action.type;
     default:
       return state;
   }

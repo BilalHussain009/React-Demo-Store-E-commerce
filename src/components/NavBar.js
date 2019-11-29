@@ -1,58 +1,82 @@
 import React from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import { Helmet } from "react-helmet";
-import {Link} from 'react-router-dom';
-import {setSort} from '../actions/sort';
-import {setHeading} from '../actions/headings';
-import { firebase} from '../firebase/firebase';
+import { Link } from 'react-router-dom';
+import { setSort } from '../actions/sort';
+import { setHeading } from '../actions/headings';
+import { firebase } from '../firebase/firebase';
 
-export class NavBar extends React.Component{
-   
-    setAll=()=>{
+export class NavBar extends React.Component {
+
+    setAll = () => {
         localStorage.setItem();
         this.props.setSort('all');
 
     }
-    setSocks=()=>{
-        localStorage.setItem('category','socks')
+    setSocks = () => {
+        localStorage.setItem('category', 'socks')
         this.props.setSort('all');
         this.props.setHeading('SET_SOCKS');
-     }
-    setHoods=()=>{
-        localStorage.setItem('category','explore');
+    }
+    setHoods = () => {
+        localStorage.setItem('category', 'explore');
         this.props.setSort('all');
         this.props.setHeading('SET_HOODIES');
     }
-    setHoodies=()=>{
+    setHoodies = () => {
         this.props.setSort('hoodies')
     }
-    setCreators=()=>{
-        localStorage.setItem('category','creators');
+    setCreators = () => {
+        localStorage.setItem('category', 'creators');
         this.props.setSort('all');
         this.props.setHeading('SET_CREATORS');
 
 
     }
-    setMugs=()=>{
+    setMugs = () => {
         this.props.setSort('mugs');
-        localStorage.setItem('category','mugs');
+        localStorage.setItem('category', 'mugs');
         this.props.setHeading('SET_MUGS');
     }
-    setPhoneCase=()=>{
+    setPhoneCase = () => {
         this.props.setSort('phonecase');
-        localStorage.setItem('category','phonecase');
+        localStorage.setItem('category', 'phonecase');
         this.props.setHeading('SET_PHONECASE');
     }
-            render(){
-                return(
-        
+    userprofile = () => {
+        if (firebase.auth().currentUser == null) {
+            return "Login"
+        }
+        else if (firebase.auth().currentUser.displayName == null) {
+            var usermail = firebase.auth().currentUser.email;
+            var name = usermail.substring(0, usermail.lastIndexOf("@"));
+            return name;
+        }
+
+        else
+            return firebase.auth().currentUser.displayName.split(' ').slice(0, 1).join(' ');
+    }
+    userprofilepic=()=>{
+        if (firebase.auth().currentUser == null) {
+            return 'https://i.ibb.co/ssp09kd/585e4bf3cb11b227491c339a.png';
+        }
+        else if (firebase.auth().currentUser.photoURL== null) {
+            return 'https://i.ibb.co/ssp09kd/585e4bf3cb11b227491c339a.png';
+        }
+
+        else
+            return firebase.auth().currentUser.photoURL;
+    }
+    render() {
+        return (
+
             <div className="navbar">
-	
-            <Link to='/'className="logo" >Store</Link>
-            <Helmet>
-        
-            <script>
-             {`
+
+                <Link to='/' className="logo" >Store</Link>
+                <Helmet>
+
+                    <script>
+                        {`
              var navbar = document.querySelector('.navbar')
 
              navbar.querySelector('.toggle').addEventListener('click',()=>{
@@ -76,60 +100,54 @@ export class NavBar extends React.Component{
                  
              })
              `}
-            </script>
-            </Helmet>
-            
-            <ul className="links">
-                
-                <li><Link to='/products'   onClick={this.setSocks}><a     >Socks</a></Link></li>
-                
-                <li><Link to='/products'><a    onClick={this.setMugs} >Mugs</a></Link></li>
-                <li><Link to='/products'><a    onClick={this.setPhoneCase} >Phone Case</a></Link></li>
-                <li><Link to='/products'><a    onClick={this.setCreators} >Creators</a></Link></li>
-                <li>
-                    <Link to={firebase.auth().currentUser?'/userprofile':'/loginPage'}>
-                    <div className='LoginBox'>
-                
-                        { firebase.auth().currentUser?
-                         <img className="LoginButton" src={firebase.auth().currentUser.photoURL}></img>:
-                         <img className="LoginButton"  src='https://i.ibb.co/ssp09kd/585e4bf3cb11b227491c339a.png'></img>}
-                        {firebase.auth().currentUser? 
-                        <p className='LoginText'>{firebase.auth().currentUser.displayName.split(' ').slice(0, 1).join(' ')}</p>:
-                        <p className='LoginText'>Login</p>}
+                    </script>
+                </Helmet>
 
-                        
-                    </div>
-                    </Link>
-                </li>
-            </ul>
-            
-            
-            <Link to="/cart" className="right">
-            <button type="button" className='cartbutton' id='cartButton' >
-                Cart
+                <ul className="links">
+
+                    <li><Link to='/products' onClick={this.setSocks}><a     >Socks</a></Link></li>
+
+                    <li><Link to='/products'><a onClick={this.setMugs} >Mugs</a></Link></li>
+                    <li><Link to='/products'><a onClick={this.setPhoneCase} >Phone Case</a></Link></li>
+                    <li><Link to='/products'><a onClick={this.setCreators} >Creators</a></Link></li>
+                    <li>
+                        <Link to={firebase.auth().currentUser ? '/userprofile' : '/loginPage'}>
+                            <div className='LoginBox'>     
+                                <img className="LoginButton" src={this.userprofilepic()}></img> 
+                                <p className='LoginText'>{this.userprofile()}</p>
+                            </div>
+                        </Link>
+                    </li>
+                </ul>
+
+
+                <Link to="/cart" className="right">
+                    <button type="button" className='cartbutton' id='cartButton' >
+                        Cart
              </button>
-            </Link>
-	        
-            <div className="toggle">
-                <div className="line1"></div>
-                <div className="line2"></div>
-                <div className="line3"></div>
+                </Link>
+
+                <div className="toggle">
+                    <div className="line1"></div>
+                    <div className="line2"></div>
+                    <div className="line3"></div>
+                </div>
+
+
+
             </div>
-            
-            
-            
-        </div>
         );
-        }}
+    }
+}
 
 
 const mapDispatchToProps = (dispatch) => ({
     setSort: (sortby) => dispatch(setSort(sortby)),
-    setHeading:(heading)=>dispatch(setHeading(heading))
-   
-    });
-const mapStateToProps=(state)=>({
-    auth:state.auth,
-    sort:state.sort
+    setHeading: (heading) => dispatch(setHeading(heading))
+
+});
+const mapStateToProps = (state) => ({
+    auth: state.auth,
+    sort: state.sort
 })
-export default connect(mapStateToProps,mapDispatchToProps)(NavBar);
+export default connect(mapStateToProps, mapDispatchToProps)(NavBar);

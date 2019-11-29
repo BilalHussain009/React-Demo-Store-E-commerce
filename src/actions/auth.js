@@ -20,6 +20,29 @@ export const startFaceBookLogin=()=>{
 export const logout = () => ({
   type: 'LOGOUT'
 });
+export const signupWithEmail=(email,password)=>{
+  email,
+  password
+}
+export const startSignupWithEmail=(email,password)=>{
+  // createUserWithEmailAndPassword(email, password)
+  return(dispatch)=>{
+    console.log(email);
+    firebase.auth().createUserWithEmailAndPassword(email,password).
+    then(()=>{dispatch(login());history.push('/userprofile')})
+    .catch((error)=>alert(error.message));
+    
+    // dispatch (signupWithEmail(email,password));
+  }
+}
+export const startSigninWithEmail=(email,password)=>{
+  return(dispatch)=>{
+    console.log(email);
+    firebase.auth().signInWithEmailAndPassword(email,password)
+    .then(()=>{dispatch(login());history.push('/userprofile')})
+    .catch((error)=>alert(error.message));
+  }
+}
 
 export const startLogout = () => {
   return (dispatch) => {

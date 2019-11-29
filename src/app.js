@@ -5,8 +5,6 @@ import AppRouter, { history } from './routers/AppRouter';
 import configureStore from './store/configureStore';
 import { login, logout } from './actions/auth';
 import {startSetItems} from './actions/item';
-import { Scrollbars } from 'react-custom-scrollbars';
-
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 import 'react-dates/lib/css/_datepicker.css';

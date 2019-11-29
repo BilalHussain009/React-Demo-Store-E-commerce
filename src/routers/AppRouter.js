@@ -12,7 +12,9 @@ import  NavbarClickPage from '../components/NavbarClickPage';
 import TestNavbar from '../components/TestNavbar';
 import UserProfile from '../components/UserProfile';
 import NavBar from '../components/NavBar';
+import SignUp from '../components/SignUp';
 export const history = createHistory();
+
 
 const AppRouter = () => (
   <Router history={history}>
@@ -20,7 +22,7 @@ const AppRouter = () => (
     <div>
       <NavBar/>
       <Switch>
-        
+      
         <Route path="/" component={DashboardPage} exact={true} />
         <Route path="/dashboard" component={DashboardPage} />
         <Route path="/cart" component={Cart} />
@@ -28,7 +30,7 @@ const AppRouter = () => (
         <Route path='/search' component={SearchResult}/>
         <Route path='/merch' component={Merch}/>
         <Route path='/products' component={NavbarClickPage}/>
-        <Route path='/test' component={TestNavbar}/>
+        <Route path='/test' component={SignUp}/>
         <Route path='/loginPage' component={LoginPage}/>
         <Route path='/userprofile' component={UserProfile}/>
         <Route component={NotFoundPage} />
