@@ -31,7 +31,7 @@ class CartItems extends React.Component{
               <p className="itemNumber">{this.props.company}</p>
               <h3>{this.props.name}</h3>
             
-               <p> <input type="text"  className="qty" placeholder="1x"/>${this.props.price}</p>
+               <p> <input type="text"  className="qty" placeholder={this.props.quantity+'x'}/>${this.props.price}</p>
             
               <p className="stockStatus">{this.props.size} -size </p>
             </div>  

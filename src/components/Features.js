@@ -8,6 +8,7 @@ const Features=()=>(
               <h2>Flexible</h2>
               <p>Learning a new skill doesn’t have to interrupt your busy schedule. Our on-demand videos and interactive code challenges are there for you when you need them.</p>
             </div>
+
           </div>
           <div className="grid">
             <img id="icon" src="https://d9hhrg4mnvzow.cloudfront.net/try.teespring.com/creators/fb1f9b1d-quality_025025025025000000.png" alt="icon-tools"></img>

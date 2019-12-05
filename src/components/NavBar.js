@@ -56,11 +56,11 @@ export class NavBar extends React.Component {
         else
             return firebase.auth().currentUser.displayName.split(' ').slice(0, 1).join(' ');
     }
-    userprofilepic=()=>{
+    userprofilepic = () => {
         if (firebase.auth().currentUser == null) {
             return 'https://i.ibb.co/ssp09kd/585e4bf3cb11b227491c339a.png';
         }
-        else if (firebase.auth().currentUser.photoURL== null) {
+        else if (firebase.auth().currentUser.photoURL == null) {
             return 'https://i.ibb.co/ssp09kd/585e4bf3cb11b227491c339a.png';
         }
 
@@ -105,19 +105,21 @@ export class NavBar extends React.Component {
 
                 <ul className="links">
 
-                    <li><Link to='/products' onClick={this.setSocks}><a     >Socks</a></Link></li>
+                    <li><Link to='/products' onClick={this.setSocks}>Socks</Link></li>
 
-                    <li><Link to='/products'><a onClick={this.setMugs} >Mugs</a></Link></li>
-                    <li><Link to='/products'><a onClick={this.setPhoneCase} >Phone Case</a></Link></li>
-                    <li><Link to='/products'><a onClick={this.setCreators} >Creators</a></Link></li>
+                    <li><Link to='/products' onClick={this.setMugs} >Mugs</Link></li>
+                    <li><Link to='/products' onClick={this.setPhoneCase}>Phone Case</Link></li>
+                    <li><Link to='/products' onClick={this.setCreators}>Creators</Link></li>
                     <li>
                         <Link to={firebase.auth().currentUser ? '/userprofile' : '/loginPage'}>
-                            <div className='LoginBox'>     
-                                <img className="LoginButton" src={this.userprofilepic()}></img> 
+                            <div className='LoginBox'>
+                                <img className="LoginButton" src={this.userprofilepic()}></img>
                                 <p className='LoginText'>{this.userprofile()}</p>
                             </div>
                         </Link>
                     </li>
+                    <li><Link to='/aboutus' onClick={this.setCreators}>About Us</Link></li>
+
                 </ul>
 
 

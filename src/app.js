@@ -30,10 +30,10 @@ const renderApp = () => {
     firebase.auth().onAuthStateChanged((user)=>{
       if(user){
         store.dispatch(login);
-        console.log()
+        
       }
       else{
-        console.log(logout);
+        console.log('welcome to the site');
       }
     });
   }

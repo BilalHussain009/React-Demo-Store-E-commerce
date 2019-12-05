@@ -36,9 +36,10 @@ export const startAddItem = (itemData = {}) => {
       image='',
       description='',
       size='',
-      id=uuid.v4()
+      id=uuid.v4(),
+      quantity=''
     } = itemData;
-    const item = {company,name,price,image,description,size,id};
+    const item = {company,name,price,image,description,size,id,quantity};
     if(JSON.parse(localStorage.getItem("cart"))==null){
       var cart=[];
     }

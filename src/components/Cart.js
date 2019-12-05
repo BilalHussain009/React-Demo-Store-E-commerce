@@ -15,7 +15,7 @@ class Cart extends React.Component{
   <div className="heading cf">
     <h1>Your Items</h1>
     <Link to='/' href="#" className="continue">Continue Shopping</Link>
-  </div>
+  </div> 
   <div className="cart">
 
     <ul className="cartWrap">
