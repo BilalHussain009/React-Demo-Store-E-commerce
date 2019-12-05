@@ -27,6 +27,7 @@ export const signupWithEmail=(email,password)=>{
 export const startSignupWithEmail=(email,password)=>{
   // createUserWithEmailAndPassword(email, password)
   return(dispatch)=>{
+    
     firebase.auth().createUserWithEmailAndPassword(email,password).
     then(()=>{dispatch(login());history.push('/userprofile')})
     .catch((error)=>alert(error.message));

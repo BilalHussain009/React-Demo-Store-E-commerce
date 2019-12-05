@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux';
 import CartItems from './CartItems';
 import {Link} from 'react-router-dom';
-import NavBar from '../components/NavBar';
+import NavBar from './NavBar';
 class Cart extends React.Component{
   componentDidMount() {
     window.scrollTo(0, 0)
@@ -39,6 +39,8 @@ class Cart extends React.Component{
             <li className="totalRow"><span className="label">Tax</span><span className="value">{JSON.parse(localStorage.getItem("sum"))>0?<p>$4.00</p>:<p>$0.00</p>}</span></li>
             <li className="totalRow final"><span className="label">Total</span><span className="value">{JSON.parse(localStorage.getItem("sum"))>0?<p>${JSON.parse(localStorage.getItem("sum"))+9}</p>:<p>$0.00</p>}</span></li>
       <li className="totalRow"><a href='#' className="btn continue">Checkout</a></li>
+      <script src="https://www.paypalobjects.com/api/checkout.js" data-version-4></script>
+
     </ul>
   </div>
 </div>

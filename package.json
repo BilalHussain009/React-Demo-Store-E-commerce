@@ -37,6 +37,7 @@
     "node-sass": "4.12.0",
     "normalize.css": "7.0.0",
     "numeral": "2.0.6",
+    "paypal-checkout": "^4.0.305",
     "pure-react-carousel": "^1.21.2",
     "react": "15.6.1",
     "react-addons-shallow-compare": "15.6.0",
