@@ -14,7 +14,7 @@ import UserProfile from '../components/UserProfile';
 import NavBar from '../components/NavBar';
 import SignUp from '../components/SignUp';
 import Features from '../components/Features';
-import CheckOut from '../components/CheckOut';
+import userInfo from '../components/UserInfo';
 export const history = createHistory();
 
 
@@ -36,7 +36,7 @@ const AppRouter = () => (
         <Route path='/loginPage' component={LoginPage}/>
         <Route path='/userprofile' component={UserProfile}/>
         <Route path='/aboutus' component={Features}/>
-        <Route path='/checkout' component={CheckOut}/>
+        <Route path='/userinfo' component={userInfo}/>
         <Route component={NotFoundPage} />
       </Switch>
     </div>

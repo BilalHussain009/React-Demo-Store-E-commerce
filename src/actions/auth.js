@@ -1,5 +1,6 @@
 import { firebase, googleAuthProvider, facebookAuthProvider } from '../firebase/firebase';
 import { history } from '../routers/AppRouter';
+
 export const login = () => ({
   type: 'LOGIN'
 

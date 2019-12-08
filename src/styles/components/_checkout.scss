@@ -1,0 +1,172 @@
+#myform {
+    margin: 50px auto;
+    width: 43%;
+  }
+  
+  header {
+    color: black;
+    font-size: 1.7em;
+    padding: 3% 0;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+  }
+  
+  .area {
+    color: rgba(0, 0, 0, 0.2);
+    width: 100%;
+    margin: 40px 0;
+  }
+  
+  label {
+    line-height: 35px;
+    display: table-header-group;
+    font-size: 1.05em;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    color: black;
+  }
+  
+  input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px;
+    border: 2px solid rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    background: transparent;
+    color: black;
+    display: table-row-group;
+    transition: all 0.3s ease;
+    font-size: 1.05em;
+  }
+  
+  input:focus {
+    outline: none !important;
+    border-color: rgb(0, 0, 0);
+  }
+  
+  input:focus + label {
+    color: #020202;
+  }
+  
+  .row {
+    margin: 20px 0;
+    width: 100%;
+    padding: 0;
+    display: table;
+  }
+  
+  .col2 {
+    display: table;
+    width: 47%;
+    float: left;
+  }
+  
+  .col2:nth-child(2) {
+    float: right;
+    display: table;
+  }
+  
+  .ckeckarea input[type="checkbox"] {
+    display: none;
+  }
+  
+  .ckeckarea label {
+    position: relative;
+    display: inline-block;
+    padding: 3px 3px 3px 30px;
+    cursor: pointer;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+  }
+  
+  .ckeckarea label::before,
+  .ckeckarea label::after {
+    position: absolute;
+    content: '';
+    -webkit-transition: all .2s;
+    transition: all .2s;
+  }
+  
+  .ckeckarea label::before {
+    top: 50%;
+    left: 0;
+    width: 14px;
+    height: 14px;
+    margin-top: -8px;
+    background: transparent;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+  }
+  
+  .ckeckarea label::after {
+    opacity: 0;
+    top: 50%;
+    left: 3px;
+    width: 8px;
+    height: 4px;
+    margin-top: -4px;
+    border-left: 2px solid rgb(0, 0, 0);
+    border-bottom: 2px solid rgb(0, 0, 0);
+    -webkit-transform: rotate(-45deg) scale(.5);
+    transform: rotate(-45deg) scale(.5);
+  }
+  
+  .ckeckarea label:hover::before {
+    border-color: rgb(0, 0, 0);
+  }
+  
+  .ckeckarea input[type="checkbox"]:checked + label::before {
+    border: 1px solid rgb(0, 0, 0);
+  }
+  
+  .ckeckarea input[type="checkbox"]:checked + label::after {
+    opacity: 1;
+    -webkit-transform: rotate(-45deg) scale(1);
+    transform: rotate(-45deg) scale(1);
+  }
+  
+  .ckeckarea input[type="checkbox"]:checked ~ label {
+    color: rgb(0, 0, 0);
+  }
+  
+  .btn {
+    width: 35%;
+    margin-right: 3%;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+  }
+  
+  .btn:hover {
+    background: rgb(13, 20, 17);
+    border-color: rgb(0, 0, 0);
+    color: white;
+    cursor: pointer;
+  }
+  .cardlogo{
+    width: 60px;
+    margin-top: 30px;
+  }
+  @media screen and (max-width: 800px) {
+    #myform {
+    margin: 50px auto;
+    width: 80%;
+  }
+    .col2 {
+    display: table;
+    width: 100%;
+    float: left;
+  }
+    
+    .ckeckarea label {
+    line-height:20px;
+  }
+  }
+  
+  @media screen and (max-width: 600px) {
+    #myform {
+    margin: 50px auto;
+    width: 90%;
+  }
+   
+  }
+  

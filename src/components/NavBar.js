@@ -110,6 +110,7 @@ export class NavBar extends React.Component {
                     <li><Link to='/products' onClick={this.setMugs} >Mugs</Link></li>
                     <li><Link to='/products' onClick={this.setPhoneCase}>Phone Case</Link></li>
                     <li><Link to='/products' onClick={this.setCreators}>Creators</Link></li>
+                    <li><Link to='/aboutus' onClick={this.setCreators}>About Us</Link></li>
                     <li>
                         <Link to={firebase.auth().currentUser ? '/userprofile' : '/loginPage'}>
                             <div className='LoginBox'>
@@ -118,7 +119,7 @@ export class NavBar extends React.Component {
                             </div>
                         </Link>
                     </li>
-                    <li><Link to='/aboutus' onClick={this.setCreators}>About Us</Link></li>
+                    
 
                 </ul>
 

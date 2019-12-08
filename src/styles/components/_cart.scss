@@ -284,7 +284,7 @@ a.remove:hover {
 .promoCode input:active, .promoCode input:focus {
   outline: 0;
 }
-.promoCode a.btn {
+.promoCode a.bt {
   float: left;
   width: 15%;
   padding: .75em 0;
@@ -292,12 +292,12 @@ a.remove:hover {
   text-align: center;
   border: 1px solid #82ca9c;
 }
-.promoCode a.btn:hover {
+.promoCode a.bt:hover {
   border: 1px solid #f69679;
   background: #f69679;
 }
 
-.btn:link, .btn:visited {
+.bt:link, .bt:visited {
   text-decoration: none;
   font-family: "Montserrat", sans-serif;
   letter-spacing: -.015em;
@@ -315,7 +315,7 @@ a.remove:hover {
   -o-transition: all 0.25s linear;
   transition: all 0.25s linear;
 }
-.btn:after {
+.bt:after {
   content: "\276f";
   padding: .5em;
   position: relative;
@@ -326,13 +326,13 @@ a.remove:hover {
   -o-transition: all 0.15s linear;
   transition: all 0.15s linear;
 }
-.btn:hover, .btn:focus, .btn:active {
+.bt:hover, .bt:focus, .bt:active {
   background: #f69679;
 }
-.btn:hover:after, .btn:focus:after, .btn:active:after {
+.bt:hover:after, .bt:focus:after, .bt:active:after {
   right: -10px;
 }
-.promoCode .btn {
+.promoCode .bt {
   font-size: .85em;
   
 }
@@ -419,7 +419,7 @@ a.remove:hover {
     width: 100%;
   }
 
-  a.btn.continue {
+  a.bt.continue {
     width: 100%;
     text-align: center;
   }
