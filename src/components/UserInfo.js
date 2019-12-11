@@ -1,69 +1,100 @@
 import React from 'react';
-import {firebase} from '../firebase/firebase';
+import { firebase } from '../firebase/firebase';
 import { error } from 'util';
 import { userInfo } from 'os';
 class UserInfo extends React.Component {
     state = {
-        firstname:'',
-        lastname:'',
-        phone:'',
-        address:'',
-        cardName:'',
-        expDate:'',
-        cvv:'',
-        cardNumber:''
-        
-    }
-    submitForm=(e)=>{
-        e.preventDefault();
-        let userId= firebase.auth().currentUser.uid;
+        firstname: '',
+        lastname: '',
+        phone: '',
+        address: '',
+        cardName: '',
+        expDate: '',
+        cvv: '',
+        cardNumber: ''
 
-        firebase.database().ref('users/'+userId).set({
-            firebase:this.state.firstname,
-            lastname:this.state.lastname,
-            phone:this.state.phone,
-            address:this.state.address,
-            cardName:this.state.cardName,
-            expDate:this.state.expDate,
-            cvv:this.state.cvv,
-            cardNumber:this.state.cardNumber
+    }
+    submitForm = (e) => {
+        e.preventDefault();
+        let userId = firebase.auth().currentUser.uid;
+
+        firebase.database().ref('users/' + userId+'/address').set({
+            firstname: this.state.firstname,
+            lastname: this.state.lastname,
+            phone: this.state.phone,
+            address: this.state.address,
+            cardName: this.state.cardName,
+            expDate: this.state.expDate,
+            cvv: this.state.cvv,
+            cardNumber: this.state.cardNumber
         }).then(
             alert("Your Data is saved")
         ).catch(
-            error=>{error.message}
+            error => { error.message }
         )
     }
-    inputedValue=(e)=>{
+    inputedValue = (e) => {
         console.log(this.state);
-        if(e.target.id=="phone"&& e.target.value.length<13){
-            this.setState({[e.target.id]:e.target.value});
+        if (e.target.id == "phone" && e.target.value.length < 13) {
+            this.setState({ [e.target.id]: e.target.value });
         }
-        
-        else if(e.target.id!=="phone"){
-            this.setState({[e.target.id]:e.target.value});
+
+        else if (e.target.id !== "phone") {
+            this.setState({ [e.target.id]: e.target.value });
         }
-       
+
     }
-    inputedValue2=(e)=>{
-        if(e.target.value.length<=3){
-            this.setState({[e.target.id]:e.target.value});
+    inputedValue2 = (e) => {
+        if (e.target.value.length <= 3) {
+            this.setState({ [e.target.id]: e.target.value });
         }
-        
+
     }
-    inputedValue3=(e)=>{
-        if(e.target.value.length<=16){
-            this.setState({[e.target.id]:e.target.value});
+    inputedValue3 = (e) => {
+        if (e.target.value.length <= 16) {
+            this.setState({ [e.target.id]: e.target.value });
         }
-        
+
     }
-    componentDidMount(){
+    
+    componentDidMount=()=>{
         let userId = firebase.auth().currentUser.uid;
-        let ref= firebase.database().ref(`users/${userId}/`);
-        var userData;
-        ref.on("value",function(snapshot){
-             console.log(snapshot.val());
-        });
+        var userData={};
+        if (this.props.location.state.flag == "updateinfo") {
+            firebase.database().ref(`users/${userId}/address`).once("value").then((snapshot)=> {
+                // let firstname=snapshot.val().firstname;
+                //  let lastname=snapshot.val().lastname;
+                //  let phone=snapshot.val().phone;
+                // let address= snapshot.val().address;
+                // let cardName= snapshot.val().cardName;
+                // let expDate= snapshot.val().expDate;
+                // let cvv=snapshot.val().cvv;
+                // let cardNumber=snapshot.val().cardNumber;
+                console.log(snapshot.val())
+                this.setState(snapshot.val());
+                // userData={
+                //     firstname: snapshot.val().firstname,
+                //     lastname: snapshot.val().lastname,
+                //     phone: snapshot.val().phone,
+                //     address: snapshot.val().address,
+                //     cardName: snapshot.val().cardName,
+                //     expDate: snapshot.val().expDate,
+                //     cvv: snapshot.val().cvv,
+                //     cardNumber: snapshot.val().cardNumber
+                // }
+                
+               
+
+            });
+            
+            // this.setState(userData);
+            
+        }
+        console.log(userData)
         
+
+        // console.log(this.props.location.state.flag);
+
     }
     render() {
         return (
@@ -76,12 +107,12 @@ class UserInfo extends React.Component {
                             <label >First Name</label>
                         </div>
                         <div className="col2">
-                            <input type="text" required name="lastname" id="lastname"onChange={this.inputedValue} value={this.state.lastname}></input>
+                            <input type="text" required name="lastname" id="lastname" onChange={this.inputedValue} value={this.state.lastname}></input>
                             <label >Last Name</label>
                         </div>
                     </div>
                     <div className="row">
-                        <input  name="phone" id="phone" onChange={this.inputedValue} type="number" maxLength="12"value={this.state.phone}></input>
+                        <input name="phone" id="phone" onChange={this.inputedValue} type="number" maxLength="12" value={this.state.phone}></input>
                         <label>Phone</label>
                     </div>
                     <div className="row">
@@ -115,10 +146,10 @@ class UserInfo extends React.Component {
                             <label >Expiration Date</label>
                         </div>
                         <div className="col2">
-                        <img className="cardlogo" src="https://seeklogo.net/wp-content/uploads/2013/06/visa-us-vector-logo-400x400.png"  alt="Visa US vector logo free download" />
-                        <img className="cardlogo" src="https://seeklogo.net/wp-content/uploads/2016/07/mastercard-vector-logo-400x400.png" alt="MasterCard new logo vector" />
+                            <img className="cardlogo" src="https://seeklogo.net/wp-content/uploads/2013/06/visa-us-vector-logo-400x400.png" alt="Visa US vector logo free download" />
+                            <img className="cardlogo" src="https://seeklogo.net/wp-content/uploads/2016/07/mastercard-vector-logo-400x400.png" alt="MasterCard new logo vector" />
                         </div>
-                        
+
                     </div>
 
                 </div>

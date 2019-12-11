@@ -72,7 +72,7 @@ export class NavBar extends React.Component {
 
             <div className="navbar">
 
-                <Link to='/' className="logo" >Store</Link>
+                <Link to='/' className="logo" >MALDINI</Link>
                 <Helmet>
 
                     <script>

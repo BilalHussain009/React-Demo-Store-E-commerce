@@ -6,6 +6,9 @@ import { connect } from 'react-redux';
 import { startAddItem } from '../actions/item';
 import { startTotalSum } from '../actions/item';
 import { DiscussionEmbed } from 'disqus-react';
+import {firebase} from '../firebase/firebase';
+import { history } from '../routers/AppRouter';
+
 import uid from 'uuid';
 class ItemDescription extends React.Component {
   componentDidMount() {
@@ -14,7 +17,8 @@ class ItemDescription extends React.Component {
 
   state = {
     size: 'Small',
-    quantity:'1'
+    quantity: '1',
+    popup: "Cart"
   }
   myFunction() {
     var x = document.getElementById("notification");
@@ -42,13 +46,22 @@ class ItemDescription extends React.Component {
       image: this.props.location.state.image,
       description: this.props.description,
       size: this.state.size,
-      quantity:this.state.quantity
+      quantity: this.state.quantity
     });
   }
   sizeChange = (e) => {
     console.log(this.state);
-    this.setState({[e.target.id]:e.target.value});
-    
+    this.setState({ [e.target.id]: e.target.value });
+
+  }
+  addToWishList = () => {
+    if(firebase.auth().currentUser){
+      let userId = firebase.auth().currentUser.uid;
+      firebase.database().ref(`users/${userId}/wishlist`).update({item:this.props.location.state.name})
+    }
+    else{
+      history.push('/loginpage')
+    }
   }
 
   render() {
@@ -81,24 +94,24 @@ class ItemDescription extends React.Component {
           <div className="selection-row">
             <h5>Select Quantity:
               </h5>
-              <div className="select" >
-            <select id="quantity" onChange={this.sizeChange}>
-              <option value='1'>
+            <div className="select" >
+              <select id="quantity" onChange={this.sizeChange}>
+                <option value='1'>
                   1
               </option>
-              <option value='2'>
+                <option value='2'>
                   2
               </option>
-              <option value='3'>
+                <option value='3'>
                   3
               </option>
-              <option value='4'>
+                <option value='4'>
                   4
               </option>
-              <option value='5'>
+                <option value='5'>
                   5
               </option>
-            </select>
+              </select>
             </div>
           </div>
           <Helmet>
@@ -113,7 +126,17 @@ class ItemDescription extends React.Component {
     $("#" + datatoast).fadeIn(400);
   };
 });
-
+$(".toast-trigger1").click(function(e){
+  $(".toast").text("added to wish list");
+  e.preventDefault();
+  datatoast = $(this).attr("data-toast");
+  if ( $( this ).hasClass( "toast-auto" ) && !$("#" + datatoast).is(":visible") ){ 
+    $("#" + datatoast).fadeIn(400).delay(2000).fadeOut(400);
+  }
+  else if ( !$("#" + datatoast).is(":visible") ){
+    $("#" + datatoast).fadeIn(400);
+  };
+});
 $(".close-toast").click(function(e){
   e.preventDefault();
   closetoast = $(this).parent().attr("id");
@@ -122,6 +145,7 @@ $(".close-toast").click(function(e){
             </script>
           </Helmet>
           <button onClick={this.addToCart} className="toast-trigger" data-toast="toast-name-1">Add To Cart</button>
+          <button onClick={this.addToWishList} className="toast-trigger1" data-toast="toast-name-1">Add To Wish List</button>
 
           <div className="toast-container toast-pos-right toast-pos-bottom">
 

@@ -243,6 +243,37 @@ select {
   background: black;
   color: white;
 }
+
+/////////////////////////////////////////
+.toast-trigger1{
+  color: black;  
+}
+
+.toast {
+  background: rgba(0, 0, 0, 0.5);
+  color: black;
+}
+
+.toast-trigger1 {
+  display: inline-block;
+  top: 50%;
+  left: 50%;
+  margin: 10px;
+  padding: 20px 40px;
+  background: transparent;
+  color: black;
+  border: 1px solid black;
+  text-decoration: none;
+  transition: ease .2s;
+}
+
+.toast-trigger1:hover {
+  background: black;
+  color: white;
+}
+
+
+/////////
 .Shipping-Info{
   float: left;
   width: 40%;

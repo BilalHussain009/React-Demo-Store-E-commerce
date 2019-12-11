@@ -276,14 +276,19 @@ ul {
 		width:50%;
 		padding-left: 65%;
 	}
-	
+	.logo{
+		font-size: 30px;
+	}
 }
 @media screen and (max-width: 600px){
 	.navbar .right {
 		width:50%;
 		padding-left: 53%;
+		
 	}
-	
+	.navbar .logo{
+		font-size: 30px;
+	}
 }
 @media screen and (max-width: 500px){
 	.navbar .right {
