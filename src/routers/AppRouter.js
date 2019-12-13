@@ -15,6 +15,7 @@ import NavBar from '../components/NavBar';
 import SignUp from '../components/SignUp';
 import Features from '../components/Features';
 import userInfo from '../components/UserInfo';
+import PayPal from '../components/PayPal';
 export const history = createHistory();
 
 
@@ -32,11 +33,11 @@ const AppRouter = () => (
         <Route path='/search' component={SearchResult}/>
         <Route path='/merch' component={Merch}/>
         <Route path='/products' component={NavbarClickPage}/>
-        <Route path='/test' component={SignUp}/>
         <Route path='/loginPage' component={LoginPage}/>
         <Route path='/userprofile' component={UserProfile}/>
         <Route path='/aboutus' component={Features}/>
         <Route path='/userinfo' component={userInfo}/>
+        <Route path='/checkout' component={PayPal}/>
         <Route component={NotFoundPage} />
       </Switch>
     </div>

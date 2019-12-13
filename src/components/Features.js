@@ -1,29 +1,30 @@
 import React from 'react';
-const Features=()=>(
-    
-    <section id="features">
-          <div className="grid">
-            <img id="icon" src="https://d9hhrg4mnvzow.cloudfront.net/try.teespring.com/creators/cc60410b-profits-icon_026026025025000000.png" alt="icon-video"></img>
-            <div className="desc">
-              <h2>Flexible</h2>
-              <p>Learning a new skill doesn’t have to interrupt your busy schedule. Our on-demand videos and interactive code challenges are there for you when you need them.</p>
-            </div>
+const Features = () => (
+  <div>
+    <section id="maldini">
+      <h1>About Maldini</h1>
+      <p className="maldini-paragraph">
+        Maldini The Italian Brand/Maldini makes in every new collection the combination of Grace, Class, Trend and Comfort to the customer.
+        </p>
+      <h1>Address</h1>
+      <p className="maldini-paragraph"> Shop No 17,Block 12,Jinnah Super Market F7, Islamabad, Pakistan-44000 Contact +92-51-2723006
+</p>
+      <h1>General Information</h1>
+      <p className="maldini-paragraph">Maldini makes in every new collection the combination of Grace, Class, Trend and Comfort to the customer. The effort for a good job as well as for the quality of the product makes the difference.
+The styles are addressed to the practical and modern generation.
+Maldini The Italian Brand/Maldini makes in every new collection the combination of Grace, Class, Trend and Comfort to the customer.
+Maldini Fashion
+                The effort for a good job as well as for the quality of the product makes the difference.
+The styles are addressed to the practical and modern generation</p>
+      <h1>
+        Founding Date
+      </h1>
+      <p className="maldini-paragraph">2006</p>
+      <h1>Products</h1>
+      <p className="maldini-paragraph">The effort for a good job as well as for the quality of the product makes the difference.
+The styles are addressed to the practical and modern generation.</p>
+    </section>
 
-          </div>
-          <div className="grid">
-            <img id="icon" src="https://d9hhrg4mnvzow.cloudfront.net/try.teespring.com/creators/fb1f9b1d-quality_025025025025000000.png" alt="icon-tools"></img>
-            <div className="desc">
-              <h2>Practical</h2>
-              <p>We believe in learning by doing. We teach you how to create projects you'll actually want to make, from scratch, and then get them online. Plus, they never expire.</p>
-            </div>
-          </div>
-          <div className="grid">
-            <img id="icon" src="https://d9hhrg4mnvzow.cloudfront.net/try.teespring.com/creators/e858a44e-fast-payments_023023022023000000.png" alt="icon-speak"></img>
-            <div className="desc">
-              <h2>Supportive</h2>
-              <p>You don't have to learn on your own. You're always welcome to join a talented, diverse and supportive community of students from several countries around the world.</p>
-            </div>
-          </div>
-        </section>
+  </div>
 );
 export default Features;
