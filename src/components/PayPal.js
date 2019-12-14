@@ -1,5 +1,8 @@
 import React, { useState,useRef, useEffect } from 'react';
+import { history } from '../routers/AppRouter';
+import uuid from 'uuid';
 
+import {firebase} from '../firebase/firebase';
 
 function Product({ product }) {
   const [paidFor, setPaidFor] = useState(false);
@@ -41,9 +44,19 @@ function Product({ product }) {
   }, [product.description, product.price]);
 
   if (paidFor) {
+    
+
+    
+    localStorage.removeItem("cart");
+    localStorage.removeItem("sum");
+    alert("The payment was ScuccesFull!");
+    let userId=firebase.auth().currentUser.uid;
+    
+    history.push('/userprofile');
+
     return (
       <div>
-        <h1>Congrats, you just bought {product.name}!</h1>
+        <h1>Congrats, you just bought Some Stuff  !</h1>
         <img alt={product.description}  />
       </div>
     );
@@ -60,9 +73,25 @@ function Product({ product }) {
 }
 
 function App() {
+  // let price=localStorage.getItem('total')
+  let price=0;
+  let items=''
+  if(localStorage.getItem('sum')!=null){
+    price=JSON.parse(localStorage.getItem('sum'))+9;
+  }
+  let item=JSON.parse(localStorage.getItem('cart'));
+  if(item==null){
+    item=[]
+  }
+  else{
+    for(var i=0;i<item.length;i++){
+      items=items+item[i].name+' ';
+    }
+  }
+  console.log(price,items);
   const product = {
-    price: 777.77,
-    name: 'comfy chair',
+    price: price,
+    name:'hello',
   };
 
   return (

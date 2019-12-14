@@ -3,13 +3,19 @@ import {startLogout} from '../actions/auth';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import {firebase} from '../firebase/firebase';
+import { database } from 'firebase';
 const onclickfunction=()=>{
 
 }
 const changeText=()=>{
-    
-        return <Link className='form-div-link' to={{pathname: `/userinfo`, state: { flag:'updateinfo'}}}>Addresses</Link>
-   
+        let userid=firebase.auth().currentUser.uid;
+        
+        if(firebase.database().ref(`/users/${userid}/address`)){
+        return <Link className='form-div-link' to={{pathname: `/userinfo`, state: { flag:'updateinfo'}}}>Edit Address</Link>
+        }
+        else{
+            return <Link className='form-div-link' to={{pathname: `/userinfo`, state: { flag:'updateinfo'}}}>Add New Address</Link>
+        }
    
 }
 const UserProfile=(props)=>(
@@ -24,7 +30,7 @@ const UserProfile=(props)=>(
        
         <div className='form-div'>
             <label className='form-div-label-one'>Order History</label><br></br><br></br>
-            <label className='form-div-label-two'>You Haven't placed any orders yet.</label>
+            <Link className='form-div-link' to='/yourorders'>View Your orders</Link>
         </div>
         <div className='form-div-one'>
             <label className='form-div-label-one'>Account Details</label><br></br><br></br>

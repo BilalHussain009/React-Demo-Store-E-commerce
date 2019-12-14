@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux';
 import CartItems from './CartItems';
+import {firebase} from '../firebase/firebase';
 import { Link } from 'react-router-dom';
 import PaypalExpressBtn from 'react-paypal-express-checkout';
 const client = {
@@ -44,7 +45,9 @@ class Cart extends React.Component {
               <li className="totalRow"><span className="label">Shipping</span><span className="value">{JSON.parse(localStorage.getItem("sum")) > 0 ? <p>$5</p> : <p>$0.00</p>}</span></li>
               <li className="totalRow"><span className="label">Tax</span><span className="value">{JSON.parse(localStorage.getItem("sum")) > 0 ? <p>$4.00</p> : <p>$0.00</p>}</span></li>
               <li className="totalRow final"><span className="label">Total</span><span className="value">{JSON.parse(localStorage.getItem("sum")) > 0 ? <p>${JSON.parse(localStorage.getItem("sum")) + 9}</p> : <p>$0.00</p>}</span></li>
-              <li className="totalRow"><Link to="/checkout" className="bt continue">Checkout</Link>
+              <li className="totalRow">{firebase.auth().currentUser?
+              <Link to="/checkout" className="bt continue">Checkout</Link>:<Link to="/loginPage" className="bt continue">Checkout</Link>}
+                
               </li>
               
 

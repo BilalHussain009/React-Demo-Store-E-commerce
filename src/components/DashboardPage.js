@@ -16,11 +16,12 @@ const DashboardPage = () => (
     <div className="section-title">
   <span className="tag tag-regular">Special Offers </span>
 </div>
-    <Featured/>
+<ProductList section='explore'/>
+
     <div className="section-title">
   <span className="tag tag-regular"> Explore</span>
 </div>
-<ProductList section='explore'/>
+<Featured/>
 
 
 <div className="section-title">

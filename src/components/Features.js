@@ -19,9 +19,7 @@ The styles are addressed to the practical and modern generation</p>
         Founding Date
       </h1>
       <p className="maldini-paragraph">2006</p>
-      <h1>Products</h1>
-      <p className="maldini-paragraph">The effort for a good job as well as for the quality of the product makes the difference.
-The styles are addressed to the practical and modern generation.</p>
+      
     </section>
 
   </div>

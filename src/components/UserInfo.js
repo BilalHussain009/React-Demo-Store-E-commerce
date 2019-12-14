@@ -11,22 +11,22 @@ class UserInfo extends React.Component {
         cardName: '',
         expDate: '',
         cvv: '',
-        cardNumber: ''
+        cardNumber: '',
+        zipcode:'',
+        address2:''
 
     }
     submitForm = (e) => {
         e.preventDefault();
         let userId = firebase.auth().currentUser.uid;
 
-        firebase.database().ref('users/' + userId+'/address').set({
+        firebase.database().ref('users/' + userId + '/address').set({
             firstname: this.state.firstname,
             lastname: this.state.lastname,
             phone: this.state.phone,
             address: this.state.address,
-            cardName: this.state.cardName,
-            expDate: this.state.expDate,
-            cvv: this.state.cvv,
-            cardNumber: this.state.cardNumber
+            address2:this.state.address2,
+            zipcode:this.state.zipcode
         }).then(
             alert("Your Data is saved")
         ).catch(
@@ -56,12 +56,21 @@ class UserInfo extends React.Component {
         }
 
     }
-    
-    componentDidMount=()=>{
+    inputedValue4 = (e) => {
+        // console.log(this.state);
+        console.log(e.target.value.length);
+        if (e.target.id == "zipcode" && e.target.value.length <=5) {
+            this.setState({ [e.target.id]: e.target.value });
+        }
+
+
+    }
+
+    componentDidMount = () => {
         let userId = firebase.auth().currentUser.uid;
-        var userData={};
+        var userData = {};
         if (this.props.location.state.flag == "updateinfo") {
-            firebase.database().ref(`users/${userId}/address`).once("value").then((snapshot)=> {
+            firebase.database().ref(`users/${userId}/address`).once("value").then((snapshot) => {
                 // let firstname=snapshot.val().firstname;
                 //  let lastname=snapshot.val().lastname;
                 //  let phone=snapshot.val().phone;
@@ -82,16 +91,16 @@ class UserInfo extends React.Component {
                 //     cvv: snapshot.val().cvv,
                 //     cardNumber: snapshot.val().cardNumber
                 // }
-                
-               
+
+
 
             });
-            
+
             // this.setState(userData);
-            
+
         }
         console.log(userData)
-        
+
 
         // console.log(this.props.location.state.flag);
 
@@ -112,6 +121,12 @@ class UserInfo extends React.Component {
                         </div>
                     </div>
                     <div className="row">
+                        <div className="col2">
+                            <input type="text" required name="zipcode" id="zipcode" onChange={this.inputedValue4} value={this.state.zipcode}></input>
+                            <label >ZipCode</label>
+                        </div>
+                    </div>
+                    <div className="row">
                         <input name="phone" id="phone" onChange={this.inputedValue} type="number" maxLength="12" value={this.state.phone}></input>
                         <label>Phone</label>
                     </div>
@@ -119,40 +134,14 @@ class UserInfo extends React.Component {
                         <input required type="text" name="address" id="address" onChange={this.inputedValue} value={this.state.address}></input>
                         <label >Address</label>
                     </div>
+                    <div className="row">
+                        <input required type="text" name="address2" id="address2" onChange={this.inputedValue} value={this.state.address2}></input>
+                        <label >Address2 (optional)</label>
+                    </div>
 
                 </div>
                 <br></br>
-                <header>Card Info</header>
-
-                <div className="area">
-
-                    <div className="row">
-                        <div className="col2">
-                            <input required type="text" name="cardName" id="cardName" onChange={this.inputedValue} value={this.state.cardName}></input>
-                            <label >Card Holder Name</label>
-                        </div>
-                        <div className="col2">
-                            <input required type="number" name="cvv" id="cvv" onChange={this.inputedValue2} maxLength="3" value={this.state.cvv}></input>
-                            <label >CVV</label>
-                        </div>
-                    </div>
-                    <div className="row">
-                        <input required type="number" name="cardNumber" id="cardNumber" onChange={this.inputedValue3} value={this.state.cardNumber}></input>
-                        <label >Card Number</label>
-                    </div>
-                    <div className="row">
-                        <div className="col2">
-                            <input required type="date" name="expDate" id="expDate" pattern="[A-Za-z]{3}" onChange={this.inputedValue} value={this.state.expDate}></input>
-                            <label >Expiration Date</label>
-                        </div>
-                        <div className="col2">
-                            <img className="cardlogo" src="https://seeklogo.net/wp-content/uploads/2013/06/visa-us-vector-logo-400x400.png" alt="Visa US vector logo free download" />
-                            <img className="cardlogo" src="https://seeklogo.net/wp-content/uploads/2016/07/mastercard-vector-logo-400x400.png" alt="MasterCard new logo vector" />
-                        </div>
-
-                    </div>
-
-                </div>
+                
                 <div className="row">
                     <input type="submit" value="Submit" className="btn"></input>
                     <input type="submit" value="cancel" className="btn"></input>
