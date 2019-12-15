@@ -1,5 +1,7 @@
 import React from 'react';
 import { firebase } from '../firebase/firebase';
+import { history } from '../routers/AppRouter';
+
 import { error } from 'util';
 import { userInfo } from 'os';
 class UserInfo extends React.Component {
@@ -29,7 +31,7 @@ class UserInfo extends React.Component {
             zipcode:this.state.zipcode
         }).then(
             alert("Your Data is saved")
-        ).catch(
+        ).then(history.push('/userprofile')).catch(
             error => { error.message }
         )
     }

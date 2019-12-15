@@ -1,5 +1,6 @@
 import React from 'react';
 import uuid from 'uuid';
+import {firebase} from '../firebase/firebase';
 import database from '../firebase/firebase';
 export const addItem = (item) => ({
   type: 'ADD_ITEM',
@@ -28,7 +29,6 @@ export const startSetItems = () => {
 };
 export const startAddItem = (itemData = {}) => {
   return (dispatch,getState) => {
-    const uid=getState().auth.uid;
     const {
       company='',
       name='',

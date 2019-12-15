@@ -37,6 +37,7 @@ const AppRouter = () => (
         <Route path='/userprofile' component={UserProfile}/>
         <Route path='/aboutus' component={Features}/>
         <Route path='/userinfo' component={userInfo}/>
+        <Route path='/signup' component={SignUp}/>
         <Route path='/checkout' component={PayPal}/>
         <Route component={NotFoundPage} />
       </Switch>

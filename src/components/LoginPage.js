@@ -73,7 +73,7 @@ class LoginPage extends React.Component {
               </div>
 
               : <div>
-                <p className='form-subheading'>UserName</p>
+                <p className='form-subheading'>Email</p>
                 <br></br>
                 <div className='InputField'>
 
@@ -104,7 +104,7 @@ class LoginPage extends React.Component {
                   <button type='submit' className='login-button' href="#" onClick={this.handleSubmit}>Login</button>
                 </div>
                 <div className='login-button-box'>
-                  <Link to='/test' className='login-button'>SignUp</Link>
+                  <Link to='/signup' className='login-button'>SignUp</Link>
                 </div>
               </div>}
 
