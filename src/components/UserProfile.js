@@ -4,54 +4,55 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { firebase } from '../firebase/firebase';
 import database  from 'firebase';
-const onclickfunction = () => {
 
-}
-const changeText = () => {
-    let userid=firebase.auth().currentUser.uid;
-    let items=[];
-    firebase.database().ref(`users/${userid}/address`).once('value').then((snapshot)=>{
-       
-        snapshot.forEach((childSnapshot) => {
-         items.push(
-           
-          childSnapshot.val()
-         );
 
-        });
-       
+class UserProfile extends React.Component{
+    state={
+        address:false
+    }
+    componentWillMount(){
+        var userId = firebase.auth().currentUser.uid;
+        firebase.database().ref('/users/' + userId + '/address').once('value').then(function (snapshot) {
+            var username = snapshot.val();
+            if(username){
+                this.setState({
+                    address:true
+                })
+            }
         
-      });
-      console.log(items[0]);
-      return(items.length==0 ?<Link className='form-div-link' to={{pathname: `/userinfo`, state: { flag:'updateinfo'}}}>Add Addresses</Link>:
-      <Link className='form-div-link' to={{pathname: `/userinfo`, state: { flag:'updateinfo'}}}>Edit Addresses</Link>);
+    
+        });
+        console.log(this.state)
+    }
 
-}
-const UserProfile = (props) => (
-    <div className='user-profile'>
+    render(){
+        return(
+            <div className='user-profile'>
 
-        <div className='user-heading'>
-            <p><span className='top-heading'>Account Information</span>
-                <span className='below-heading'>View Your Personal Details</span>
-            </p>
+            <div className='user-heading'>
+                <p><span className='top-heading'>Account Information</span>
+                    <span className='below-heading'>View Your Personal Details</span>
+                </p>
+            </div>
+    
+    
+            <div className='form-div'>
+                <label className='form-div-label-one'>Order History</label><br></br><br></br>
+                <Link className='form-div-link' to='/purchaseHistory'>You haven't placed any Orders yet</Link>
+            </div>
+            <div className='form-div-one'>
+            <Link className='form-div-link' to={{ pathname: `/userinfo`, state: { flag: 'updateinfo' } }}>Your Address</Link>
+                
+    
+            </div>
+            <div className='form-div-one'>
+                <Link className='form-div-link-logout' to='/' onClick={this.props.startLogout}>Log out</Link>
+            </div>
         </div>
-
-
-        <div className='form-div'>
-            <label className='form-div-label-one'>Order History</label><br></br><br></br>
-            <Link className='form-div-link' to='/yourorders'>View Your orders</Link>
-        </div>
-        <div className='form-div-one'>
-            <label className='form-div-label-one'>Account Details</label><br></br><br></br>
-            {/* <a href='#' className='form-div-link'>View Addresses(0)</a> */}
-            {changeText()}
-
-        </div>
-        <div className='form-div-one'>
-            <Link className='form-div-link-logout' to='/' onClick={props.startLogout}>Log out</Link>
-        </div>
-    </div>
-);
+        )
+    }
+   
+};
 const mapDispatchToProps = (dispatch) => ({
     startLogout: () => dispatch(startLogout()),
 

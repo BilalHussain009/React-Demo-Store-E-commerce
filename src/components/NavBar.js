@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import { setSort } from '../actions/sort';
 import { setHeading } from '../actions/headings';
 import { firebase } from '../firebase/firebase';
+import ReactTooltip from 'react-tooltip';
+
 
 export class NavBar extends React.Component {
 
@@ -72,7 +74,7 @@ export class NavBar extends React.Component {
 
             <div className="navbar">
 
-                <Link to='/' className="logo" >MALDINI</Link>
+                <Link to='/' className="logo" data-tip="Home Page" >MALDINI</Link>
                 <Helmet>
 
                     <script>
@@ -105,26 +107,26 @@ export class NavBar extends React.Component {
 
                 <ul className="links">
 
-                    <li><Link to='/products' onClick={this.setSocks}>Socks</Link></li>
+                    <li><Link to='/products'data-tip="View Socks Products" onClick={this.setSocks}>Socks</Link></li>
 
-                    <li><Link to='/products' onClick={this.setMugs} >Mugs</Link></li>
-                    <li><Link to='/products' onClick={this.setPhoneCase}>Phone Case</Link></li>
-                    <li><Link to='/products' onClick={this.setCreators}>Creators</Link></li>
-                    <li><Link to='/aboutus' onClick={this.setCreators}>About Us</Link></li>
+                    <li><Link to='/products'data-tip="View Mugs Products" onClick={this.setMugs} >Mugs</Link></li>
+                    <li><Link to='/products' data-tip="View Phone Products" onClick={this.setPhoneCase}>Phone Case</Link></li>
+                    <li><Link to='/products'data-tip="View Products By Creators" onClick={this.setCreators}>Creators</Link></li>
+                    <li><Link to='/aboutus'data-tip="Know More About us" onClick={this.setCreators}>About Us</Link></li>
                     <li>
-                        <Link to={firebase.auth().currentUser ? '/userprofile' : '/loginPage'}>
+                        <Link data-tip="User Profile" to={firebase.auth().currentUser ? '/userprofile' : '/loginPage'}>
                             <div className='LoginBox'>
                                 <img className="LoginButton" src={this.userprofilepic()}></img>
                                 <p className='LoginText'>{this.userprofile()}</p>
                             </div>
                         </Link>
                     </li>
-                    
+
 
                 </ul>
 
 
-                <Link to="/cart" className="right">
+                <Link to="/cart" className="right" data-tip="Go To Cart">
                     <button type="button" className='cartbutton' id='cartButton' >
                         Cart
              </button>
@@ -133,6 +135,7 @@ export class NavBar extends React.Component {
                 <div className="toggle">
                     <div className="line1"></div>
                     <div className="line2"></div>
+                    <ReactTooltip />
                     <div className="line3"></div>
                 </div>
 

@@ -3,10 +3,10 @@ import {setSort} from '../actions/sort';
 
 import {connect} from 'react-redux';
 
-class FilterBar extends React.Component{
+class FilterBar extends React.Component{//This Compontn is the side filter bar in the product section
     setAll=()=>{
         
-        this.props.setSort('all');
+        this.props.setSort('all'); ///Displaying all the items from a categry
     }
      setCat=()=>{
         if(localStorage.getItem('category')=='mugs'){
@@ -72,7 +72,7 @@ class FilterBar extends React.Component{
             <div className="menu">
     <div className="title">FILTERS</div>
     <ul className="nav">
-      <li><a onClick={this.setCamo} href="#">{this.props.heading[2]}</a></li>
+      <li><a onClick={this.setCamo} href="#">{this.props.heading[2]}</a></li> {/* Set filter to camo*/}
       <li><a  onClick={this.setCat}href="#">{this.props.heading[3]}</a></li>
       <li><a  onClick={this.setPassion}href="#">{this.props.heading[4]}</a></li>
       <li><a onClick={this.setLove}href="#">{this.props.heading[5]}</a></li>

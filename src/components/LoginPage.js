@@ -13,33 +13,34 @@ class LoginPage extends React.Component {
     password: '',
     resetEmail: '',
     passreset: false
-  }
-
+  } //temporary saving the values the user enter in form to save in the component state
 
   handleChange = (e) => {
-    this.setState({ [e.target.id]: e.target.value });
+    this.setState({ [e.target.id]: e.target.value }); //Changing the state when user enters something in the form
     console.log(this.state);
   }
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.startSigninWithEmail(this.state.email, this.state.password);
+    this.props.startSigninWithEmail(this.state.email, this.state.password); //Dispatching the firebase method of 
+    // user sign in 
 
   }
   changePassword = () => {
-    this.setState({ passreset: true })
+    this.setState({ passreset: true })  // changing the state of passreset to true when user clicks reset password
   }
   changeToLogin = () => {
     this.setState({ passreset: false })
   }
   handleChangePass = (e) => {
-    this.setState({ resetEmail: e.target.value });
+    this.setState({ resetEmail: e.target.value }); //saving the user entered password value in the state 
 
   }
   handleChangePassSubmit = (e) => {
     firebase.auth().sendPasswordResetEmail(this.state.resetEmail).then(
-      alert("Reset password has been sent! Check Your Email!")
+      alert("Reset password has been sent! Check Your Email!") //Changing the password if the password scuccessfully changes 
+      //we notidy user that your passwrod has been changed other wise we say that email does not exisit in the data base
 
-    ).then(history.push('/loginPage'));
+    ).catch(alert("The email does not exists")).then(history.push('/loginPage'));
   }
   render() {
     return (

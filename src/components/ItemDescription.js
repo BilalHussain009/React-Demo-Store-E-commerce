@@ -21,9 +21,9 @@ class ItemDescription extends React.Component {
     popup: "Cart"
   }
   myFunction() {
-    var x = document.getElementById("notification");
+    var x = document.getElementById("notification"); // function to call when we click add product button
     x.className = "show";
-    setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
+    setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);//Time out for 3 seconds
   }
 
   addToCart = (id, company, name, price, image) => {
@@ -79,6 +79,7 @@ class ItemDescription extends React.Component {
           <div className="selection-row">
             <h3>${this.props.location.state.price}</h3>
           </div>
+          {console.log(this.props.location.section)}
           <div className="selection-row">
             <h5>Select Size:</h5>
             <div className="select">
@@ -145,7 +146,7 @@ $(".close-toast").click(function(e){
             </script>
           </Helmet>
           <button onClick={this.addToCart} className="toast-trigger" data-toast="toast-name-1">Add To Cart</button>
-          <button onClick={this.addToWishList} className="toast-trigger1" data-toast="toast-name-1">Add To Wish List</button>
+
 
           <div className="toast-container toast-pos-right toast-pos-bottom">
 
@@ -205,4 +206,4 @@ const mapDispatchToProps = (dispatch) => ({
   startTotalSum: (price) => dispatch(startTotalSum(price))
 });
 
-export default connect(undefined, mapDispatchToProps)(ItemDescription);
+export default connect(undefined, mapDispatchToProps)(ItemDescription); //Conneting wiht react -redux

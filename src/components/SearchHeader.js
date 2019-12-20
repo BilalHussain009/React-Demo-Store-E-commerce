@@ -3,6 +3,8 @@ import {setSearch} from '../actions/search';
 import { connect } from 'react-redux';
 import {Link} from 'react-router-dom';
 import { withRouter } from "react-router-dom";
+import ReactTooltip from 'react-tooltip'
+
 class SearchHeader extends React.Component{
   onChange=(e)=>{
     this.setState({searchTerm:e.target.value})
@@ -30,8 +32,9 @@ class SearchHeader extends React.Component{
       <label htmlFor="from">
         <i className="ion-location"></i>
       </label>
-      <input type="search" placeholder="Search For Products" onChange={this.onChange}></input>
-      <input type="submit" value="Search"></input>
+
+      <input type="search"  placeholder="Search For Products" onChange={this.onChange}></input>
+      <input type="submit" value="Search" ></input>
     </form>
     </div>
     )

@@ -4,13 +4,12 @@ const Banner=()=>(
 	
 	<div className="banner-content">
 		<div className="banner-content-icon">
-
 <svg id="Layer_1" className="banner-dog" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 276.27 235.5">
 	<defs>
 		<style>
 		</style>
 	</defs>
-	<title>jakeDog</title>
+	<title>jakeDog</title>{/* SVG path */}
 	<path className="cls-1" d="M46.42,166.86s27-42,50.53-47.39c-11.68-13.31-59.6-70.9-59.6-70.9S-25.54,96.9,46.42,166.86Z" transform="translate(-11.9 -48.57)"/>
 	<path className="cls-1 dog-ear" d="M253.58,169.46s-24.95-43.19-47.44-48.92c11.5-13.43,58.75-71.61,58.75-71.61S324.16,99,253.58,169.46Z" transform="translate(-11.9 -48.57)"/>
 	<ellipse className="cls-2" cx="135.1" cy="138.43" rx="117.06" ry="97.07"/>

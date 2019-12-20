@@ -33,12 +33,13 @@ export class Product extends React.Component{
             pathname: "/description",
             state: { name:this.props.name,
                     price:this.props.price,
-                    image:this.props.image}
+                    image:this.props.image,
+                    section:this.props.section}
          }} >
         <figure>
         <img src={this.props.image}></img>
 	        <figcaption>{this.props.name}</figcaption>
-            <span className="price"> ${this.props.price}</span>
+            <span className="price"> Rs.{this.props.price}</span>
             
 	    </figure>
         </Link>

@@ -18,6 +18,27 @@ class UserInfo extends React.Component {
         address2:''
 
     }
+    handleCheckout=()=>{
+        let userId = firebase.auth().currentUser.uid;
+        let item = JSON.parse(localStorage.getItem('cart'));
+        
+        firebase.database().ref('orders/' + userId + '/address').set({
+            firstname: this.state.firstname,
+            lastname: this.state.lastname,
+            phone: this.state.phone,
+            address: this.state.address,
+            address2:this.state.address2,
+            zipcode:this.state.zipcode
+        }).then(
+            firebase.database().ref('orders/' + userId + '/items').set({
+                ...item
+            })
+        ).then(
+            alert("Your Order Has been Placed")
+        ).then(history.push('/userprofile')).catch(
+            error => { error.message }
+        )
+    }
     submitForm = (e) => {
         e.preventDefault();
         let userId = firebase.auth().currentUser.uid;
@@ -71,7 +92,7 @@ class UserInfo extends React.Component {
     componentDidMount = () => {
         let userId = firebase.auth().currentUser.uid;
         var userData = {};
-        if (this.props.location.state.flag == "updateinfo") {
+         
             firebase.database().ref(`users/${userId}/address`).once("value").then((snapshot) => {
                 // let firstname=snapshot.val().firstname;
                 //  let lastname=snapshot.val().lastname;
@@ -100,7 +121,7 @@ class UserInfo extends React.Component {
 
             // this.setState(userData);
 
-        }
+        
         console.log(userData)
 
 
@@ -145,7 +166,10 @@ class UserInfo extends React.Component {
                 <br></br>
                 
                 <div className="row">
-                    <input type="submit" value="Submit" className="btn"></input>
+                    {this.props.location.state.flag == "checkout"?
+                        <button  className="btn" form="myform" onClick={this.handleCheckout}>CheckOut</button>:
+                        <input type="submit" value="Submit" className="btn"></input>}
+                    
                     <input type="submit" value="cancel" className="btn"></input>
                 </div>
 

@@ -7,16 +7,16 @@ class CartItems extends React.Component{
     onRemove=()=>{
         // this.props.startRemoveFromCart(this.props.id)
         // this.props.startSubtractAmount(this.props.price)
-        let cart =JSON.parse(localStorage.getItem("cart"));
+        let cart =JSON.parse(localStorage.getItem("cart")); //Getting the items from the old cart
         
-        let newCart=cart.filter(({id})=>id!==this.props.id);
-        localStorage.setItem('cart',JSON.stringify(newCart));
+        let newCart=cart.filter(({id})=>id!==this.props.id); //Making the new Cart where i.e removing the items from old cart
+        localStorage.setItem('cart',JSON.stringify(newCart));//SAving new Cart
         
-        var sum=JSON.parse(localStorage.getItem("sum"));
+        var sum=JSON.parse(localStorage.getItem("sum"));//Getting the total Bill from the local Storage
         
         
-        sum-=this.props.price;
-        localStorage.setItem('sum',JSON.stringify(sum));
+        sum-=this.props.price; // Subtracting the price of deleted item from the total sum
+        localStorage.setItem('sum',JSON.stringify(sum));//updating the sum in the local storage
         
     }
     render(){
@@ -28,8 +28,8 @@ class CartItems extends React.Component{
         <div className="infoWrap"> 
             <div className="cartSection">
             <img src={this.props.image} alt="" className="itemImg" />
-              <p className="itemNumber">{this.props.company}</p>
-              <h3>{this.props.name}</h3>
+              <p className="itemNumber">{this.props.company}</p> {/*Dispplaying the Company name that was passed as props */}
+              <h3>{this.props.name}</h3>{/* Displaying the product name from the props*/}
             
                <p> <input type="text"  className="qty" placeholder={this.props.quantity+'x'}/>${this.props.price}</p>
             
@@ -41,7 +41,7 @@ class CartItems extends React.Component{
               <p>${this.props.price}</p>
             </div>
                   <div className="cartSection removeWrap">
-               <a href="#" onClick={this.onRemove} className="remove">x</a>
+               <a href="#" onClick={this.onRemove} className="remove">x</a> {/*Product remove button  */}
             </div>
           </div>
         </li>
@@ -60,7 +60,7 @@ const mapStateToProps=(state)=>({
     cart:state.cart
 });
 const mapDispatchToProps=(dispatch)=>({
-    startRemoveFromCart:(id)=>dispatch(startRemoveFromCart(id)),
+    startRemoveFromCart:(id)=>dispatch(startRemoveFromCart(id)), 
     startSubtractAmount:(price)=>dispatch(startSubtractAmount(price))
-})
+});{/* Ading the methods to the prosp so that we can call them latter */}
 export default connect(mapStateToProps,mapDispatchToProps)(CartItems);

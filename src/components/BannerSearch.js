@@ -3,7 +3,7 @@ import SearchHeader from './SearchHeader';
 const BannerSearch=()=>(
   <div className='hero-search'>
     <div className='hero-search-line'>
-      <h3>Find Something <br></br>you Love.</h3>
+      <h3>Find Something <br></br>you Love.</h3>{/* Tag Line of our project*/}
     </div>
     <br></br>
     <div className='hero-search-input'>

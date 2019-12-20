@@ -61,3 +61,47 @@
   -o-transition: all .3s ease;
   transition: all .3s ease;
 }
+
+//////////////////////////////////@at-root
+
+.toast-trigger2 {
+  color: black;  
+}
+
+.toast {
+  background: rgba(0, 0, 0, 0.5);
+  color: black;
+}
+
+.toast-trigger2 {
+  display: inline-block;
+  top: 50%;
+  left: 50%;
+  margin: 10px;
+  padding: 20px 40px;
+  background: transparent;
+  color: black;
+  border: 1px solid black;
+  text-decoration: none;
+  transition: ease .2s;
+}
+
+.toast-trigger2:hover {
+  background: black;
+  color: white;
+}
+.cash-div{
+  top: 20%; 
+    position: absolute;
+    left: 33%;
+
+    margin-top: 57%;
+}
+@media (max-width: $desktop-breakpoint) {
+
+  .cash-div{
+      position: absolute;
+      left: 20%;
+      margin-top: 100%;
+  }
+}

@@ -58,6 +58,8 @@
     "react-script-tag": "^1.1.2",
     "react-scrollbar": "^0.5.6",
     "react-stripe-elements": "^6.0.1",
+    "react-sweet-progress": "^1.1.2",
+    "react-tooltip": "^3.11.1",
     "redux": "3.7.2",
     "redux-mock-store": "1.2.3",
     "redux-thunk": "2.2.0",

@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { history } from '../routers/AppRouter';
+import {Link} from 'react-router-dom';
 import uuid from 'uuid';
 
 import { firebase } from '../firebase/firebase';
@@ -47,19 +48,8 @@ function Product({ product }) {
     let items = {};
     let checkUser = firebase.auth().currentUser.uid;
     let item = JSON.parse(localStorage.getItem('cart'));
-    var starCountRef = firebase.database().ref(`users/${checkUser}/history`);
-    starCountRef.on('value', function (snapshot) {
-      items = (snapshot.val());
-    });
-    console.log(item);
+    firebase.database().ref(`users/${checkUser}/history`).push(item);
     console.log(items);
-
-
-    for (const key of Object.keys(item)) {
-
-    }
-    console.log(items);
-    firebase.database().ref(`users/${checkUser}/history`).set(items);
     localStorage.removeItem("cart");
     localStorage.removeItem("sum");
     alert("The payment was ScuccesFull!");
@@ -111,6 +101,9 @@ function App() {
     <div className="paypal">
       <h1 className="projTitle">Pay securely with PayPal <br></br> or Credit Card</h1>
       <Product product={product} />
+      <div className="cash-div">
+      <Link  className="toast-trigger2" to={{ pathname: `/userinfo`, state: { flag: 'checkout' } }}>Cash On Delivery</Link>
+      </div>
     </div>
   );
 }

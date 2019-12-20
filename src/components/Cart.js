@@ -3,15 +3,11 @@ import { connect } from 'react-redux';
 import CartItems from './CartItems';
 import {firebase} from '../firebase/firebase';
 import { Link } from 'react-router-dom';
-import PaypalExpressBtn from 'react-paypal-express-checkout';
-const client = {
-  sandbox: 'ATwFQyu3gAIwpqjT5jisMPNnXy3E3OVx39ost8k9DB37ViXl8X6aml6jePdJEqu3043tFGfLY8W5GgxC',
-  prdouction: 'ATwFQyu3gAIwpqjT5jisMPNnXy3E3OVx39ost8k9DB37ViXl8X6aml6jePdJEqu3043tFGfLY8W5GgxC'
-}
+
 import NavBar from './NavBar';
 class Cart extends React.Component {
   componentDidMount() {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0) //Scroll the Window to Top When Component Mount the DOM 
   }
 
   render() {
@@ -29,7 +25,7 @@ class Cart extends React.Component {
               {
                 localStorage.getItem("cart") !== null ? (JSON.parse(localStorage.getItem("cart")).map((item) => (
 
-                  <CartItems key={item.id} {...item} />
+                  <CartItems key={item.id} {...item} /> // Looping through items Stored in Cart Object and passing to CartITems Props
                 ))) : <div>No item</div>
 
               }
@@ -40,14 +36,14 @@ class Cart extends React.Component {
 
           <div className="subtotal cf">
             <ul>
-              <li className="totalRow"><span className="label">Subtotal</span><span className="value">${(JSON.parse(localStorage.getItem("sum")))}</span></li>
-
-              <li className="totalRow"><span className="label">Shipping</span><span className="value">{JSON.parse(localStorage.getItem("sum")) > 0 ? <p>$5</p> : <p>$0.00</p>}</span></li>
-              <li className="totalRow"><span className="label">Tax</span><span className="value">{JSON.parse(localStorage.getItem("sum")) > 0 ? <p>$4.00</p> : <p>$0.00</p>}</span></li>
-              <li className="totalRow final"><span className="label">Total</span><span className="value">{JSON.parse(localStorage.getItem("sum")) > 0 ? <p>${JSON.parse(localStorage.getItem("sum")) + 9}</p> : <p>$0.00</p>}</span></li>
+              <li className="totalRow"><span className="label">Subtotal</span><span className="value">Rs{(JSON.parse(localStorage.getItem("sum")))}</span></li>
+                                                                {/*Setting the sum from the Local Storage in Subtototal*/}
+              <li className="totalRow"><span className="label">Shipping</span><span className="value">{JSON.parse(localStorage.getItem("sum")) > 0 ? <p>Rs.100</p> : <p>Rs0.00</p>}</span></li>
+              <li className="totalRow"><span className="label">Tax</span><span className="value">{JSON.parse(localStorage.getItem("sum")) > 0 ? <p>Rs.40.00</p> : <p>Rs0.00</p>}</span></li>
+              <li className="totalRow final"><span className="label">Total</span><span className="value">{JSON.parse(localStorage.getItem("sum")) > 0 ? <p>Rs.{JSON.parse(localStorage.getItem("sum")) + 140}</p> : <p>Rs0.00</p>}</span></li>
               <li className="totalRow">{firebase.auth().currentUser?
               <Link to="/checkout" className="bt continue">Checkout</Link>:<Link to="/loginPage" className="bt continue">Checkout</Link>}
-                
+                {/*Checking if user exists if it does redirect to checkout otherwise redirect to loginPage*/}
               </li>
               
 
@@ -95,5 +91,5 @@ class Cart extends React.Component {
 const mapStateToProps = (state) => ({
   cart: state.cart,
   totalAmount: state.totalAmount
-});
+}); {/*Passing the State from REdux to Props of this Component */}
 export default connect(mapStateToProps)(Cart);

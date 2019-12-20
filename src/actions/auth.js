@@ -1,6 +1,7 @@
 import { firebase, googleAuthProvider, facebookAuthProvider } from '../firebase/firebase';
+//imoorting firebase and loging functions from firebase
 import { history } from '../routers/AppRouter';
-
+//hsiory is used to push user to another route forecefully
 export const login = () => ({
   type: 'LOGIN'
 

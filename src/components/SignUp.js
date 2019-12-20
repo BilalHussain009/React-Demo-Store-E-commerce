@@ -9,17 +9,34 @@ class  SignUp extends React.Component{
 
     state={
         email:'',
-        password:''
+        password:'',
+        repass:'',
+        username:'',
+        progress:0
     }
    
 
     handleChange=(e)=>{
       this.setState({[e.target.id]:e.target.value})
+      if(e.target.value.length>0){
+        this.setState({progress:progress+25});
+      }
+      else{
+        this.setState({progress:progress-25})
+        
+      }
     }
     handleSubmit=(e)=>{
       
       e.preventDefault();
-      this.props.startSignupWithEmail(this.state.email,this.state.password);
+      if(this.state.password!==this.state.repass){
+        alert("Passwords Didn't Match");
+      }
+      
+      else{
+        this.props.startSignupWithEmail(this.state.email,this.state.password,this.state.username);
+      }
+      
 
     }
     render(){
@@ -37,7 +54,7 @@ class  SignUp extends React.Component{
       
       <img src='https://image.flaticon.com/icons/svg/21/21104.svg' className='form-logo' alt='image here'/>
       <input 
-       style={{border:'none'}} className='form-placeholder' 
+       style={{border:'none'}} className='form-placeholder' id='username'
        type='text' placeholder='Type your user name' required></input>
       </div>
       <p className='form-subheading'>Email</p>
@@ -51,6 +68,16 @@ class  SignUp extends React.Component{
       type='text' placeholder='eg. max@example.com' required></input>
       </div>
       <p className='form-subheading'>Password</p>
+      <br></br>
+      <div className='InputField'>
+    
+      <img src='https://img.icons8.com/metro/26/000000/password.png' className='form-logo' alt='image here'/>
+
+      <input onChange={this.handleChange}
+      style={{border:'none'}} className='form-placeholder' id='repass' 
+      type='password' placeholder='Type your Password here' required></input>
+      </div>
+      <p className='form-subheading'>Confirm Password</p>
       <br></br>
       <div className='InputField'>
     

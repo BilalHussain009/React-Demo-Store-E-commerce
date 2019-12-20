@@ -36,7 +36,6 @@ class ProductsList extends React.Component {
                   {
 
                     this.props.items.map((item) => {
-
                       if (item.section === this.props.section) {
                         return <Product key={item.image} {...item} />
                       }
