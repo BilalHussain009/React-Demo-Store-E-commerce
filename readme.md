@@ -9,7 +9,7 @@
 
 
 
-view the Live App : https://react-demo-store-by-bilal.herokuapp.com/
+view the Live App : http://maldinifashion.herokuapp.com/
 
 
 install Command : Yarn install
