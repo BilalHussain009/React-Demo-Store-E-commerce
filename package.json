@@ -37,7 +37,7 @@
     "history": "4.7.2",
     "jquery": "^3.4.1",
     "moment": "2.18.1",
-    "node-sass": "4.12.0",
+    "node-sass": "7.0.0",
     "normalize.css": "7.0.0",
     "numeral": "2.0.6",
     "paypal-checkout": "^4.0.305",
